@@ -18,7 +18,12 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body
+          suppressHydrationWarning
+          className={`${inter.className} text-slate-12 h-screen antialiased`}
+        >
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );

@@ -13,7 +13,7 @@ export const Logo = () => {
           sizes="(max-width: 0px) 100px, (max-width: 0px) 100px, 100px"
         />
       </div>
-      <p className="hidden lg:block">EZtrading</p>
+      <p className="hidden lg:block">EZTRADING</p>
     </span>
   );
 };
