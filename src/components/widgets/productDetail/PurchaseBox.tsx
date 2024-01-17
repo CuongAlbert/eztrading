@@ -16,6 +16,8 @@ export default function PurchaseBox(props: { product: Product }) {
           <input
             type="number"
             className="border-2 border-blue-900 rounded-full w-20 py-2 px-3"
+            min={product.minOrder}
+            defaultValue={product.minOrder}
           />
           <hr className="text-blue-600" />
           <h1>Variations</h1>

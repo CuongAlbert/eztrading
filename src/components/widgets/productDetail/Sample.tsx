@@ -13,7 +13,12 @@ export default function Sample(props: {
       <p className="my-4">{`Maximum order quantity: ${sample.max} ${
         sample.max == 1 ? unit : `${unit}s`
       }`}</p>
-      <p className="my-4">{`Sample price: US$${sample.price}/${sample.unit}`}</p>
+      <p className="my-4">
+        {`Sample price: `}
+        <span className="font-bold">
+          US${sample.price.toFixed(2)}/{unit}
+        </span>
+      </p>
       <Button variant="primary" className="my-4">{`Order sample`}</Button>
     </div>
   );

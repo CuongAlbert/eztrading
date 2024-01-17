@@ -4,7 +4,7 @@ export type Product = {
   unit: string;
   provider: string;
   price: string;
-  minOrder: string;
+  minOrder: number;
   country: string;
   category: string;
   images: { [key: string]: string };
