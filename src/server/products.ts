@@ -1,8 +1,9 @@
 "use server";
 import { client, urlFor } from "./SanityClient";
-import { Product } from "@/types/product";
+import { Product, RawProduct } from "@/types/product";
 import { getMinMaxPrice } from "@/lib/helpers";
-
+import { b64toBlob } from "@/lib/helpers";
+import { v4 as uuidv4 } from "uuid";
 export const searchProducts = async (query: string): Promise<Product[]> => {
   //separate query into words
   const tokens = query.split(/\s+/);
@@ -175,4 +176,70 @@ export const getProductBySlug = async (slug: string): Promise<Product> => {
   };
 
   return result;
+};
+
+export const createProduct = async (product: RawProduct) => {
+  const newData = {
+    _type: "products",
+    name: product.name,
+    unit: product.unit,
+    providers: {
+      _weak: true,
+      ...product.provider,
+    },
+
+    pricing: product.pricing,
+    country: product.country,
+    categories: product.categories,
+    gallery: product.gallery,
+    attributes: product.attributes,
+    leadTimes: product.leadTimes,
+    maxSample: product.maxSample,
+    samplePrice: product.samplePrice,
+    minOrder: product.minOrder,
+    slug: {
+      _type: "slug",
+      current: product.slug,
+    },
+  };
+  console.log(newData);
+  try {
+    const res = await client.create(newData);
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const updateProductImage = async (
+  productId: string,
+  image: string,
+  name: string,
+) => {
+  const imageBlob = b64toBlob(image);
+
+  try {
+    const asset = await client.assets.upload("image", imageBlob, {
+      contentType: imageBlob.type,
+      filename: name,
+    });
+    const res = await client
+      .patch(productId)
+      .setIfMissing({ gallery: [] })
+      .append("gallery", [
+        {
+          _key: uuidv4(),
+          _type: "image",
+          asset: {
+            _type: "reference",
+            _ref: asset._id,
+          },
+        },
+      ])
+      .commit();
+    console.log("upload photo", res);
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
 };

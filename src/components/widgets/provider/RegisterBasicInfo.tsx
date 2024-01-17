@@ -75,13 +75,18 @@ export const RegisterBasicInfo = () => {
       // If complete, the user has been created -- set the session active
       if (completeSignUp.status === "complete") {
         await setActive({ session: completeSignUp.createdSessionId });
-
+        // const slug = (completeSignUp.unsafeMetadata.company as string)
+        //   .toLowerCase()
+        //   .replace(/[^a-z0-9]/g, "-") // Remove special characters
+        //   .concat(new Date().getTime().toString())
+        //   .slice(0, 200);
         // Redirect the user to a post sign-up route
         const newProvider: NewProvider = {
           email: completeSignUp.emailAddress as string,
           phone: completeSignUp.unsafeMetadata.phone as string,
           username: completeSignUp.unsafeMetadata.username as string,
           authProviderId: completeSignUp.createdUserId as string,
+          // slug: slug,
 
           company: completeSignUp.unsafeMetadata.company as string,
         };

@@ -78,8 +78,8 @@ export const providerHeader = {
       href: "/provider/my-profile",
     },
     {
-      text: "Customer Request",
-      href: "/provider/customer-requests",
+      text: "My Listings",
+      href: "/provider/products",
     },
   ],
   actions: [
