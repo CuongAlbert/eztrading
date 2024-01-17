@@ -4,6 +4,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 1,
     unit: "pair",
+    slug: "adfg",
     name: "candles1",
     provider: "ABC company",
     price: `US$${1234.12}`,
@@ -41,6 +42,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 2,
+    slug: "adfg",
     unit: "pair",
     name: "candles2",
     provider: "DEF company",
@@ -74,6 +76,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 3,
+    slug: "adfg",
     name: "candles3",
     unit: "pair",
     provider: "GHI company",
@@ -107,6 +110,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 4,
+    slug: "adfg",
     name: "candles4",
     unit: "pair",
     provider: "KLM company",
@@ -140,6 +144,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 5,
+    slug: "adfg",
     name: "candles5",
     unit: "pair",
     provider: "XYZ company",

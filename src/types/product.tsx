@@ -1,5 +1,6 @@
 export type Product = {
   id: number;
+  slug: string;
   name: string;
   unit: string;
   provider: string;
