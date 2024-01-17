@@ -6,7 +6,7 @@ import {
   CheckBadgeIcon,
 } from "@heroicons/react/24/outline";
 import { LogoEdit, InfoEdit } from "@/components/widgets/provider-myprofile";
-import { ProviderSettingsContext } from "@/app/ctx/ProviderSettings";
+import { ProviderSettingsContext } from "@/ctx/ProviderSettings";
 
 const ProviderMyProfile = () => {
   const { provider } = useContext(ProviderSettingsContext);

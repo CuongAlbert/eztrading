@@ -29,7 +29,7 @@ const Header = ({ links = [], actions = [] }: HeaderProps) => {
   const { isSignedIn, isLoaded } = useUser();
   const pathName = usePathname();
   return (
-    <header className="top-0 z-10 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out sticky bg-slate-1">
+    <header className="top-0 z-10 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out sticky bg-slate-50">
       <div className="py-3 px-3 md:px-6 mx-auto w-full flex justify-between max-w-6xl">
         <div className="flex justify-between">
           <Link href="/" className="flex items-center">

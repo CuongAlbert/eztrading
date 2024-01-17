@@ -27,7 +27,13 @@ export const searchProducts = async (query: string): Promise<Product[]> => {
 
     }`;
 
-  const products = await client.fetch(groq);
+  const products = await client.fetch(
+    groq,
+    {},
+    {
+      cache: "no-cache",
+    },
+  );
 
   if (!products) {
     throw new Error(`Products not found`);
@@ -35,6 +41,12 @@ export const searchProducts = async (query: string): Promise<Product[]> => {
   console.log(products);
 
   const result: Product[] = products.map((product: any) => {
+    console.log(product);
+    //check if product.gallery is array
+
+    if (!Array.isArray(product.gallery)) {
+      product.gallery = [];
+    }
     const { minPrice, maxPrice } = getMinMaxPrice(product.pricing);
     //generate price range string based on min and max price
     const priceRange =

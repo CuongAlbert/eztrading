@@ -5,9 +5,15 @@ import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import React, { useState } from "react";
 
-export const SearchBar = () => {
-  const [text, setText] = useState<string>("");
+interface SearchBarProps {
+  default?: string;
+}
+
+export const SearchBar = ({ default: defaultTerm = "" }: SearchBarProps) => {
   const searchParams = useSearchParams();
+  const [text, setText] = useState<string>(
+    searchParams ? searchParams.get("kwd") || defaultTerm : "",
+  );
   const { replace } = useRouter();
   const handleSearch = (term: string) => {
     const params = new URLSearchParams(searchParams);

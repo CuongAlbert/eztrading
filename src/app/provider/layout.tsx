@@ -2,7 +2,7 @@
 import React from "react";
 import Header from "@/components/ui/Header";
 import { providerHeader } from "@/config/navigation";
-import { ProviderSettingsProvider } from "@/app/ctx/ProviderSettings";
+import { ProviderSettingsProvider } from "@/ctx/ProviderSettings";
 
 const ProviderLayout = ({ children }: { children: React.ReactNode }) => {
   return (
