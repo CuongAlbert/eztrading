@@ -7,7 +7,7 @@ export const PRODUCTS: Product[] = [
     name: "candles1",
     provider: "ABC company",
     price: `US$${1234.12}`,
-    minOrder: `${10} pieces`,
+    minOrder: 10,
     country: "USA",
     category: "Candles",
     images: {
@@ -45,7 +45,7 @@ export const PRODUCTS: Product[] = [
     name: "candles2",
     provider: "DEF company",
     price: `US$${1234.12}`,
-    minOrder: `${10} pieces`,
+    minOrder: 10,
     country: "USA",
     category: "Candles",
     images: {
@@ -78,7 +78,7 @@ export const PRODUCTS: Product[] = [
     unit: "pair",
     provider: "GHI company",
     price: `US$${1234.12}`,
-    minOrder: `${10} pieces`,
+    minOrder: 10,
     country: "USA",
     category: "Candles",
     images: {
@@ -111,7 +111,7 @@ export const PRODUCTS: Product[] = [
     unit: "pair",
     provider: "KLM company",
     price: `US$${1234.12}`,
-    minOrder: `${10} pieces`,
+    minOrder: 10,
     country: "USA",
     category: "Candles",
     images: {
@@ -144,7 +144,7 @@ export const PRODUCTS: Product[] = [
     unit: "pair",
     provider: "XYZ company",
     price: `US$${1234.12}`,
-    minOrder: `${10} pieces`,
+    minOrder: 10,
     country: "USA",
     category: "Candles",
     images: {

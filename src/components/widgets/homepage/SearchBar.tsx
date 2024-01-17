@@ -1,19 +1,27 @@
 "use client";
 import { Button } from "@/components/common";
 import { CameraIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
+import { useSearchParams, useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 export const SearchBar = () => {
-  const [text, setText] = useState("");
-  const submitHandle = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log(text);
-    setText("");
+  const [text, setText] = useState<string>("");
+  const searchParams = useSearchParams();
+  const { replace } = useRouter();
+  const handleSearch = (term: string) => {
+    const params = new URLSearchParams(searchParams);
+    if (term) {
+      params.set("kwd", term);
+    } else {
+      params.delete("kwd");
+    }
+    replace(`/search?${params.toString()}`);
   };
   return (
     <form
       className="relative w-[90%] md:w-[50%] h-16 mx-auto my-10 px-2 md:px-4 py-8 flex gap-3 sm:gap-1 justify-between items-center rounded-full border-solid border-2 border-blue-950"
-      onSubmit={submitHandle}
+      onSubmit={() => handleSearch(text)}
     >
       <input
         className="outline-none w-full"
@@ -24,7 +32,9 @@ export const SearchBar = () => {
       ></input>
       <div className="flex gap-1 md:gap-4 justify-around items-center">
         {/* <CameraIcon className="w-6 h-6" /> */}
-        <Button variant={"primary"}>Search</Button>
+        <Button variant={"primary"} onClick={() => handleSearch(text)}>
+          Search
+        </Button>
         {/* <button type="submit">Search</button> */}
       </div>
     </form>
