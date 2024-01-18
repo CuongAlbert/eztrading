@@ -10,7 +10,6 @@ export default defineConfig({
   dataset: "production",
   basePath: "/admin",
   plugins: [deskTool()],
-
   schema: {
     types: schemaTypes,
   },
