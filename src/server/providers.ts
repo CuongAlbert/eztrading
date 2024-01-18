@@ -103,6 +103,16 @@ export const updateProviderLogo = async (
   }
 };
 
+export const getProviderName = async (providerId: string) => {
+  const query = `
+    *[_type == "providers" && _id == "${providerId}"] {
+      company
+    }
+  `;
+  const res = await client.fetch(query);
+  return res[0].company;
+};
+
 // const updateProviderLogo = async () => {
 //   if (!selectedImage) return;
 //   toBase64(selectedImage).then((res) => console.log(res));

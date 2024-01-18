@@ -24,6 +24,7 @@ export const SearchResultProvider = ({ children }: React.PropsWithChildren) => {
     const fetchData = async () => {
       try {
         const products = await searchProducts(search ? search : "");
+        console.log(products);
         setProducts(products);
         setIsLoading(false);
       } catch (err) {

@@ -6,14 +6,19 @@ import { ProviderInfo } from "@/types/provider";
 import { useRouter } from "next/navigation";
 import { getProviderByAuthProviderId } from "@/server/providers";
 import { Loading } from "@/components/widgets/common";
+import { Product } from "@/types/product";
+import { getProductsByProvider } from "@/server/products";
+import { set } from "sanity";
 
 type ProviderSettingsContextType = {
   provider: ProviderInfo;
+  products: Product[];
 };
 
 export const ProviderSettingsContext =
   createContext<ProviderSettingsContextType>({
     provider: {} as ProviderInfo,
+    products: [] as Product[],
   });
 
 export const ProviderSettingsProvider = ({
@@ -21,6 +26,7 @@ export const ProviderSettingsProvider = ({
 }: React.PropsWithChildren) => {
   const { isSignedIn, user, isLoaded } = useUser();
   const [provider, setProvider] = React.useState<any | null>(null);
+  const [products, setProducts] = React.useState<Product[]>([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const router = useRouter();
 
@@ -29,6 +35,8 @@ export const ProviderSettingsProvider = ({
       if (!user) return;
       try {
         const provider = await getProviderByAuthProviderId(user.id);
+        const products = await getProductsByProvider(provider.id);
+        setProducts(products);
         setProvider(provider);
         setIsLoading(false);
       } catch (err) {
@@ -59,7 +67,7 @@ export const ProviderSettingsProvider = ({
   }
 
   return (
-    <ProviderSettingsContext.Provider value={{ provider }}>
+    <ProviderSettingsContext.Provider value={{ provider, products }}>
       {children}
     </ProviderSettingsContext.Provider>
   );

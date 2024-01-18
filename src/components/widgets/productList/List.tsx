@@ -26,11 +26,11 @@ export default function List({ products }: ListProps) {
       </div>
     );
   return (
-    <div className="w-full  mx-auto mt-2 grid grid-col-1 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3">
+    <div className="w-full mx-auto mt-2 grid grid-col-1 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
       {products.map((p) => (
         <Card
           key={`${p.name}-${p.provider}`}
-          className="bg-white rounded-lg mx-3 my-2 p-2"
+          className="bg-white rounded-lg overflow-clip"
         >
           <CarouselUI list={Object.values(p.images)} axis="x" basis="">
             {(item: string) => (
@@ -48,7 +48,7 @@ export default function List({ products }: ListProps) {
           <Link href={`/${p.slug}`}>
             <CardContent>
               <p className="my-2">{p.name}</p>
-              <p className="text-lg font-bold my-2">{p.price}</p>
+              <p className="text-2xl font-medium my-2">{p.price}</p>
               <p className="my-2">
                 {`Min. order: `}
                 {p.minOrder} {p.unit}

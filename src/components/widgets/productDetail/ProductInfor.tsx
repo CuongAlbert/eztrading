@@ -16,14 +16,17 @@ export default function ProductInfor(props: {
       ) : (
         <h1 className="my-4 ml-8">Other attributes</h1>
       )}
-      <table className="table-fixed w-[97%] ml-8">
-        <tbody className="w-[80%] mx-auto">
+      <table className="table-fixed w-[97%] ml-8 rounded-lg overflow-clip ">
+        <tbody className="w-[80%] mx-auto rounded-lg">
           {!other &&
             Object.keys(attributes)
               .slice(0, 5)
               .map((at: string, idx) => (
-                <tr key={idx} className={`border-2 border-blue-400`}>
-                  <td className="bg-blue-100 w-[40%] p-4 border-2 border-blue-400">
+                <tr
+                  key={idx}
+                  className={`border border-slate-200 rounded-r-lg`}
+                >
+                  <td className="bg-slate-100 w-[40%] p-4 border border-slate-200">
                     {at}
                   </td>
                   <td className="p-2">{attributes[at]}</td>
@@ -47,7 +50,7 @@ export default function ProductInfor(props: {
                           }`
                   }
                 >
-                  <td className="bg-blue-100 w-[40%] p-4 border-2 border-blue-400">
+                  <td className="bg-slate-100 w-[40%] p-4 border border-slate-200">
                     {at}
                   </td>
                   <td className="p-2">{attributes[at]}</td>

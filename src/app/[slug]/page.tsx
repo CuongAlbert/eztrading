@@ -18,7 +18,7 @@ export default async function ProductDetail({
   return (
     <div className="flex w-[95%] gap-2 md:gap-6 justify-between mx-auto py-8">
       <div className="w-[70%] ml-3">
-        <h1 className="font-bold text-3xl ml-10">{pData.name}</h1>
+        <h1 className="font-medium text-2xl ml-10">{pData.name}</h1>
         <ProductView images={pData.images} />
         <Recommendation />
         <hr className="text-blue-600 ml-8 my-4" />
