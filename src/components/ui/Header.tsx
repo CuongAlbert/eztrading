@@ -30,7 +30,7 @@ const Header = ({ links = [], actions = [] }: HeaderProps) => {
   const pathName = usePathname();
   return (
     <header className="top-0 z-10 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out sticky bg-slate-50">
-      <div className="py-3 px-3 md:px-6 mx-auto w-full flex justify-between max-w-6xl">
+      <div className="py-3 px-3 md:px-6 mx-auto w-full flex justify-between">
         <div className="flex justify-between">
           <Link href="/" className="flex items-center">
             <Logo />
@@ -40,7 +40,7 @@ const Header = ({ links = [], actions = [] }: HeaderProps) => {
             <ToggleMenu />
           </div>
         </div>
-        <nav className="w-full items-center justify-center gap-4 md:flex hidden">
+        {/* <nav className="w-full items-center justify-center gap-4 md:flex hidden">
           {links.map(({ text, href }) => (
             <Link
               key={text}
@@ -52,7 +52,7 @@ const Header = ({ links = [], actions = [] }: HeaderProps) => {
               {text}
             </Link>
           ))}
-        </nav>
+        </nav> */}
 
         <div className="flex gap-2 shrink-0 justify-center items-center">
           <div className="items-center flex justify-between gap-2 w-full md:w-auto">

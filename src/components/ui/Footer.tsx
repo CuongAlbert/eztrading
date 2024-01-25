@@ -4,47 +4,38 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <section className="relative w-full mx-auto px-4 sm:px-6 py-8 flex flex-col justify-center items-center border border-t-slate-5">
-      <footer className="footer p-10 bg-base-200 text-base-content">
+    <section className="relative w-full mx-auto px-4 sm:px-6 py-8 flex flex-col gap-8 justify-center items-center border border-t-slate-5">
+      <footer className="flex w-full flex-col md:flex-row gap-8 md:gap-16 justify-center">
         <aside>
           <Logo />
         </aside>
-        <nav>
-          <header className="footer-title">Services</header>
-          <Link className="link link-hover" href="/home-inspection">
-            Home Inspection
+        {/* <nav className="flex-col flex gap-2">
+          <header className="font-bold">Services</header>
+          <Link className="" href="/consultants">
+            Settle Buddies
           </Link>
-          <Link className="link link-hover" href="/#home-insurance">
-            Home Insurance
+          <Link className="" href="/packages">
+            Settle Care
           </Link>
-          <Link className="link link-hover" href="/#rental-unit-protection">
-            Rental Unit Protection
+          <Link className="" href="/tips-and-guides">
+            Settle Tips
           </Link>
-          <Link className="link link-hover" href="/#ezsupplies">
-            EZSUPPLIES
-          </Link>
-          <Link className="link link-hover" href="/#ezlist">
-            EZLIST
-          </Link>
-        </nav>
-        <nav>
-          <header className="footer-title">Company</header>
-          <Link className="link link-hover" href="/#about">
+        </nav> */}
+        <nav className="flex-col flex gap-2">
+          <header className="font-bold">Company</header>
+          <Link className="" href="/#about">
             About us
           </Link>
-          <Link className="link link-hover" href="/#contact">
+          <Link className="" href="/#contact">
             Contact
           </Link>
-          <Link className="link link-hover" href="/#partners">
-            Partner
-          </Link>
         </nav>
-        <nav>
-          <header className="footer-title">Legal</header>
-          <Link className="link link-hover" href="/">
+        <nav className="flex-col flex gap-2">
+          <header className="font-bold">Legal</header>
+          <Link className="" href="/">
             Terms of use
           </Link>
-          <Link className="link link-hover" href="/">
+          <Link className="" href="/privacy-policy">
             Privacy policy
           </Link>
         </nav>
@@ -56,9 +47,9 @@ export const Footer = () => {
           className="text-blue-600 hover:underline"
           href="https://rezza.io/"
         >
-          Rezza
+          Rezza.
         </Link>{" "}
-        · All rights reserved.
+        Copyright © Open Momentum Technologies Ltd · All rights reserved.
       </div>
     </section>
   );

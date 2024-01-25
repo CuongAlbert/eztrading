@@ -1,30 +1,44 @@
 import { Toolbox, CurrencyCircleDollar } from "@phosphor-icons/react/dist/ssr";
+import {
+  Squares2X2Icon,
+  ShieldCheckIcon,
+  BuildingStorefrontIcon,
+  IdentificationIcon,
+} from "@heroicons/react/24/outline";
 import { ShieldCheck } from "@phosphor-icons/react/dist/ssr/ShieldCheck";
 import { Icon } from "@phosphor-icons/react/dist/lib/types";
 import React from "react";
 
 const SERVICES = [
   {
-    title: "EZPROTECT",
-    desc: "Shield your property from potential long-term expenses with our comprehensive home protection services",
+    title: "Diversity offerings",
+    desc: "Explore products and suppliers for your business from millions of offerings worldwide.",
     icon: {
-      iconComp: ShieldCheck,
+      iconComp: Squares2X2Icon,
       color: "#072c09",
     },
   },
   {
-    title: "EZSUPPLIES",
-    desc: `Where your home needs meet unparalleled variety. We've curated a home supplies store like no other, featuring everything you require.`,
+    title: "Assured quality and transactions",
+    desc: `Ensure production quality from verified suppliers, with your orders protected from payment to delivery.`,
     icon: {
-      iconComp: Toolbox,
+      iconComp: ShieldCheckIcon,
       color: "#34238b",
     },
   },
   {
-    title: "EZLIST",
-    desc: "Your go-to online listing service for effortless property sales and rentals.",
+    title: "One-stop trading solution",
+    desc: "Order seamlessly from product/supplier search to order management, payment, and fulfillment.",
     icon: {
-      iconComp: CurrencyCircleDollar,
+      iconComp: BuildingStorefrontIcon,
+      color: "#e6b633",
+    },
+  },
+  {
+    title: "Personalized experience",
+    desc: "Get curated benefits, such as discounted samples and dedicated support, tailored to your business growth stage.",
+    icon: {
+      iconComp: IdentificationIcon,
       color: "#e6b633",
     },
   },
@@ -32,27 +46,15 @@ const SERVICES = [
 
 export const ServicesSummary = () => {
   return (
-    <section className="relative w-full mx-auto px-4 sm:px-6 py-24 bg-blue-2 flex justify-center items-center">
-      <div className="flex flex-col justify-center items-center gap-4 max-w-7xl">
-        <h1 className="text-4xl font-bold text-center">
-          What services do we provide?
-        </h1>
-
-        <p className="text-xl text-slate-11 mb-6 text-center">
-          We offer a range of services to help you protect your home and
-          investment.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {SERVICES.map((service) => (
-            <ServicesItem
-              key={service.title}
-              title={service.title}
-              desc={service.desc}
-              icon={service.icon}
-            />
-          ))}
-        </div>
-      </div>
+    <section className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      {SERVICES.map((service) => (
+        <ServicesItem
+          key={service.title}
+          title={service.title}
+          desc={service.desc}
+          icon={service.icon}
+        />
+      ))}
     </section>
   );
 };
@@ -71,8 +73,10 @@ const ServicesItem = ({
 }>) => {
   const Icon = icon.iconComp;
   return (
-    <div className="flex flex-col gap-4 p-8 rounded-xl bg-slate-1 shadow-md">
-      <Icon size={56} color={icon.color} weight="duotone" />
+    <div className="flex flex-col gap-4 p-8 rounded-xl bg-slate-50/30 backdrop-blur-md border-border border">
+      <div className="p-4 rounded-full bg-slate-50 max-w-fit">
+        <Icon className="w-8 h-8 text-muted-foreground" />
+      </div>
       <h2 className="text-xl font-bold">{title}</h2>
       <p className="text-slate-11">{desc}</p>
     </div>

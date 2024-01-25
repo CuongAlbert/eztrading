@@ -20,7 +20,7 @@ export default function RootLayout({
       <html lang="en">
         <body
           suppressHydrationWarning
-          className={`${inter.className} text-slate-12 h-screen antialiased`}
+          className={`${inter.className} h-screen antialiased overflow-scroll`}
         >
           {children}
         </body>

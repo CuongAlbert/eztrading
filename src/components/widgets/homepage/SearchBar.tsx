@@ -26,13 +26,13 @@ export const SearchBar = ({ default: defaultTerm = "" }: SearchBarProps) => {
   };
   return (
     <form
-      className="relative w-[90%] md:w-[50%] h-16 mx-auto my-10 px-2 md:px-4 py-8 flex gap-3 sm:gap-1 justify-between items-center rounded-full border-solid border-2 border-blue-950"
+      className="w-full max-w-2xl mx-auto px-2 md:px-4 py-2 flex gap-3 sm:gap-1 justify-between items-center rounded-full border-solid border-2 border-blue-950"
       onSubmit={() => handleSearch(text)}
     >
       <input
-        className="outline-none w-full"
+        className="ml-2 text-lg outline-none w-full bg-transparent"
         type="text"
-        placeholder="Enter your product"
+        placeholder="Search products"
         value={text}
         onChange={(e) => setText(e.target.value)}
       ></input>
