@@ -26,7 +26,7 @@ export default async function ProductDetail({
         {/* <ProductInfor attributes={pData.attributes} other={true} /> */}
         <hr className="text-blue-600 ml-8 my-4" />
         <LeadTime leadTime={pData.leadTime} unit={pData.unit} />
-        <Sample sample={pData.sample} unit={pData.unit} />
+        <Sample sample={pData.sample} unit={pData.unit} product={pData.name} />
       </div>
       <div className="w-[25%]">
         <PurchaseBox product={pData} />

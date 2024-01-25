@@ -26,10 +26,12 @@ export default function ProductInfor(props: {
                   key={idx}
                   className={`border border-slate-200 rounded-r-lg`}
                 >
-                  <td className="bg-slate-100 w-[40%] p-4 border border-slate-200">
+                  <td className="bg-slate-100/90 backdrop-blur-md w-[40%] p-4 border border-slate-200">
                     {at}
                   </td>
-                  <td className="p-2">{attributes[at]}</td>
+                  <td className="bg-slate-50/30 backdrop-blur-md p-2">
+                    {attributes[at]}
+                  </td>
                 </tr>
               ))}
           {other &&
@@ -50,7 +52,7 @@ export default function ProductInfor(props: {
                           }`
                   }
                 >
-                  <td className="bg-slate-100 w-[40%] p-4 border border-slate-200">
+                  <td className="bg-slate-50/50 backdrop-blur-md rounded-xl w-[40%] p-4 border border-slate-200">
                     {at}
                   </td>
                   <td className="p-2">{attributes[at]}</td>

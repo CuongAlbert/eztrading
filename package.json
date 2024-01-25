@@ -30,6 +30,7 @@
     "react-dom": "^18",
     "react-photo-album": "^2.3.0",
     "react-photo-view": "^1.2.3",
+    "resend": "^3.1.0",
     "sanity": "^3.23.4",
     "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7"

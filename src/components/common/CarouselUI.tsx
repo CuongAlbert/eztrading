@@ -42,14 +42,10 @@ export const CarouselUI = (props: {
         ))}
       </CarouselContent>
       <CarouselPrevious
-        className={`${
-          axis == "x" ? "left-0 ml-2 top-1/2" : "left-1/2 mt-2 t-0"
-        }`}
+        className={`${axis == "x" ? "left-1 top-1/2" : "left-1/2 mt-2 t-0"}`}
       />
       <CarouselNext
-        className={`${
-          axis == "x" ? "right-0 mr-2 top-1/2" : "right-1/2 b-2 b-0"
-        }`}
+        className={`${axis == "x" ? "right-1  top-1/2" : "right-1/2 b-2 b-0"}`}
       />
     </Carousel>
   );

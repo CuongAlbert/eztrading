@@ -8,7 +8,7 @@ import { getProviderName } from "./providers";
 export const searchProducts = async (query: string): Promise<Product[]> => {
   //separate query into words
   const tokens = query.split(/\s+/);
-  const titleMatchingClauses = tokens.map((token) => `name match "${token}"`);
+  const titleMatchingClauses = tokens.map((token) => `name match "*${token}*"`);
   const titleMatchingQuery = titleMatchingClauses.join(" || ");
   const groq = `*[_type == "products" && (${titleMatchingQuery})] {
         _id, 

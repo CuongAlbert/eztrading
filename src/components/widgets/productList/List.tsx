@@ -30,11 +30,11 @@ export default function List({ products }: ListProps) {
       {products.map((p) => (
         <Card
           key={`${p.name}-${p.provider}`}
-          className="bg-white rounded-lg overflow-clip"
+          className="bg-slate-50/50 backdrop-blur-md border-border border rounded-xl overflow-clip"
         >
           <CarouselUI list={Object.values(p.images)} axis="x" basis="">
             {(item: string) => (
-              <div className="w-full aspect-square overflow-clip rounded-lg">
+              <div className="w-full aspect-square overflow-clip rounded-lg relative">
                 <Image
                   src={item}
                   className="transition ease-in-out delay-250 duration-200 hover:scale-110 object-cover"

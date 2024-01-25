@@ -18,9 +18,9 @@ export default function Recommendation() {
         basis={"basis-1/2 md:basis-1/3 lg:basis-1/4"}
       >
         {(item: Product) => (
-          <Link href={"/product-detail"}>
+          <div>
             <Card
-              className="bg-white rounded-lg mx-3 my-2"
+              className="bg-slate-50/50 backdrop-blur-md border-border border rounded-xl mx-3 my-2"
               key={`${item.name}-${item.provider}`}
             >
               <div className="w-full aspect-square overflow-clip rounded-lg relative">
@@ -37,15 +37,15 @@ export default function Recommendation() {
                 <p className="text-sm my-2">{item.name}</p>
                 <p className="text-lg font-bold my-2">{item.price}</p>
                 <p className="text-sm my-2">Min. order: {item.minOrder}</p>
-                <Link
+                <div
                   className="text-sm underline hover:bg-slate-300"
-                  href={`#`}
+                  // href={`#`}
                 >
                   {item.provider}
-                </Link>
+                </div>
               </CardContent>
             </Card>
-          </Link>
+          </div>
         )}
       </CarouselUI>
     </div>

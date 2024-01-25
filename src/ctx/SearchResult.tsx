@@ -4,7 +4,6 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Loading } from "@/components/widgets/common";
 import { searchProducts, getProductBySlug } from "@/server/products";
 import { Product } from "@/types/product";
-import { result } from "lodash";
 
 type FilterCriteria = {
   minOrder: number;
@@ -80,10 +79,6 @@ export const SearchResultProvider = ({ children }: React.PropsWithChildren) => {
     },
     [products],
   );
-
-  // useEffect(() => {
-  //   setDisplayProducts(filterProducts(filterCriteria));
-  // }, [filterCriteria, filterProducts]);
 
   useEffect(() => {
     const fetchData = async () => {

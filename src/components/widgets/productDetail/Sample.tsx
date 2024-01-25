@@ -1,9 +1,11 @@
 import { Button } from "@/components/common";
 import React from "react";
+import { SendRequest } from "../send-request";
 
 export default function Sample(props: {
   sample: { [key: string]: number };
   unit: string;
+  product: string;
 }) {
   const sample = props.sample,
     unit = props.unit;
@@ -19,7 +21,8 @@ export default function Sample(props: {
           US${sample.samplePrice.toFixed(2)}/{unit}
         </span>
       </p>
-      <Button variant="primary" className="my-4">{`Order sample`}</Button>
+      {/* <Button variant="primary" className="my-4">{`Order sample`}</Button> */}
+      <SendRequest product={props.product} />
     </div>
   );
 }

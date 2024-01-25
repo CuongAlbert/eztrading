@@ -6,18 +6,19 @@ import Link from "next/link";
 import React from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { SendRequest } from "../send-request";
 export default function PurchaseBox(props: { product: Product }) {
   const product = props.product;
   return (
     <div className="flex flex-col sticky h-[80vh] top-2 ">
-      <Card className="mx-auto my-2 w-full">
+      <Card className="mx-auto my-2 w-full bg-slate-50/50 backdrop-blur-md border-border border rounded-xl">
         <CardContent className="flex flex-col gap-8 py-8">
           <div className="w-full flex flex-col gap-2">
             <Label>Price</Label>
             <p className="font-bold text-xl">{product.price}</p>
           </div>
           {/* <hr className="text-blue-600" /> */}
-          <div className="w-full flex flex-col gap-2">
+          {/* <div className="w-full flex flex-col gap-2">
             <Label htmlFor="quantity">Quantity</Label>
             <Input
               type="number"
@@ -35,7 +36,7 @@ export default function PurchaseBox(props: { product: Product }) {
               // className="border-2 border-blue-900 rounded-full w-20 py-2 px-3"
               placeholder="Enter your note here"
             />
-          </div>
+          </div> */}
 
           {/* </div>
           <hr className="text-blue-600" />
@@ -50,7 +51,8 @@ export default function PurchaseBox(props: { product: Product }) {
         <h1 className="font-bold">Purchase Detail</h1> */}
         </CardContent>
         <CardFooter>
-          <Button variant="primary">{`Order`}</Button>
+          {/* <Button variant="primary">{`Order`}</Button> */}
+          <SendRequest product={product.name} />
         </CardFooter>
       </Card>
     </div>
