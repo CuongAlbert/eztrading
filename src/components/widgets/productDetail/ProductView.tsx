@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function ProductView(props: { images: Record<string, string> }) {
   const images = props.images;
-  const [viewedImg, setViewedImg] = useState(images["image1"]);
+  const [viewedImg, setViewedImg] = useState(Object.values(images)[0]);
   return (
     <div className="flex gap-4 md:gap-6 my-8 ml-4">
       <div className="w-[20%]">
