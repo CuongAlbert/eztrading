@@ -7,8 +7,8 @@ export default function ProductView(props: { images: Record<string, string> }) {
   const images = props.images;
   const [viewedImg, setViewedImg] = useState(Object.values(images)[0]);
   return (
-    <div className="flex gap-4 md:gap-6 my-8 ml-4 relative">
-      <div className="w-[20%]">
+    <div className="flex lg:flex-row flex-col-reverse gap-4 md:gap-6 my-8 lg:ml-4 relative">
+      <div className="w-full lg:w-[20%] flex lg:flex-col gap-2 overflow-scroll">
         {Object.values(images).map((item: string) => (
           <div key={item} className="scroll-smooth focus:scroll-auto">
             <Image
@@ -18,12 +18,12 @@ export default function ProductView(props: { images: Record<string, string> }) {
               src={item}
               onMouseEnter={() => setViewedImg(item)}
               alt="..."
-              className="mx-auto my-2 cursor-pointer hover:border-2 hover:border-blue-900 hover:border-solid-3 rounded-lg object-cover"
+              className="mx-auto cursor-pointer hover:border-2 hover:border-blue-900 hover:border-solid-3 rounded-lg object-cover"
             />
           </div>
         ))}
       </div>
-      <div className="w-[80%] aspect-square backdrop-blur-sm bg-gradient-to-tr from-green-50/90 to-orange-50/80 rounded-lg relative">
+      <div className="w-full lg:w-[80%] aspect-square backdrop-blur-sm bg-gradient-to-tr from-green-50/90 to-orange-50/80 rounded-lg relative">
         <Image
           // height={150}
           // width={150}

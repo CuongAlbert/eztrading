@@ -38,27 +38,28 @@ export default function Home() {
           <div className="flex ">
             <SearchBar />
           </div>
-          <div className="flex gap-4 items-center mb-16">
+          <div className="flex flex-col md:flex-row gap-4 items-center mb-16">
             <p className="font-medium text-primary-foreground">
-              Frequently search:
+              Frequently searched
             </p>
-
-            {["garden tool", "home decor", "custom decor"].map(
-              (item, index) => (
-                <Button
-                  variant="ghost"
-                  key={index}
-                  asChild
-                  className="rounded-full bg-slate-50/30 backdrop-blur-md "
-                >
-                  <Link href={`/search?kwd=${item}`}>{item}</Link>
-                </Button>
-              ),
-            )}
+            <div className="flex gap-2 flex-wrap items-center justify-center">
+              {["garden tool", "home decor", "custom decor"].map(
+                (item, index) => (
+                  <Button
+                    variant="ghost"
+                    key={index}
+                    asChild
+                    className="rounded-full bg-slate-50/30 backdrop-blur-md "
+                  >
+                    <Link href={`/search?kwd=${item}`}>{item}</Link>
+                  </Button>
+                ),
+              )}
+            </div>
           </div>
         </div>
       </div>
-      <main className="w-full max-w-6xl p-16 flex flex-col mx-auto my-8">
+      <main className="w-full max-w-6xl p-4 lg:p-16 flex flex-col mx-auto my-8">
         <p className="font-bold text-center text-orange-500 my-2 uppercase">
           Welcome to EZTrading
         </p>

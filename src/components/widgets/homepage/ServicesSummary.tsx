@@ -73,7 +73,7 @@ const ServicesItem = ({
 }>) => {
   const Icon = icon.iconComp;
   return (
-    <div className="flex flex-col gap-4 p-8 rounded-xl bg-slate-50/30 backdrop-blur-md border-border border">
+    <div className="flex flex-col gap-4 p-4 lg:p-8 rounded-xl bg-slate-50/30 backdrop-blur-md border-border border">
       <div className="p-4 rounded-full bg-slate-50 max-w-fit">
         <Icon className="w-8 h-8 text-muted-foreground" />
       </div>

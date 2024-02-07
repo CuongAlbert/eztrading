@@ -10,8 +10,8 @@ import { SendRequest } from "../send-request";
 export default function PurchaseBox(props: { product: Product }) {
   const product = props.product;
   return (
-    <div className="flex flex-col sticky h-[80vh] top-2 ">
-      <Card className="mx-auto my-2 w-full bg-slate-50/50 backdrop-blur-md border-border border rounded-xl">
+    <div className="flex flex-col sticky lg:relative lg:h-[80vh] lg:top-2 ">
+      <Card className="mx-auto lg:my-2 w-full bg-slate-50/50 backdrop-blur-md border-border border rounded-xl">
         <CardContent className="flex flex-col gap-8 py-8">
           <div className="w-full flex flex-col gap-2">
             <Label>Price</Label>

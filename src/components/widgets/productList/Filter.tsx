@@ -37,8 +37,8 @@ export default function Filter() {
   };
 
   return (
-    <div className="flex flex-row justify-between items-center p-4 bg-slate-50/50 backdrop-blur-md border-border border rounded-xl">
-      <div className="flex gap-2 justify-center items-center">
+    <div className="flex flex-col md:flex-row justify-between gap-4 p-4 bg-slate-50/50 backdrop-blur-md border-border border rounded-xl">
+      <div className="flex gap-2 items-center">
         <Label className="shrink-0">Category</Label>
         <Select onValueChange={handleCategoryChange}>
           <SelectTrigger className="bg-slate-50/30 backdrop-blur-md">
@@ -53,9 +53,9 @@ export default function Filter() {
           </SelectContent>
         </Select>
       </div>
-      <div className="flex gap-2 justify-center items-center">
+      <div className="flex gap-2 items-center">
         <Label className="shrink-0">Price</Label>
-        <div className="flex gap-2 justify-center items-center">
+        <div className="flex gap-2 items-center">
           <Input
             placeholder="Min"
             className="w-16 bg-slate-50/30 backdrop-blur-md"
