@@ -32,7 +32,7 @@ export const SearchBar = ({ default: defaultTerm = "" }: SearchBarProps) => {
       <input
         className="ml-2 text-lg outline-none w-full bg-transparent"
         type="text"
-        placeholder="Search products"
+        placeholder="A Leading B2B Gateway to Vietnam's Sustainable Supply Chain"
         value={text}
         onChange={(e) => setText(e.target.value)}
       ></input>
