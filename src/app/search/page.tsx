@@ -17,7 +17,9 @@ export default function ProductList() {
     <>
       <Header links={headerData.links} actions={headerData.actions} />
       <main className="w-full max-w-6xl p-16 flex flex-col gap-8 mx-auto">
-        <SearchBar />
+        <div className="w-full flex items-center justify-center">
+          <SearchBar />
+        </div>
         <Filter />
         <List products={displayProducts} />
         <div className="w-[15%]"></div>

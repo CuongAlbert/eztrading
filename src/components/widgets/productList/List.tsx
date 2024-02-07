@@ -34,12 +34,12 @@ export default function List({ products }: ListProps) {
         >
           <CarouselUI list={Object.values(p.images)} axis="x" basis="">
             {(item: string) => (
-              <div className="w-full aspect-square overflow-clip rounded-lg relative">
+              <div className="w-full aspect-square overflow-clip rounded-t-lg relative">
                 <Image
                   src={item}
                   className="transition ease-in-out delay-250 duration-200 hover:scale-110 object-cover"
                   alt="..."
-                  sizes="90vw 250px"
+                  // sizes="90vw 250px"
                   fill
                 />
               </div>

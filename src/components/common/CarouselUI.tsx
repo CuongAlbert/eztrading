@@ -29,7 +29,7 @@ export const CarouselUI = (props: {
           : {}
       }
     >
-      <CarouselContent className={`${axis == "x" ? "-ml-2" : "-mt-2"}`}>
+      <CarouselContent className={`${axis == "x" ? "-ml-4" : "-mt-2"}`}>
         {list.map((item: any, idx) => (
           <CarouselItem
             key={idx}
