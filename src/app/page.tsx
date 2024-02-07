@@ -62,10 +62,13 @@ export default function Home() {
         <p className="font-bold text-center text-orange-500 my-2 uppercase">
           Welcome to EZTrading
         </p>
-        <h1 className="text-5xl font-bold text-center mb-4 text-primary">
-          {`Your No.1 Gateway to Vietnam's Sustainable Supply Network`}
+        <h1 className="text-4xl font-bold text-center text-primary">
+          {`Your No.1 Gateway to`}
         </h1>
-        <p className="text-center text-lg text-muted-foreground mb-8">
+        <h1 className="text-4xl font-bold text-center mb-4 text-primary">
+          {`Vietnam's Sustainable Supply Network`}
+        </h1>
+        <p className="text-center text-lg text-muted-foreground mb-24">
           {`As an innovative B2B platform, EZTrading seamlessly connects global buyers with a diverse array of high-quality products sourced from Vietnam's most eco-conscious suppliers. Our commitment to sustainability is at the core of our mission, unlocking opportunities for businesses worldwide to access Vietnam's green excellence. Navigate the future of international trade with EZTrading, where sustainability, quality, and seamless connections converge to elevate your business to new heights. Explore the green horizon and make EZTrading your trusted partner in sourcing responsibly and trading with purpose.`}
         </p>
 

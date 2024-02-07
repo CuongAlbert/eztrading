@@ -12,23 +12,17 @@ export default function LeadTime(props: {
       <table className="table-fixed w-[97%] rounded-lg overflow-clip">
         <tbody className="mx-auto">
           <tr className="border border-slate-200">
-            <td className="bg-slate-100/90 backdrop-blur-md w-[20%] px-2">{`Quantity (${unit}s)`}</td>
+            <td className=" w-[20%] px-2 font-medium">{`Quantity (${unit}s)`}</td>
             {Object.keys(leadTime).map((lt: string, idx) => (
-              <td
-                key={idx}
-                className="bg-slate-50/30 backdrop-blur-md p-4 border border-slate-200"
-              >
+              <td key={idx} className=" p-4 border border-slate-200">
                 {lt}
               </td>
             ))}
           </tr>
           <tr className="border border-slate-200">
-            <td className="bg-slate-100/90 backdrop-blur-md w-[20%] px-2">{`Lead time (days)`}</td>
+            <td className="font-medium w-[20%] px-2">{`Lead time (days)`}</td>
             {Object.values(leadTime).map((lt: string | number, idx) => (
-              <td
-                key={idx}
-                className="bg-slate-50/30 backdrop-blur-md p-4 border border-slate-200"
-              >
+              <td key={idx} className=" p-4 border border-slate-200">
                 {lt}
               </td>
             ))}

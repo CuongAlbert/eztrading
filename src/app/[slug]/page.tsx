@@ -17,14 +17,14 @@ export default async function ProductDetail({
   console.log(pData);
   return (
     <div className="flex w-[95%] gap-2 md:gap-6 justify-between mx-auto py-8">
-      <div className="w-[70%] ml-3">
+      <div className="w-[70%] ml-3 space-y-16">
         <h1 className="font-medium text-2xl ml-10">{pData.name}</h1>
         <ProductView images={pData.images} />
         {/* <Recommendation /> */}
-        <hr className="text-blue-600 ml-8 my-4" />
+
         <ProductInfor attributes={pData.attributes} other={false} />
         {/* <ProductInfor attributes={pData.attributes} other={true} /> */}
-        <hr className="text-blue-600 ml-8 my-4" />
+
         <LeadTime leadTime={pData.leadTime} unit={pData.unit} />
         <Sample sample={pData.sample} unit={pData.unit} product={pData.name} />
       </div>
