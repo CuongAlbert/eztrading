@@ -20,7 +20,7 @@ export default async function ProductDetail({
       <div className="w-[70%] ml-3">
         <h1 className="font-medium text-2xl ml-10">{pData.name}</h1>
         <ProductView images={pData.images} />
-        <Recommendation />
+        {/* <Recommendation /> */}
         <hr className="text-blue-600 ml-8 my-4" />
         <ProductInfor attributes={pData.attributes} other={false} />
         {/* <ProductInfor attributes={pData.attributes} other={true} /> */}

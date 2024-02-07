@@ -18,17 +18,17 @@ export default function ProductView(props: { images: Record<string, string> }) {
               src={item}
               onMouseEnter={() => setViewedImg(item)}
               alt="..."
-              className="mx-auto my-2 cursor-pointer hover:border-2 hover:border-blue-900 hover:border-solid-3 rounded-lg"
+              className="mx-auto my-2 cursor-pointer hover:border-2 hover:border-blue-900 hover:border-solid-3 rounded-lg object-cover"
             />
           </div>
         ))}
       </div>
-      <div className="w-[80%] bg-slate-200 rounded-lg relative">
+      <div className="w-[80%] aspect-square backdrop-blur-sm bg-gradient-to-tr from-green-50/90 to-orange-50/80 rounded-lg relative">
         <Image
           // height={150}
           // width={150}
           fill
-          className="object-cover rounded-lg"
+          className="object-contain rounded-lg"
           alt="...."
           src={viewedImg}
         />

@@ -70,7 +70,9 @@ export const SendRequest = ({ product }: SendRequestProps) => {
   return (
     <Dialog open={isOpen} onOpenChange={openChangeHandler}>
       <DialogTrigger asChild>
-        <Button variant="outline">Send Request</Button>
+        <Button className="bg-orange-500 hover:bg-orange-700">
+          Send Request
+        </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
@@ -92,58 +94,48 @@ export const SendRequest = ({ product }: SendRequestProps) => {
         )}
         {!isSuccess && (
           <div className="grid gap-4 py-4">
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="count" className="text-right">
-                Number of items
-              </Label>
+            <div className="grid grid-cols-1 items-center gap-4">
+              <Label htmlFor="count">Number of items</Label>
               <Input
                 id="count"
                 value={count}
-                className="col-span-3"
+                className="w-full"
                 onChange={(e) => setCount(e.target.value)}
               />
             </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="name" className="text-right">
-                Name
-              </Label>
+            <div className="grid grid-cols-1 items-center gap-4">
+              <Label htmlFor="name">Name</Label>
               <Input
                 id="name"
                 value={name}
-                className="col-span-3"
+                className="w-full"
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="email" className="text-right">
-                Email
-              </Label>
+            <div className="grid grid-cols-1 items-center gap-4">
+              <Label htmlFor="email">Email</Label>
               <Input
                 id="email"
                 value={email}
-                className="col-span-3"
+                className="w-full"
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="phone" className="text-right">
-                Phone
-              </Label>
+            <div className="grid grid-cols-1 items-center gap-4">
+              <Label htmlFor="phone">Phone</Label>
               <Input
                 id="phone"
                 value={phone}
-                className="col-span-3"
+                className="w-full"
                 onChange={(e) => setPhone(e.target.value)}
               />
             </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="message" className="text-right">
-                Message
-              </Label>
+            <div className="grid grid-cols-1 items-center gap-4">
+              <Label htmlFor="message">Message</Label>
               <Textarea
                 id="message"
                 value={message}
-                className="col-span-3"
+                className="w-full"
                 onChange={(e) => setMessage(e.target.value)}
               />
             </div>
