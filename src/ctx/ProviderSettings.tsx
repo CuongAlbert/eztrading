@@ -8,7 +8,6 @@ import { getProviderByAuthProviderId } from "@/server/providers";
 import { Loading } from "@/components/widgets/common";
 import { Product } from "@/types/product";
 import { getProductsByProvider } from "@/server/products";
-import { set } from "sanity";
 
 type ProviderSettingsContextType = {
   provider: ProviderInfo;
