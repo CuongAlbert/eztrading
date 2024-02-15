@@ -8,12 +8,13 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "EZTRADING",
   description: "A Leading B2B Gateway to Vietnam's Sustainable Supply Chain",
+  metadataBase: new URL("https://eztrading.ca"),
   openGraph: {
     title: "EZTRADING",
     description: "A Leading B2B Gateway to Vietnam's Sustainable Supply Chain",
     type: "website",
     locale: "en_US",
-    url: "https://eztrading.ca/og-image.png",
+    images: "/og-image.png",
   },
 };
 
