@@ -36,7 +36,7 @@ export default function Home() {
             {`to Vietnam's Sustainable Supply Chain`}
           </h1>
           <div className="flex ">
-            <SearchBar />
+            <SearchBar isDark={true} />
           </div>
           <div className="flex flex-col md:flex-row gap-4 items-center mb-16">
             <p className="font-medium text-primary-foreground">
