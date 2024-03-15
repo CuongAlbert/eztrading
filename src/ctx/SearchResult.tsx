@@ -1,8 +1,10 @@
 "use client";
+
 import React, { createContext, use, useCallback, useEffect } from "react";
+import { getProductBySlug, searchProducts } from "@/server/products";
 import { useRouter, useSearchParams } from "next/navigation";
+
 import { Loading } from "@/components/widgets/common";
-import { searchProducts, getProductBySlug } from "@/server/products";
 import { Product } from "@/types/product";
 
 type FilterCriteria = {
@@ -91,7 +93,8 @@ export const SearchResultProvider = ({ children }: React.PropsWithChildren) => {
 
           pCates.forEach((cate) => {
             const cleanCate = cate.trim();
-            if (!cates.includes(cleanCate)) cates.push(cleanCate);
+            if (!cates.includes(cleanCate) && cleanCate !== "")
+              cates.push(cleanCate);
           });
         });
         console.log(cates);

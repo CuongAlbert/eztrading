@@ -1,20 +1,20 @@
 import {
-  // Hero,
-  ServicesSummary,
-  ServiceDetailsLong,
-  ServiceDetailsCompact,
   About,
-  Subscribe,
-  Partners,
   Contact,
+  Partners,
   SearchBar,
+  ServiceDetailsCompact,
+  ServiceDetailsLong,
+  ServicesSummary,
+  Subscribe,
 } from "@/components/widgets/homepage";
-import { headerData } from "@/config/navigation";
-import Header from "@/components/ui/Header";
+
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { Footer } from "@/components/ui/Footer";
+import Header from "@/components/ui/Header";
 import Image from "next/image";
+import Link from "next/link";
+import { headerData } from "@/config/navigation";
 
 export default function Home() {
   return (
@@ -40,9 +40,16 @@ export default function Home() {
           </div>
           <div className="flex flex-col md:flex-row gap-4 items-center mb-16">
             <p className="font-medium text-primary-foreground">
-              Frequently searched
+              Or click to search top products
             </p>
             <div className="flex gap-2 flex-wrap items-center justify-center">
+              <Button
+                variant="ghost"
+                asChild
+                className="rounded-full bg-slate-50/30 backdrop-blur-md "
+              >
+                <Link href={`/search`}>All product</Link>
+              </Button>
               {["garden tool", "home decor", "custom decor"].map(
                 (item, index) => (
                   <Button

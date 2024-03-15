@@ -1,16 +1,21 @@
 "use server";
-import { client, urlFor } from "./SanityClient";
+
 import { Product, RawProduct } from "@/types/product";
-import { getMinMaxPrice } from "@/lib/helpers";
+import { client, urlFor } from "./SanityClient";
+
 import { b64toBlob } from "@/lib/helpers";
-import { v4 as uuidv4 } from "uuid";
+import { getMinMaxPrice } from "@/lib/helpers";
 import { getProviderName } from "./providers";
+import { v4 as uuidv4 } from "uuid";
+
 export const searchProducts = async (query: string): Promise<Product[]> => {
   //separate query into words
   const tokens = query.split(/\s+/);
   const titleMatchingClauses = tokens.map((token) => `name match "*${token}*"`);
   const titleMatchingQuery = titleMatchingClauses.join(" || ");
-  const groq = `*[_type == "products" && (${titleMatchingQuery})] {
+  const groq = `*[_type == "products" && (${
+    query !== "" ? titleMatchingQuery : "true"
+  })] {
         _id, 
         name, 
         unit, 
@@ -27,6 +32,7 @@ export const searchProducts = async (query: string): Promise<Product[]> => {
         minOrder
 
     }`;
+  console.log(groq);
 
   const products = await client.fetch(
     groq,
@@ -39,10 +45,10 @@ export const searchProducts = async (query: string): Promise<Product[]> => {
   if (!products) {
     throw new Error(`Products not found`);
   }
-  console.log(products);
+  // console.log(products);
 
   const result: Product[] = products.map((product: any) => {
-    console.log(product);
+    // console.log(product);
     //check if product.gallery is array
 
     if (!Array.isArray(product.gallery)) {
