@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+
 import { ClerkProvider } from "@clerk/nextjs";
+import { Inter } from "next/font/google";
+import type { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +26,10 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" className="h-screen overflow-clip">
+        <head>
+          <script async src="https://tally.so/widgets/embed.js"></script>
+        </head>
         <body
           suppressHydrationWarning
           className={`${inter.className} h-screen antialiased overflow-scroll`}

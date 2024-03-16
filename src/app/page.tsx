@@ -1,15 +1,12 @@
 import {
-  About,
   Contact,
-  Partners,
   SearchBar,
-  ServiceDetailsCompact,
-  ServiceDetailsLong,
   ServicesSummary,
   Subscribe,
 } from "@/components/widgets/homepage";
 
 import { Button } from "@/components/ui/button";
+import { EzServiceExpansion } from "@/components/widgets/homepage/EZServiceExpansion";
 import { Footer } from "@/components/ui/Footer";
 import Header from "@/components/ui/Header";
 import Image from "next/image";
@@ -81,6 +78,7 @@ export default function Home() {
         </p>
 
         <ServicesSummary />
+        <EzServiceExpansion />
         {/* <About id="about" /> */}
         <Subscribe />
         {/* <Partners id="partners" /> */}
