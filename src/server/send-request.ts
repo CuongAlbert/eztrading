@@ -15,7 +15,7 @@ export const sendRequest = async (
   srcData: SendRequestProps,
 ): Promise<ApiResponse<any>> => {
   const resend = new Resend(process.env.RESEND_API_KEY);
-  console.log("data", srcData);
+  // console.log("data", srcData);
   try {
     const res = await resend.emails.send({
       from: "customer-request@settle-buddies.vuadu.net",
@@ -26,7 +26,7 @@ export const sendRequest = async (
       }),
     });
     if (!res) throw new Error("Can't send request");
-    console.log(res);
+    // console.log(res);
     return {
       success: true,
       data: [res],

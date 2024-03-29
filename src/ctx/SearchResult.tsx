@@ -10,6 +10,7 @@ import { Product } from "@/types/product";
 type FilterCriteria = {
   minOrder: number;
   category: string;
+  country: string;
   minPrice: number;
   maxPrice: number;
 };
@@ -17,6 +18,7 @@ type FilterCriteria = {
 type SearchResultContextType = {
   // products: Product[];
   categoriesList: string[];
+  countriesList: string[];
   filterCriteria: FilterCriteria;
   // setFilterCriteria: React.Dispatch<React.SetStateAction<FilterCriteria>>;
   filterProducts: (criteria: FilterCriteria) => void;
@@ -26,9 +28,11 @@ type SearchResultContextType = {
 export const SearchResultContext = createContext<SearchResultContextType>({
   // products: [],
   categoriesList: [],
+  countriesList: [],
   filterCriteria: {
     minOrder: 0,
     category: "",
+    country: "",
     minPrice: 0,
     maxPrice: Number.MAX_SAFE_INTEGER,
   },
@@ -46,9 +50,11 @@ export const SearchResultProvider = ({ children }: React.PropsWithChildren) => {
   const [displayProducts, setDisplayProducts] =
     React.useState<Product[]>(products); //filtered products
   const [categoriesList, setCategoriesList] = React.useState<string[]>([]);
+  const [countriesList, setCountriesList] = React.useState<string[]>([]);
   const [filterCriteria, setFilterCriteria] = React.useState({
     minOrder: 0,
     category: "",
+    country: "",
     minPrice: 0,
     maxPrice: Number.MAX_SAFE_INTEGER,
   });
@@ -76,7 +82,6 @@ export const SearchResultProvider = ({ children }: React.PropsWithChildren) => {
           pMinPrice <= maxPrice
         );
       });
-      console.log("filtered", filteredProducts);
       setDisplayProducts(filteredProducts);
     },
     [products],
@@ -97,7 +102,6 @@ export const SearchResultProvider = ({ children }: React.PropsWithChildren) => {
               cates.push(cleanCate);
           });
         });
-        console.log(cates);
 
         setCategoriesList(cates);
         setProducts(products);
@@ -130,6 +134,7 @@ export const SearchResultProvider = ({ children }: React.PropsWithChildren) => {
       value={{
         displayProducts,
         categoriesList,
+        countriesList,
         filterCriteria,
         filterProducts,
       }}

@@ -64,7 +64,8 @@ export default function Home() {
         </div>
       </div>
       <main className="w-full max-w-6xl p-4 lg:p-16 flex flex-col mx-auto my-8">
-        <p className="font-bold text-center text-orange-500 my-2 uppercase">
+        <Subscribe />
+        <p className="font-bold text-center text-orange-500 my-8 uppercase">
           Welcome to EZTrading
         </p>
         <h1 className="text-4xl font-bold text-center text-primary">
@@ -80,7 +81,6 @@ export default function Home() {
         <ServicesSummary />
         <EzServiceExpansion />
         {/* <About id="about" /> */}
-        <Subscribe />
         {/* <Partners id="partners" /> */}
         <Contact id="contact" />
       </main>

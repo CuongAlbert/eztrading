@@ -16,23 +16,22 @@ export const searchProducts = async (query: string): Promise<Product[]> => {
   const groq = `*[_type == "products" && (${
     query !== "" ? titleMatchingQuery : "true"
   })] {
-        _id, 
-        name, 
-        unit, 
+        _id,
+        name,
+        unit,
         "providers": providers->company,
         pricing,
         country,
         categories,
         gallery,
         attributes,
-        leadTimes, 
+        leadTimes,
         maxSample,
         samplePrice,
         slug,
         minOrder
 
     }`;
-  console.log(groq);
 
   const products = await client.fetch(
     groq,
@@ -116,16 +115,16 @@ export const searchProducts = async (query: string): Promise<Product[]> => {
 
 export const getProductBySlug = async (slug: string): Promise<Product> => {
   const groq = `*[_type == "products" && slug.current == $slug] {
-        _id, 
-        name, 
-        unit, 
+        _id,
+        name,
+        unit,
         providers,
         pricing,
         country,
         categories,
         gallery,
         attributes,
-        leadTimes, 
+        leadTimes,
         maxSample,
         samplePrice,
         slug,
@@ -221,7 +220,7 @@ export const createProduct = async (product: RawProduct) => {
       current: product.slug,
     },
   };
-  console.log(newData);
+  // console.log(newData);
   try {
     const res = await client.create(newData);
     return res;
@@ -256,7 +255,7 @@ export const updateProductImage = async (
         },
       ])
       .commit();
-    console.log("upload photo", res);
+    // console.log("upload photo", res);
     return res;
   } catch (error) {
     console.log(error);
@@ -266,16 +265,16 @@ export const updateProductImage = async (
 export const getProductsByProvider = async (providerId: string) => {
   const groq = `
     *[_type == "products" && providers._ref == "${providerId}"] {
-        _id, 
-        name, 
-        unit, 
+        _id,
+        name,
+        unit,
         "providers": providers->company,
         pricing,
         country,
         categories,
         gallery,
         attributes,
-        leadTimes, 
+        leadTimes,
         maxSample,
         samplePrice,
         slug,
@@ -294,10 +293,10 @@ export const getProductsByProvider = async (providerId: string) => {
   if (!products) {
     throw new Error(`Products not found`);
   }
-  console.log(products);
+  // console.log(products);
 
   const result: Product[] = products.map((product: any) => {
-    console.log(product);
+    // console.log(product);
     //check if product.gallery is array
 
     if (!Array.isArray(product.gallery)) {

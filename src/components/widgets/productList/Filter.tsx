@@ -14,11 +14,12 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 export default function Filter() {
-  const { filterCriteria, filterProducts, categoriesList } =
+  const { filterCriteria, filterProducts, categoriesList, countriesList } =
     React.useContext(SearchResultContext);
 
   const [minOrder, setMinOrder] = useState(filterCriteria.minOrder);
   const [category, setCategory] = useState(filterCriteria.category);
+  const [country, setCountry] = useState(filterCriteria.country);
   const [minPrice, setMinPrice] = useState(filterCriteria.minPrice);
   const [maxPrice, setMaxPrice] = useState(filterCriteria.maxPrice);
 
@@ -26,6 +27,7 @@ export default function Filter() {
     filterProducts({
       minOrder,
       category,
+      country,
       minPrice,
       maxPrice,
     });
@@ -35,17 +37,36 @@ export default function Filter() {
     setCategory(v);
     filter();
   };
+  const handleCountryChange = (v: string) => {
+    setCountry(v);
+    filter();
+  };
 
   return (
     <div className="flex flex-col md:flex-row justify-between gap-4 p-4 bg-slate-50/50 backdrop-blur-md border-border border rounded-xl">
       <div className="flex gap-2 items-center">
         <Label className="shrink-0">Category</Label>
         <Select onValueChange={handleCategoryChange}>
-          <SelectTrigger className="bg-slate-50/30 backdrop-blur-md">
+          <SelectTrigger className="bg-slate-50/30 backdrop-blur-md flex items-center justify-between">
             <SelectValue>Category</SelectValue>
           </SelectTrigger>
           <SelectContent>
             {categoriesList.map((cate) => (
+              <SelectItem key={cate} value={cate}>
+                {cate}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
+      <div className="flex gap-2 items-center">
+        <Label className="shrink-0">Country</Label>
+        <Select onValueChange={handleCountryChange}>
+          <SelectTrigger className="bg-slate-50/30 backdrop-blur-md flex items-center justify-between">
+            <SelectValue>Country</SelectValue>
+          </SelectTrigger>
+          <SelectContent>
+            {countriesList.map((cate) => (
               <SelectItem key={cate} value={cate}>
                 {cate}
               </SelectItem>

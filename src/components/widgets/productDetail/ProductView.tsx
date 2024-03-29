@@ -8,7 +8,7 @@ export default function ProductView(props: { images: Record<string, string> }) {
   const [viewedImg, setViewedImg] = useState(Object.values(images)[0]);
   return (
     <div className="flex lg:flex-row flex-col-reverse gap-4 md:gap-6 my-8 lg:ml-4 relative">
-      <div className="w-full lg:w-[20%] flex lg:flex-col gap-2 overflow-scroll">
+      <div className="w-full max-h-[280px] lg:w-[20%] flex lg:flex-col gap-2 overflow-scroll">
         {Object.values(images).map((item: string) => (
           <div key={item} className="scroll-smooth focus:scroll-auto">
             <Image
@@ -23,10 +23,8 @@ export default function ProductView(props: { images: Record<string, string> }) {
           </div>
         ))}
       </div>
-      <div className="w-full lg:w-[80%] aspect-square backdrop-blur-sm bg-gradient-to-tr from-green-50/90 to-orange-50/80 rounded-lg relative">
+      <div className="w-full aspect-square backdrop-blur-sm bg-gradient-to-tr from-green-50/90 to-orange-50/80 rounded-lg relative">
         <Image
-          // height={150}
-          // width={150}
           fill
           className="object-contain rounded-lg"
           alt="...."
