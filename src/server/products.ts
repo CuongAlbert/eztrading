@@ -362,3 +362,201 @@ export const getProductsByProvider = async (providerId: string) => {
 
   return result;
 };
+
+export const getProductByCategory = async (category: string) => {
+  const groq = `
+    *[_type == "products" && "${category}" in categories] {
+        _id, 
+        name, 
+        unit, 
+        "providers": providers->company,
+        pricing,
+        country,
+        categories,
+        gallery,
+        attributes,
+        leadTimes, 
+        maxSample,
+        samplePrice,
+        slug,
+        minOrder
+
+    }`;
+
+  const products = await client.fetch(
+    groq,
+    {},
+    {
+      cache: "no-cache",
+    },
+  );
+
+  if (!products) {
+    throw new Error(`Products not found`);
+  }
+  console.log(products);
+
+  const result: Product[] = products.map((product: any) => {
+    console.log(product);
+    //check if product.gallery is array
+
+    if (!Array.isArray(product.gallery)) {
+      product.gallery = [];
+    }
+    const { minPrice, maxPrice } = getMinMaxPrice(product.pricing);
+    //generate price range string based on min and max price
+    const priceRange =
+      minPrice === maxPrice ? `$${minPrice}` : `$${minPrice} - $${maxPrice}`;
+
+    //convert categories array to string for display
+    const categories = product.categories
+      .map((category: any) => category)
+      .join(", ");
+
+    //convert attributes to   attributes: { [key: string]: string };
+
+    const attributes = product.attributes.reduce((obj: any, item: any) => {
+      if (item.key && item.value) {
+        obj[item.key] = item.value;
+      }
+      return obj;
+    }, {});
+
+    const leadTime = product.leadTimes.reduce((obj: any, item: any) => {
+      if (item.count && item.time) {
+        obj[item.count] = item.time;
+      }
+      return obj;
+    }, {});
+
+    // const images = product.gallery.map((image: any) => {
+    //   image._key, urlFor(image).url();
+    // });
+
+    const images = product.gallery.reduce((obj: any, item: any) => {
+      if (item._key && item.asset) {
+        obj[item._key] = urlFor(item).url();
+      }
+      return obj;
+    }, {});
+
+    return {
+      id: product._id,
+      slug: product.slug.current,
+      name: product.name,
+      unit: product.unit,
+      provider: product.providers,
+      price: priceRange,
+      country: product.country,
+      category: categories,
+      images: images,
+      attributes: attributes,
+      leadTime: leadTime,
+      minOrder: product.minOrder,
+      sample: {
+        maxSample: product.maxSample,
+        samplePrice: product.samplePrice,
+      },
+    };
+  });
+  return result;
+};
+
+//get first 8 products
+export const getHighlightedProducts = async () => {
+  const groq = `*[_type == "products"] | order(_createdAt desc) [0...8] {
+        _id, 
+        name, 
+        unit, 
+        "providers": providers->company,
+        pricing,
+        country,
+        categories,
+        gallery,
+        attributes,
+        leadTimes, 
+        maxSample,
+        samplePrice,
+        slug,
+        minOrder
+
+    }`;
+
+  const products = await client.fetch(
+    groq,
+    {},
+    {
+      cache: "no-cache",
+    },
+  );
+
+  if (!products) {
+    throw new Error(`Products not found`);
+  }
+  console.log(products);
+
+  const result: Product[] = products.map((product: any) => {
+    console.log(product);
+    //check if product.gallery is array
+
+    if (!Array.isArray(product.gallery)) {
+      product.gallery = [];
+    }
+    const { minPrice, maxPrice } = getMinMaxPrice(product.pricing);
+    //generate price range string based on min and max price
+    const priceRange =
+      minPrice === maxPrice ? `$${minPrice}` : `$${minPrice} - $${maxPrice}`;
+
+    //convert categories array to string for display
+    const categories = product.categories
+      .map((category: any) => category)
+      .join(", ");
+
+    //convert attributes to   attributes: { [key: string]: string };
+
+    const attributes = product.attributes.reduce((obj: any, item: any) => {
+      if (item.key && item.value) {
+        obj[item.key] = item.value;
+      }
+      return obj;
+    }, {});
+
+    const leadTime = product.leadTimes.reduce((obj: any, item: any) => {
+      if (item.count && item.time) {
+        obj[item.count] = item.time;
+      }
+      return obj;
+    }, {});
+
+    // const images = product.gallery.map((image: any) => {
+    //   image._key, urlFor(image).url();
+    // });
+
+    const images = product.gallery.reduce((obj: any, item: any) => {
+      if (item._key && item.asset) {
+        obj[item._key] = urlFor(item).url();
+      }
+      return obj;
+    }, {});
+
+    return {
+      id: product._id,
+      slug: product.slug.current,
+      name: product.name,
+      unit: product.unit,
+      provider: product.providers,
+      price: priceRange,
+      country: product.country,
+      category: categories,
+      images: images,
+      attributes: attributes,
+      leadTime: leadTime,
+      minOrder: product.minOrder,
+      sample: {
+        maxSample: product.maxSample,
+        samplePrice: product.samplePrice,
+      },
+    };
+  });
+  return result;
+};
