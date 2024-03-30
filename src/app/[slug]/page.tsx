@@ -6,7 +6,12 @@ import PurchaseBox from "@/components/widgets/productDetail/PurchaseBox";
 import ProductInfor from "@/components/widgets/productDetail/ProductInfor";
 import LeadTime from "@/components/widgets/productDetail/LeadTime";
 import Sample from "@/components/widgets/productDetail/Sample";
-import { getProductBySlug, getProductsByProvider } from "@/server/products";
+import {
+  getProductByCategory,
+  getProductBySlug,
+  getProductsByProvider,
+} from "@/server/products";
+import { Product } from "@/types/product";
 
 export default async function ProductDetail({
   params,
@@ -15,7 +20,18 @@ export default async function ProductDetail({
 }) {
   const pData = await getProductBySlug(params.slug);
   const pProduct = await getProductsByProvider(pData.provider);
-  const list = pProduct.filter((p) => p.id !== pData.id);
+  const cate = pData.category.split(",").map((c) => c.trim());
+  let pCates: Product[] = [];
+  for (let i = 0; i < cate.length; i++) {
+    let product = await getProductByCategory(cate[i]);
+    pCates = [...pCates, ...product];
+  }
+  console.log("Provider:", pData);
+  console.log("Product category:", pCates);
+  const providerList = pProduct.filter((p) => p.id !== pData.id);
+  const categoryList = pCates.filter(
+    (pc) => pc.id !== pData.id && pc.provider !== pData.provider,
+  );
 
   return (
     <div className="flex w-full max-w-[84rem] gap-4 md:gap-8 justify-between mx-auto py-8">
@@ -25,7 +41,8 @@ export default async function ProductDetail({
           <PurchaseBox product={pData} />
         </div>
         <ProductView images={pData.images} />
-        <Recommendation list={list} />
+        <Recommendation list={providerList} title="More from this shop" />
+        <Recommendation list={categoryList} title="You may also like" />
 
         <ProductInfor attributes={pData.attributes} other={false} />
         {/* <ProductInfor attributes={pData.attributes} other={true} /> */}

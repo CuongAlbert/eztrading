@@ -93,8 +93,11 @@ export const SearchResultProvider = ({ children }: React.PropsWithChildren) => {
         const products = await searchProducts(search ? search : "");
         //const cates = products.map((product) => product.category);
         const cates: string[] = [];
+        const pCountry: string[] = [];
         products.forEach((product) => {
           const pCates = product.category.split(",");
+          if (!pCountry.includes(product.country))
+            pCountry.push(product.country);
 
           pCates.forEach((cate) => {
             const cleanCate = cate.trim();
@@ -104,6 +107,7 @@ export const SearchResultProvider = ({ children }: React.PropsWithChildren) => {
         });
 
         setCategoriesList(cates);
+        setCountriesList(pCountry);
         setProducts(products);
         setIsLoading(false);
       } catch (err) {

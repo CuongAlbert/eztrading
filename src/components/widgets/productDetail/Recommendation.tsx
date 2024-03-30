@@ -5,16 +5,14 @@ import { Product } from "@/types/product";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Recommendation(props: { list: Product[] }) {
-  const list = props.list;
+export default function Recommendation(props: {
+  list: Product[];
+  title: string;
+}) {
+  const { list, title } = props;
   return (
     <div className="w-full ml-4">
-      {list.length > 0 && (
-        <h3 className="font-medium text-lg ml-4">More from this shop</h3>
-      )}
-      {list.length === 0 && (
-        <h3 className="font-medium text-lg ml-4">No more product by shop</h3>
-      )}
+      {list.length > 0 && <h3 className="font-medium text-lg ml-4">{title}</h3>}
       {list.length > 0 && (
         <CarouselUI
           list={list}

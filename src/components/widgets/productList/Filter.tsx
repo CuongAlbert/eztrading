@@ -12,6 +12,7 @@ import { SearchResultContext } from "@/ctx/SearchResult";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { SelectGroup } from "@radix-ui/react-select";
 
 export default function Filter() {
   const { filterCriteria, filterProducts, categoriesList, countriesList } =
@@ -48,14 +49,16 @@ export default function Filter() {
         <Label className="shrink-0">Category</Label>
         <Select onValueChange={handleCategoryChange}>
           <SelectTrigger className="bg-slate-50/30 backdrop-blur-md flex items-center justify-between">
-            <SelectValue>Category</SelectValue>
+            <SelectValue placeholder="Category" />
           </SelectTrigger>
           <SelectContent>
-            {categoriesList.map((cate) => (
-              <SelectItem key={cate} value={cate}>
-                {cate}
-              </SelectItem>
-            ))}
+            <SelectGroup>
+              {categoriesList.map((cate) => (
+                <SelectItem key={cate} value={cate}>
+                  {cate}
+                </SelectItem>
+              ))}
+            </SelectGroup>
           </SelectContent>
         </Select>
       </div>
@@ -63,14 +66,16 @@ export default function Filter() {
         <Label className="shrink-0">Country</Label>
         <Select onValueChange={handleCountryChange}>
           <SelectTrigger className="bg-slate-50/30 backdrop-blur-md flex items-center justify-between">
-            <SelectValue>Country</SelectValue>
+            <SelectValue placeholder="Country" />
           </SelectTrigger>
           <SelectContent>
-            {countriesList.map((cate) => (
-              <SelectItem key={cate} value={cate}>
-                {cate}
-              </SelectItem>
-            ))}
+            <SelectGroup>
+              {countriesList.map((country) => (
+                <SelectItem key={country} value={country}>
+                  {country}
+                </SelectItem>
+              ))}
+            </SelectGroup>
           </SelectContent>
         </Select>
       </div>

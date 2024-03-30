@@ -365,16 +365,16 @@ export const getProductsByProvider = async (providerId: string) => {
 export const getProductByCategory = async (category: string) => {
   const groq = `
     *[_type == "products" && "${category}" in categories] {
-        _id, 
-        name, 
-        unit, 
+        _id,
+        name,
+        unit,
         "providers": providers->company,
         pricing,
         country,
         categories,
         gallery,
         attributes,
-        leadTimes, 
+        leadTimes,
         maxSample,
         samplePrice,
         slug,
@@ -393,10 +393,8 @@ export const getProductByCategory = async (category: string) => {
   if (!products) {
     throw new Error(`Products not found`);
   }
-  console.log(products);
 
   const result: Product[] = products.map((product: any) => {
-    console.log(product);
     //check if product.gallery is array
 
     if (!Array.isArray(product.gallery)) {
@@ -464,16 +462,16 @@ export const getProductByCategory = async (category: string) => {
 //get first 8 products
 export const getHighlightedProducts = async () => {
   const groq = `*[_type == "products"] | order(_createdAt desc) [0...8] {
-        _id, 
-        name, 
-        unit, 
+        _id,
+        name,
+        unit,
         "providers": providers->company,
         pricing,
         country,
         categories,
         gallery,
         attributes,
-        leadTimes, 
+        leadTimes,
         maxSample,
         samplePrice,
         slug,
@@ -492,10 +490,8 @@ export const getHighlightedProducts = async () => {
   if (!products) {
     throw new Error(`Products not found`);
   }
-  console.log(products);
 
   const result: Product[] = products.map((product: any) => {
-    console.log(product);
     //check if product.gallery is array
 
     if (!Array.isArray(product.gallery)) {
