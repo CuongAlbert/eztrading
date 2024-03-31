@@ -26,13 +26,13 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en" className="h-screen overflow-clip">
+      <html lang="en" className="h-screen overflow-y-scroll">
         <head>
           <script async src="https://tally.so/widgets/embed.js"></script>
         </head>
         <body
           suppressHydrationWarning
-          className={`${inter.className} h-screen antialiased overflow-scroll`}
+          className={`${inter.className} antialiased h-screen`}
         >
           {children}
         </body>
