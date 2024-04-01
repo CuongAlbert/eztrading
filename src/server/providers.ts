@@ -1,8 +1,9 @@
 "use server";
-import { client } from "./SanityClient";
-import { NewProvider, ProviderInfo } from "@/types/provider";
-import { b64toBlob } from "@/lib/helpers";
 
+import { NewProvider, ProviderInfo } from "@/types/provider";
+
+import { b64toBlob } from "@/lib/helpers";
+import { client } from "./SanityClient";
 import { v4 as uuidv4 } from "uuid";
 
 export const createProvider = async (provider: NewProvider) => {
@@ -140,3 +141,10 @@ export const getProviderName = async (providerId: string) => {
 //     console.log(error);
 //   }
 // };
+
+const getProvidersById = async (providerId: string) => {
+  const query = `
+    *[_type == "providers" && _id == "${providerId}"] `;
+  const res = await client.fetch(query);
+  return res;
+};

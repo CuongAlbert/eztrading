@@ -1,4 +1,5 @@
 "use client";
+
 import { ChevronDown, ChevronUp } from "lucide-react";
 import React, { useState } from "react";
 
@@ -12,13 +13,13 @@ export default function ProductInfor(props: {
   return (
     <div>
       {!other ? (
-        <h1 className="lg:ml-8 font-bold my-4">Key Attributes</h1>
+        <h1 className="font-bold">Key Attributes</h1>
       ) : (
-        <h1 className="lg:my-4 ml-8">Other attributes</h1>
+        <h1 className="font-bold">Other attributes</h1>
       )}
       <div className="overflow-x-auto">
-        <table className="lg:table-fixed lg:w-[97%] lg:ml-8 rounded-lg border-collapse border border-slate-500">
-          <tbody className="lg:w-[80%] mx-auto rounded-lg  border border-slate-200">
+        <table className=" mt-4 rounded-lg border-collapse border border-slate-500">
+          <tbody className=" mx-auto rounded-lg  border border-slate-200">
             {!other &&
               Object.keys(attributes)
                 .slice(0, 5)

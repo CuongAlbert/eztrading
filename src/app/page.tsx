@@ -1,3 +1,4 @@
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Contact,
   SearchBar,
@@ -5,15 +6,17 @@ import {
   Subscribe,
 } from "@/components/widgets/homepage";
 
-import { Button } from "@/components/ui/button";
 import { EzServiceExpansion } from "@/components/widgets/homepage/EZServiceExpansion";
 import { Footer } from "@/components/ui/Footer";
 import Header from "@/components/ui/Header";
 import Image from "next/image";
 import Link from "next/link";
+import List from "@/components/widgets/productList/List";
+import { getHighlightedProducts } from "@/server/products";
 import { headerData } from "@/config/navigation";
 
-export default function Home() {
+export default async function Home() {
+  const products = await getHighlightedProducts();
   return (
     <>
       <Header links={headerData.links} actions={headerData.actions} />
@@ -27,10 +30,10 @@ export default function Home() {
         <div className="w-full flex p-4 md:p-16 lg:p-32 flex-col gap-3 justify-center absolute top-0 left-0 h-full bg-gradient-to-r from-green-950 via-green-950/80 to-transparent to-[120%]">
           <p className="font-bold text-primary-foreground ">EZTRADING</p>
           <h1 className="text-4xl font-bold text-orange-500">
-            {`A Leading B2B Gateway `}
+            {`The First Sustainable B2B Trade Freeway `}
           </h1>
           <h1 className="text-4xl font-bold text-orange-500">
-            {`to Vietnam's Sustainable Supply Chain`}
+            {`Between North America and S.E.A region`}
           </h1>
           <div className="flex ">
             <SearchBar isDark={true} />
@@ -64,23 +67,32 @@ export default function Home() {
         </div>
       </div>
       <main className="w-full max-w-6xl p-4 lg:p-16 flex flex-col mx-auto my-8">
-        <p className="font-bold text-center text-orange-500 my-2 uppercase">
-          Welcome to EZTrading
-        </p>
-        <h1 className="text-4xl font-bold text-center text-primary">
-          {`Your No.1 Gateway to`}
-        </h1>
-        <h1 className="text-4xl font-bold text-center mb-4 text-primary">
-          {`Vietnam's Sustainable Supply Network`}
-        </h1>
-        <p className="text-center text-lg text-muted-foreground mb-24">
-          {`As an innovative B2B platform, EZTrading seamlessly connects global buyers with a diverse array of high-quality products sourced from Vietnam's most eco-conscious suppliers. Our commitment to sustainability is at the core of our mission, unlocking opportunities for businesses worldwide to access Vietnam's green excellence. Navigate the future of international trade with EZTrading, where sustainability, quality, and seamless connections converge to elevate your business to new heights. Explore the green horizon and make EZTrading your trusted partner in sourcing responsibly and trading with purpose.`}
-        </p>
+        <section className="w-full flex flex-col items-center justify-center gap-4 py-8">
+          <h1 className="text-4xl font-bold text-center text-primary">
+            {`Featured Products`}
+          </h1>
+          <List products={products.slice(1, 4)} />
+          <Link href="/search" className={buttonVariants()}>
+            View All Products
+          </Link>
+        </section>
+        <section className="w-full flex flex-col items-center justify-center gap-1 py-8">
+          <div className="w-full flex flex-col items-center justify-center gap-0">
+            <h1 className="text-4xl font-bold text-center text-primary">
+              {`The First Sustainable B2B Trade Freeway`}
+            </h1>
+            <h1 className="text-4xl font-bold text-center mb-4 text-primary">
+              {`Between North America and the S.E.A Region`}
+            </h1>
+          </div>
+          <p className="text-center text-lg text-muted-foreground mb-24">
+            {`Our platform facilitates swift and seamless trade connections between these two regions, fostering a dynamic exchange of sustainable goods. With EZTrading, Gaining access to the regions' finest and most responsible certified suppliers has never been easier. Our secured payment process ensures peace of mind throughout every transaction. Join us on this sustainable journey towards seamless two-way trade and discover the unparalleled convenience of trading with purpose.`}
+          </p>
+        </section>
 
         <ServicesSummary />
         <EzServiceExpansion />
         {/* <About id="about" /> */}
-        <Subscribe />
         {/* <Partners id="partners" /> */}
         <Contact id="contact" />
       </main>

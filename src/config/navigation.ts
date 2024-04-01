@@ -3,15 +3,11 @@ export const headerData = {
     { text: "Home", href: "/" },
     {
       text: "Services",
-      href: "/#services",
+      href: "/ez-business-expansion",
     },
     {
       text: "Product List",
-      href: "/product-list",
-    },
-    {
-      text: "Blog",
-      href: "/blog",
+      href: "/search",
     },
   ],
   actions: [

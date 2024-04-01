@@ -7,7 +7,7 @@ export default function LeadTime(props: {
   const leadTime = props.leadTime,
     unit = props.unit;
   return (
-    <div className="lg:ml-8">
+    <div className="">
       <h1 className="font-bold my-4">Lead Time</h1>
       <div className="overflow-x-auto">
         <table className="lg:table-fixed w-full lg:w-[97%] rounded-lg">

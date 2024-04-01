@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import {
   Select,
@@ -7,18 +8,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { SearchResultContext } from "@/ctx/SearchResult";
 
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { SearchResultContext } from "@/ctx/SearchResult";
+import { SelectGroup } from "@radix-ui/react-select";
 
 export default function Filter() {
-  const { filterCriteria, filterProducts, categoriesList } =
+  const { filterCriteria, filterProducts, categoriesList, countriesList } =
     React.useContext(SearchResultContext);
 
   const [minOrder, setMinOrder] = useState(filterCriteria.minOrder);
   const [category, setCategory] = useState(filterCriteria.category);
+  const [country, setCountry] = useState(filterCriteria.country);
   const [minPrice, setMinPrice] = useState(filterCriteria.minPrice);
   const [maxPrice, setMaxPrice] = useState(filterCriteria.maxPrice);
 
@@ -26,6 +29,7 @@ export default function Filter() {
     filterProducts({
       minOrder,
       category,
+      country,
       minPrice,
       maxPrice,
     });
@@ -35,25 +39,48 @@ export default function Filter() {
     setCategory(v);
     filter();
   };
+  const handleCountryChange = (v: string) => {
+    setCountry(v);
+    filter();
+  };
 
   return (
     <div className="flex flex-col md:flex-row justify-between gap-4 p-4 bg-slate-50/50 backdrop-blur-md border-border border rounded-xl">
-      <div className="flex gap-2 items-center">
+      <div className="flex flex-col gap-2">
         <Label className="shrink-0">Category</Label>
         <Select onValueChange={handleCategoryChange}>
-          <SelectTrigger className="bg-slate-50/30 backdrop-blur-md">
-            <SelectValue>Category</SelectValue>
+          <SelectTrigger className="bg-slate-50/30 backdrop-blur-md flex items-center justify-between">
+            <SelectValue placeholder="Category" />
           </SelectTrigger>
           <SelectContent>
-            {categoriesList.map((cate) => (
-              <SelectItem key={cate} value={cate}>
-                {cate}
-              </SelectItem>
-            ))}
+            <SelectGroup>
+              {categoriesList.map((cate) => (
+                <SelectItem key={cate} value={cate}>
+                  {cate}
+                </SelectItem>
+              ))}
+            </SelectGroup>
           </SelectContent>
         </Select>
       </div>
-      <div className="flex gap-2 items-center">
+      <div className="flex flex-col gap-2">
+        <Label className="shrink-0">Country</Label>
+        <Select onValueChange={handleCountryChange}>
+          <SelectTrigger className="bg-slate-50/30 backdrop-blur-md flex items-center justify-between">
+            <SelectValue placeholder="Country" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              {countriesList.map((country) => (
+                <SelectItem key={country} value={country}>
+                  {country}
+                </SelectItem>
+              ))}
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+      </div>
+      <div className="flex flex-col gap-2">
         <Label className="shrink-0">Price</Label>
         <div className="flex gap-2 items-center">
           <Input
@@ -81,18 +108,20 @@ export default function Filter() {
           </Button>
         </div>
       </div>
-      <div className="flex gap-2 justify-center items-center">
+      <div className="flex flex-col gap-2">
         <Label className="shrink-0">Min Order</Label>
-        <Input
-          placeholder="Min order"
-          className="bg-slate-50/30 backdrop-blur-md"
-          onChange={(e) => {
-            setMinOrder(Number(e.target.value));
-          }}
-        />
-        <Button onClick={filter} variant="outline">
-          OK
-        </Button>
+        <div className="flex gap-2 items-center">
+          <Input
+            placeholder="Min order"
+            className="bg-slate-50/30 backdrop-blur-md"
+            onChange={(e) => {
+              setMinOrder(Number(e.target.value));
+            }}
+          />
+          <Button onClick={filter} variant="outline">
+            OK
+          </Button>
+        </div>
       </div>
     </div>
   );

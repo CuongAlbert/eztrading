@@ -25,7 +25,6 @@ export const GalleryEdit: React.FC<GalleryEditProps> = ({
   // const [currentGallery, setCurrentGallery] =
   //   React.useState<SanityImage[]>(gallery);
   const currentGallery = gallery;
-  console.log(currentGallery);
 
   useEffect(() => {
     if (!selectedImages) {
