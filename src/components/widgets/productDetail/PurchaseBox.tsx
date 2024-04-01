@@ -1,12 +1,15 @@
 "use client";
-import { Button } from "@/components/common";
+
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Product } from "@/types/product";
-import Link from "next/link";
 import React, { useState } from "react";
-import { Label } from "@/components/ui/label";
+
+import { Button } from "@/components/common";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import Link from "next/link";
+import { Product } from "@/types/product";
 import { SendRequest } from "../send-request";
+
 export default function PurchaseBox(props: { product: Product }) {
   const product = props.product;
   const price = Number(product.price.slice(1));
@@ -17,9 +20,9 @@ export default function PurchaseBox(props: { product: Product }) {
     setSubtotal(qual * price);
   };
   return (
-    <div className="flex flex-col sticky lg:relative lg:h-[80vh] lg:top-2 ">
-      <Card className="mx-auto lg:my-2 w-full bg-slate-50/50 backdrop-blur-md border-border border rounded-xl">
-        <CardContent className="flex flex-col gap-8 py-8">
+    <div className="flex flex-col bg-red-200">
+      <Card className="mx-auto w-full bg-slate-50/50 backdrop-blur-md border-border border rounded-xl">
+        <CardContent className="flex flex-col gap-4 py-8">
           <div className="w-full flex flex-col gap-2">
             <Label>Price</Label>
             <p className="font-bold text-xl">{product.price}</p>

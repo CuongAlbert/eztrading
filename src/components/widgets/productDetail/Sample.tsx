@@ -10,7 +10,7 @@ export default function Sample(props: {
   const sample = props.sample,
     unit = props.unit;
   return (
-    <div className="lg:ml-8">
+    <div className="">
       <h1 className="font-bold my-4">Samples</h1>
       <p className="my-4">{`Maximum order quantity: ${sample.maxSample} ${
         sample.max == 1 ? unit : `${unit}s`

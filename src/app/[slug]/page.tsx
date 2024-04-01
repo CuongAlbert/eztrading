@@ -1,17 +1,18 @@
-import ProductView from "@/components/widgets/productDetail/ProductView";
-import React from "react";
-import { PRODUCTS } from "@/config/productData";
-import Recommendation from "@/components/widgets/productDetail/Recommendation";
-import PurchaseBox from "@/components/widgets/productDetail/PurchaseBox";
-import ProductInfor from "@/components/widgets/productDetail/ProductInfor";
-import LeadTime from "@/components/widgets/productDetail/LeadTime";
-import Sample from "@/components/widgets/productDetail/Sample";
 import {
   getProductByCategory,
   getProductBySlug,
   getProductsByProvider,
 } from "@/server/products";
+
+import LeadTime from "@/components/widgets/productDetail/LeadTime";
+import { PRODUCTS } from "@/config/productData";
 import { Product } from "@/types/product";
+import ProductInfor from "@/components/widgets/productDetail/ProductInfor";
+import ProductView from "@/components/widgets/productDetail/ProductView";
+import PurchaseBox from "@/components/widgets/productDetail/PurchaseBox";
+import React from "react";
+import Recommendation from "@/components/widgets/productDetail/Recommendation";
+import Sample from "@/components/widgets/productDetail/Sample";
 
 export default async function ProductDetail({
   params,
@@ -34,9 +35,13 @@ export default async function ProductDetail({
   );
 
   return (
-    <div className="flex w-full max-w-[84rem] gap-4 md:gap-8 justify-between mx-auto py-8">
-      <div className="w-full lg:w-[60%] lg:ml-3 px-4 lg:px-0 space-y-8 lg:space-y-16">
-        <h1 className="font-medium text-2xl lg:ml-10">{pData.name}</h1>
+    <div className="flex w-full max-w-[84rem] justify-between mx-auto py-8 px-4 lg:px-0 relative">
+      <div className="w-full lg:w-[60%] px-4 lg:px-0 space-y-8">
+        <div className="w-full flex flex-col gap-2">
+          <h1 className="font-medium text-2xl">{pData.name}</h1>
+          <p>No reviewed yet</p>
+        </div>
+
         <div className="w-full lg:hidden">
           <PurchaseBox product={pData} />
         </div>
@@ -44,6 +49,7 @@ export default async function ProductDetail({
         <Recommendation list={providerList} title="More from this shop" />
         <Recommendation list={categoryList} title="You may also like" />
 
+        <div className="w-full h-[1px] bg-slate-200"></div>
         <ProductInfor attributes={pData.attributes} other={false} />
         {/* <ProductInfor attributes={pData.attributes} other={true} /> */}
 

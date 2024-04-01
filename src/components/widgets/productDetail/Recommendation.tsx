@@ -1,9 +1,10 @@
-import React from "react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+
 import { CarouselUI } from "@/components/common/CarouselUI";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { Product } from "@/types/product";
 import Image from "next/image";
 import Link from "next/link";
+import { Product } from "@/types/product";
+import React from "react";
 
 export default function Recommendation(props: {
   list: Product[];
@@ -11,8 +12,8 @@ export default function Recommendation(props: {
 }) {
   const { list, title } = props;
   return (
-    <div className="w-full ml-4">
-      {list.length > 0 && <h3 className="font-medium text-lg ml-4">{title}</h3>}
+    <div className="w-full">
+      {list.length > 0 && <h3 className="font-bold text-xl py-4">{title}</h3>}
       {list.length > 0 && (
         <CarouselUI
           list={list}
@@ -22,26 +23,24 @@ export default function Recommendation(props: {
           {(item: Product) => (
             <Link href={`/${item.slug}`}>
               <Card
-                className="bg-slate-50/50 backdrop-blur-md border-border border rounded-xl mx-3 my-2 flex gap-2 flex-col h-full"
+                className="bg-slate-50/50 rounded-xl mx-2 my-2 flex flex-col h-full w-full overflow-clip border-none"
                 key={`${item.name}-${item.provider}`}
               >
-                <div className="w-full aspect-square overflow-clip rounded-lg relative">
+                <div className="w-full aspect-square relative">
                   <Image
                     src={Object.values(item.images)[0]}
-                    className="rounded-lg object-cover"
+                    className="object-cover"
                     alt="..."
                     fill
                     sizes="90vw 250px"
                   />
                 </div>
 
-                <CardContent className="h-full flex flex-col">
-                  <p className="text-sm my-2 h-full">{item.name}</p>
-                  <p className="text-lg font-bold my-2 h-full">{item.price}</p>
-                  <p className="text-sm my-2 h-full">
-                    Min.order: {item.minOrder}
-                  </p>
-                  <div className="text-sm underline hover:bg-slate-300 h-full">
+                <CardContent className="flex flex-col gap-2 pt-2 px-2">
+                  <p className="text-sm">{item.name}</p>
+                  <p className="text-lg font-bold">{item.price}</p>
+                  <p className="text-sm">Min.order: {item.minOrder}</p>
+                  <div className="text-sm underline hover:bg-slate-300">
                     {item.provider}
                   </div>
                 </CardContent>

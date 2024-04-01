@@ -1,19 +1,25 @@
 "use client";
-import { CarouselUI } from "@/components/common/CarouselUI";
+
 import React, { useState } from "react";
+
+import { CarouselUI } from "@/components/common/CarouselUI";
 import Image from "next/image";
 
 export default function ProductView(props: { images: Record<string, string> }) {
   const images = props.images;
   const [viewedImg, setViewedImg] = useState(Object.values(images)[0]);
   return (
-    <div className="flex lg:flex-row flex-col-reverse gap-4 md:gap-6 my-8 lg:ml-4 relative">
-      <div className="w-full max-h-[280px] lg:w-[20%] flex lg:flex-col gap-2 overflow-scroll">
+    <div className="flex lg:flex-row flex-col-reverse gap-4 my-8 relative">
+      <div className="w-24 h-full flex lg:flex-col gap-2 overflow-scroll">
         {Object.values(images).map((item: string) => (
-          <div key={item} className="scroll-smooth focus:scroll-auto">
+          <div
+            key={item}
+            className="scroll-smooth focus:scroll-auto relative w-full aspect-square"
+          >
             <Image
-              height={100}
-              width={100}
+              // height={100}
+              // width={100}
+              fill
               key={item}
               src={item}
               onMouseEnter={() => setViewedImg(item)}
@@ -23,7 +29,7 @@ export default function ProductView(props: { images: Record<string, string> }) {
           </div>
         ))}
       </div>
-      <div className="w-full aspect-square backdrop-blur-sm bg-gradient-to-tr from-green-50/90 to-orange-50/80 rounded-lg relative">
+      <div className="w-full aspect-video backdrop-blur-sm bg-slate-100 rounded-lg relative">
         <Image
           fill
           className="object-contain rounded-lg"
