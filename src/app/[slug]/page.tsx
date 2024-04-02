@@ -12,7 +12,9 @@ import ProductView from "@/components/widgets/productDetail/ProductView";
 import PurchaseBox from "@/components/widgets/productDetail/PurchaseBox";
 import React from "react";
 import Recommendation from "@/components/widgets/productDetail/Recommendation";
+import Reviews from "@/components/widgets/reviews/reviews";
 import Sample from "@/components/widgets/productDetail/Sample";
+import { getReviewsByProductId } from "@/server/reviews";
 
 export default async function ProductDetail({
   params,
@@ -27,6 +29,7 @@ export default async function ProductDetail({
     let product = await getProductByCategory(cate[i]);
     pCates = [...pCates, ...product];
   }
+  const reviews = await getReviewsByProductId(pData.id.toString());
   console.log("Provider:", pData);
   console.log("Product category:", pCates);
   const providerList = pProduct.filter((p) => p.id !== pData.id);
@@ -49,12 +52,14 @@ export default async function ProductDetail({
         <Recommendation list={providerList} title="More from this shop" />
         <Recommendation list={categoryList} title="You may also like" />
 
-        <div className="w-full h-[1px] bg-slate-200"></div>
+        <div className="w-full h-[1px] bg-slate-200" />
         <ProductInfor attributes={pData.attributes} other={false} />
         {/* <ProductInfor attributes={pData.attributes} other={true} /> */}
 
         <LeadTime leadTime={pData.leadTime} unit={pData.unit} />
         <Sample sample={pData.sample} unit={pData.unit} product={pData.name} />
+        <div className="w-full h-[1px] bg-slate-200" />
+        <Reviews initReviews={reviews} productId={pData.id.toString()} />
       </div>
       <div className="w-[40%] hidden lg:block space-y-8 p-4 lg:p-8 lg:space-y-16 mx-auto">
         <PurchaseBox product={pData} />
