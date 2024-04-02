@@ -142,9 +142,24 @@ export const getProviderName = async (providerId: string) => {
 //   }
 // };
 
-const getProvidersById = async (providerId: string) => {
+export const getProvidersById = async (providerId: string) => {
   const query = `
     *[_type == "providers" && _id == "${providerId}"] `;
   const res = await client.fetch(query);
-  return res;
+  const data: ProviderInfo = {
+    id: res[0]._id,
+    company: res[0].company,
+    description: res[0].description,
+    email: res[0].email,
+    logo: res[0].logo,
+    paymentTerms: res[0].paymentTerms,
+    phone: res[0].phone,
+    shipping: res[0].shipping,
+    slug: res[0].slug?.current || "",
+    username: res[0].username || "",
+    verified: res[0].verified || false,
+    authProviderId: res[0].authProviderId,
+    address: res[0].address || "",
+  };
+  return data;
 };

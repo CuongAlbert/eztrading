@@ -8,7 +8,7 @@ export default function LeadTime(props: {
     unit = props.unit;
   return (
     <div className="">
-      <h1 className="font-bold my-4">Lead Time</h1>
+      <h1 className="font-bold my-4 text-2xl">Lead Time</h1>
       <div className="overflow-x-auto">
         <table className="lg:table-fixed w-full lg:w-[97%] rounded-lg">
           <tbody className="mx-auto">

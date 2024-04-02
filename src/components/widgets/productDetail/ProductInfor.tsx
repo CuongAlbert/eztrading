@@ -13,9 +13,9 @@ export default function ProductInfor(props: {
   return (
     <div>
       {!other ? (
-        <h1 className="font-bold">Key Attributes</h1>
+        <h1 className="font-bold text-2xl">Key Attributes</h1>
       ) : (
-        <h1 className="font-bold">Other attributes</h1>
+        <h1 className="font-bold text-2xl">Other attributes</h1>
       )}
       <div className="overflow-x-auto">
         <table className=" mt-4 rounded-lg border-collapse border border-slate-500">

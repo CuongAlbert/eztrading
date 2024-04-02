@@ -20,7 +20,7 @@ export default function PurchaseBox(props: { product: Product }) {
     setSubtotal(qual * price);
   };
   return (
-    <div className="flex flex-col bg-red-200">
+    <div className="flex flex-col">
       <Card className="mx-auto w-full bg-slate-50/50 backdrop-blur-md border-border border rounded-xl">
         <CardContent className="flex flex-col gap-4 py-8">
           <div className="w-full flex flex-col gap-2">

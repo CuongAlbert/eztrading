@@ -7,17 +7,11 @@ import React, { use, useEffect, useRef, useState } from "react";
 import { Rating } from "@smastrom/react-rating";
 import { Review } from "@/types/reviews";
 import { addReviewToProduct } from "@/server/reviews";
+import { calculateAverageRating } from "@/lib/helpers";
 
 type Props = {
   productId: string;
   initReviews: Review[];
-};
-
-const calculateAverageRating = (reviews: Review[]) => {
-  const totalRating = reviews.reduce((acc, review) => acc + review.rating, 0);
-  const totalReviews = reviews.length;
-  const avgRating = totalRating / totalReviews;
-  return { avgRating, totalReviews };
 };
 
 const Reviews: React.FC<Props> = ({ productId, initReviews }) => {
@@ -102,7 +96,7 @@ const Reviews: React.FC<Props> = ({ productId, initReviews }) => {
   };
 
   return (
-    <section className="w-full flex flex-col gap-8">
+    <section className="w-full flex flex-col gap-8" id="reviews">
       <div className="flex flex-col gap-2">
         <p className="text-2xl font-bold">Ratings and reviews</p>
         <div className="flex gap-4 items-center">

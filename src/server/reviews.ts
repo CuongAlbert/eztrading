@@ -67,6 +67,8 @@ export const getAverageRating = async (productId: string) => {
   const average = total / res.length;
   //rounded to 1 decimal place
 
-  const rounded = Math.round(average * 10) / 10;
-  return rounded;
+  return {
+    average: average.toFixed(1),
+    total: res.length,
+  };
 };

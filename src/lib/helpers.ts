@@ -1,3 +1,5 @@
+import { Review } from "@/types/reviews";
+
 type Pricing = {
   min: number;
   price: number;
@@ -75,4 +77,11 @@ export const b64toBlob = (
   var blob = new Blob([buffer], { type: type });
 
   return blob;
+};
+
+export const calculateAverageRating = (reviews: Review[]) => {
+  const totalRating = reviews.reduce((acc, review) => acc + review.rating, 0);
+  const totalReviews = reviews.length;
+  const avgRating = totalRating / totalReviews;
+  return { avgRating, totalReviews };
 };
