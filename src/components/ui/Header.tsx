@@ -1,11 +1,14 @@
 "use client";
-import Link from "next/link";
-import React from "react";
-import { Logo, ToggleMenu } from "@/components/common";
-import { usePathname } from "next/navigation";
-import { useUser, UserButton } from "@clerk/nextjs";
-import { Bars3Icon } from "@heroicons/react/24/outline";
+
 import * as Dialog from "@radix-ui/react-dialog";
+
+import { Logo, ToggleMenu } from "@/components/common";
+import { UserButton, useUser } from "@clerk/nextjs";
+
+import { Bars3Icon } from "@heroicons/react/24/outline";
+import { Link } from "@/config/i18n-navigation";
+import React from "react";
+import { usePathname } from "next/navigation";
 
 interface LinkType {
   text: string;

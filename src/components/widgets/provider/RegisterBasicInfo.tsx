@@ -1,12 +1,12 @@
 "use client";
-import React from "react";
 
-import { useSignUp } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
+import { Link } from "@/config/i18n-navigation";
 import { NewProvider } from "@/types/provider";
+import React from "react";
 import { createProvider } from "@/server/providers";
-import Link from "next/link";
 import { set } from "sanity";
+import { useRouter } from "next/navigation";
+import { useSignUp } from "@clerk/nextjs";
 
 // import { ClerkAPIErrorJSON } from "@clerk/types";
 

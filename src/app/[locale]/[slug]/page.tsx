@@ -6,7 +6,7 @@ import {
 
 import Image from "next/image";
 import LeadTime from "@/components/widgets/productDetail/LeadTime";
-import Link from "next/link";
+import { Link } from "@/config/i18n-navigation";
 import { Product } from "@/types/product";
 import ProductInfor from "@/components/widgets/productDetail/ProductInfor";
 import ProductView from "@/components/widgets/productDetail/ProductView";

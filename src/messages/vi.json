@@ -1,0 +1,24 @@
+{
+  "Home": {
+    "feature": {
+      "title": "Sản phẩm nổi bật",
+      "button": "Xem tất cả sản phẩm"
+    },
+    "content1": {
+      "title1": "Kết nối thương mại B2B bền vững đầu tiên ",
+      "title2": "Giữa Bắc Mỹ và khu vực Đông Nam Á",
+      "description": "Nền tảng của chúng tôi tạo điều kiện kết nối thương mại nhanh chóng và liền mạch giữa hai khu vực này, thúc đẩy trao đổi năng động hàng hóa bền vững. Với EZTrading, việc tiếp cận các nhà cung cấp được chứng nhận tốt nhất và có trách nhiệm nhất trong khu vực chưa bao giờ dễ dàng hơn thế. Quy trình thanh toán bảo mật của chúng tôi đảm bảo sự an tâm trong mọi giao dịch. Hãy tham gia cùng chúng tôi trên hành trình bền vững hướng tới thương mại hai chiều liền mạch và khám phá sự tiện lợi vô song của giao dịch có mục đích."
+    },
+    "search": {
+      "placeHolder": "Bạn đang tìm kiếm gì?",
+      "title": "Hoặc tìm kiếm các sản phẩm nổi bật",
+      "button": {
+        "search": "Tìm kiếm"
+      }
+    }
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, vi {🇻🇳} en {🇺🇸} other {Unknown}}"
+  }
+}

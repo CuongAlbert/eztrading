@@ -1,6 +1,6 @@
-import React from "react";
+import { Link } from "@/config/i18n-navigation";
 import { Logo } from "../common";
-import Link from "next/link";
+import React from "react";
 
 export const Footer = () => {
   return (

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/config/i18n-navigation";
 import React from "react";
 import { StaticImageData } from "next/image";
 import { buttonVariants } from "@/components/ui/button";

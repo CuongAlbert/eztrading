@@ -1,15 +1,17 @@
 "use client";
-import React, { useContext } from "react";
+
 import {
-  InformationCircleIcon,
-  ClockIcon,
   CheckBadgeIcon,
+  ClockIcon,
+  InformationCircleIcon,
 } from "@heroicons/react/24/outline";
-import { LogoEdit, InfoEdit } from "@/components/widgets/provider-myprofile";
-import { ProviderSettingsContext } from "@/ctx/ProviderSettings";
+import { InfoEdit, LogoEdit } from "@/components/widgets/provider-myprofile";
+import React, { useContext } from "react";
+
 import { Button } from "@/components/common";
-import Link from "next/link";
+import { Link } from "@/config/i18n-navigation";
 import List from "@/components/widgets/productList/List";
+import { ProviderSettingsContext } from "@/ctx/ProviderSettings";
 
 const ProviderMyProfile = () => {
   const { provider, products } = useContext(ProviderSettingsContext);
