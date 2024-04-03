@@ -54,7 +54,7 @@ export default async function ProductDetail({
   const { avgRating, totalReviews } = calculateAverageRating(reviews);
 
   return (
-    <div className="flex w-full max-w-[84rem] justify-between mx-auto py-8 px-4 lg:px-0 relative">
+    <div className="flex w-full max-w-[84rem] justify-between mx-auto py-8 px-4 lg:px-0">
       <div className="w-full lg:w-[60%] px-4 lg:px-0 space-y-8">
         <div className="w-full flex flex-col gap-4">
           <h1 className="font-bold text-2xl">{pData.name}</h1>
@@ -112,7 +112,7 @@ export default async function ProductDetail({
         <div className="w-full h-[1px] bg-slate-200" />
         <Reviews initReviews={reviews} productId={pData.id.toString()} />
       </div>
-      <div className="w-[40%] hidden lg:block space-y-8 p-4 lg:p-8 lg:space-y-16 mx-auto">
+      <div className="w-[40%] hidden lg:block space-y-8 p-4 lg:px-8 lg:space-y-16 mx-auto ">
         <PurchaseBox
           product={pData}
           shipping={provider.shipping}

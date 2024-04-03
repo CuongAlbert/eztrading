@@ -57,12 +57,14 @@ export default function PurchaseBox(props: {
     setSubtotal(calSubTotal(qual, product.rawPrice));
   };
   return (
-    <div className="flex flex-col">
-      <Card className="mx-auto w-full bg-slate-50/50 backdrop-blur-md border-border border rounded-xl">
-        <CardContent className="flex flex-col gap-4 py-8">
-          <p className="font-bold text-lg">
+    <div className="flex flex-col lg:sticky top-[122px]">
+      <Card className="mx-auto w-full bg-slate-50/50 backdrop-blur-md border-t-4 border-t-green-600 shadow-xl rounded-xl">
+        <CardContent className="flex flex-col gap-4 p-6">
+          <p className="font-bold text-base">
             Price{" "}
-            <span className="font-normal text-base">(by order quantity)</span>
+            <span className="font-normal text-sm text-slate-500">
+              (by order quantity)
+            </span>
           </p>
           <div className="w-full grid grid-cols-4 gap-2">
             {product.rawPrice && Object.keys(product.rawPrice).length > 0
@@ -81,7 +83,7 @@ export default function PurchaseBox(props: {
           {/* <div className="w-full h-[1px] bg-slate-200" /> */}
           <hr className="text-blue-600" />
           <div className="w-full flex flex-col gap-2">
-            <label className="text-lg font-bold" htmlFor="quantity">
+            <label className="text-base font-bold" htmlFor="quantity">
               Quantity
             </label>
             <Input
@@ -98,7 +100,7 @@ export default function PurchaseBox(props: {
           </div>
 
           <div className="w-full flex flex-col gap-2">
-            <label className="text-lg font-bold" htmlFor="note">
+            <label className="text-base font-bold" htmlFor="note">
               Note
             </label>
             <Input

@@ -4,7 +4,7 @@ import { headerData } from "@/config/navigation";
 
 const ProductListLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="bg-slate-50">
+    <div className="bg-slate-50 relative">
       <Header links={headerData.links} actions={headerData.actions} />
       {children}
     </div>

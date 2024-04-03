@@ -32,7 +32,7 @@ export default function RootLayout({
       <html lang="en" className="h-screen overflow-y-scroll">
         <body
           suppressHydrationWarning
-          className={`${inter.className} antialiased h-screen overflow-scroll`}
+          className={`${inter.className} antialiased h-screen overflow-scroll relative`}
         >
           {children}
         </body>
