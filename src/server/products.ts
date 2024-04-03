@@ -142,6 +142,16 @@ export const getProductBySlug = async (slug: string): Promise<Product> => {
   const priceRange =
     minPrice === maxPrice ? `$${minPrice}` : `$${minPrice} - $${maxPrice}`;
 
+  const rawPrice: { [key: number]: number } = product.pricing.reduce(
+    (obj: any, item: any) => {
+      if (item.min && item.price) {
+        obj[item.min] = item.price;
+      }
+      return obj;
+    },
+    {},
+  );
+
   //convert categories array to string for display
   const categories = product.categories
     .map((category: any) => category)
@@ -181,6 +191,7 @@ export const getProductBySlug = async (slug: string): Promise<Product> => {
     unit: product.unit,
     provider: product.providers._ref,
     price: priceRange,
+    rawPrice,
     country: product.country,
     category: categories,
     images: images,

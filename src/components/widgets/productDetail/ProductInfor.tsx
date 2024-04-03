@@ -13,9 +13,9 @@ export default function ProductInfor(props: {
   return (
     <div>
       {!other ? (
-        <h1 className="font-bold text-2xl">Key Attributes</h1>
+        <h1 className="font-bold text-xl">Key Attributes</h1>
       ) : (
-        <h1 className="font-bold text-2xl">Other attributes</h1>
+        <h1 className="font-bold text-xl">Other attributes</h1>
       )}
       <div className="overflow-x-auto">
         <table className=" mt-4 rounded-lg border-collapse border border-slate-500">
@@ -28,10 +28,12 @@ export default function ProductInfor(props: {
                     key={idx}
                     className={`border border-slate-200 rounded-3xl `}
                   >
-                    <td className="lg:w-[25%] whitespace-nowrap p-4 border border-slate-200 font-medium overflow-clip ">
+                    <td className="lg:w-[25%] whitespace-nowrap p-4 border border-slate-200 overflow-clip bg-slate-100">
                       {at}
                     </td>
-                    <td className="p-4 whitespace-nowrap">{attributes[at]}</td>
+                    <td className="p-4 whitespace-nowrap font-medium">
+                      {attributes[at]}
+                    </td>
                   </tr>
                 ))}
             {other &&

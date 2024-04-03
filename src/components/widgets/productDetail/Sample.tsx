@@ -11,7 +11,7 @@ export default function Sample(props: {
     unit = props.unit;
   return (
     <div className="">
-      <h1 className="font-bold my-4 text-2xl">Samples</h1>
+      <h1 className="font-bold my-4 text-xl">Samples</h1>
       <p className="my-4">{`Maximum order quantity: ${sample.maxSample} ${
         sample.max == 1 ? unit : `${unit}s`
       }`}</p>

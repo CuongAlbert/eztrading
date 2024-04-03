@@ -5,6 +5,7 @@ export type Product = {
   unit: string;
   provider: string;
   price: string;
+  rawPrice: { [key: number]: number };
   minOrder: number;
   country: string;
   category: string;

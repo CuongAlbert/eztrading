@@ -8,12 +8,12 @@ export default function LeadTime(props: {
     unit = props.unit;
   return (
     <div className="">
-      <h1 className="font-bold my-4 text-2xl">Lead Time</h1>
+      <h1 className="font-bold my-4 text-xl">Lead Time</h1>
       <div className="overflow-x-auto">
         <table className="lg:table-fixed w-full lg:w-[97%] rounded-lg">
           <tbody className="mx-auto">
             <tr className="border border-slate-200">
-              <td className="lg:w-[20%] px-4 font-medium whitespace-nowrap">{`Quantity (${unit}s)`}</td>
+              <td className="lg:w-[20%] px-4 whitespace-nowrap bg-slate-100">{`Quantity (${unit})`}</td>
               {Object.keys(leadTime).map((lt: string, idx) => (
                 <td
                   key={idx}
@@ -24,11 +24,11 @@ export default function LeadTime(props: {
               ))}
             </tr>
             <tr className="border border-slate-200 ">
-              <td className="font-medium w-[20%] p-4  whitespace-nowrap">{`Lead time (days)`}</td>
+              <td className="w-[20%] p-4  whitespace-nowrap bg-slate-100">{`Lead time (days)`}</td>
               {Object.values(leadTime).map((lt: string | number, idx) => (
                 <td
                   key={idx}
-                  className=" p-4 border border-slate-200  whitespace-nowrap"
+                  className=" p-4 border border-slate-200  whitespace-nowrap font-medium"
                 >
                   {lt}
                 </td>
