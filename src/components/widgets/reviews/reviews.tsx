@@ -101,7 +101,9 @@ const Reviews: React.FC<Props> = ({ productId, initReviews }) => {
         <p className="text-2xl font-bold">Ratings and reviews</p>
         <div className="flex gap-4 items-center">
           <div className="flex flex-col gap-2 justify-center items-center  rounded-md border p-4">
-            <p className="text-5xl font-medium">{averageRating.toFixed(1)}</p>
+            <p className="text-5xl font-medium">
+              {averageRating ? averageRating.toFixed(1) : "--"}
+            </p>
             <p className="text-sm italic text-slate-500">average rating</p>
           </div>
           <div className="flex flex-col gap-2 justify-center items-center  rounded-md border p-4">
@@ -139,7 +141,7 @@ const Reviews: React.FC<Props> = ({ productId, initReviews }) => {
           ))}
         </div>
       ) : (
-        <p>No comments yet</p>
+        <p>No reviews yet</p>
       )}
       {/* <div className="border-b border-slate-5" /> */}
       <h2 className="text-xl font-bold">Leave your comment</h2>

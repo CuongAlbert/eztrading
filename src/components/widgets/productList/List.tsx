@@ -1,11 +1,12 @@
 "use client";
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { CarouselUI } from "@/components/common";
-import { PRODUCTS } from "@/config/productData";
+
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+
+import { CarouselUI } from "@/components/common";
+import Image from "next/image";
+import Link from "next/link";
 import { Product } from "@/types/product";
+import React from "react";
 import { useRouter } from "next/navigation";
 interface ListProps {
   products: Product[];

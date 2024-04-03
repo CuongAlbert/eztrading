@@ -7,7 +7,6 @@ import {
 import Image from "next/image";
 import LeadTime from "@/components/widgets/productDetail/LeadTime";
 import Link from "next/link";
-import { PRODUCTS } from "@/config/productData";
 import { Product } from "@/types/product";
 import ProductInfor from "@/components/widgets/productDetail/ProductInfor";
 import ProductView from "@/components/widgets/productDetail/ProductView";
@@ -20,6 +19,7 @@ import Sample from "@/components/widgets/productDetail/Sample";
 import { ShieldCheckIcon } from "@heroicons/react/24/outline";
 import { calculateAverageRating } from "@/lib/helpers";
 import { getProvidersById } from "@/server/providers";
+import { getRecommendedProductsFromCategories } from "@/server/products";
 import { getReviewsByProductId } from "@/server/reviews";
 import { urlFor } from "@/server/SanityClient";
 
@@ -44,6 +44,10 @@ export default async function ProductDetail({
     (pc) => pc.id !== pData.id && pc.provider !== pData.provider,
   );
   const provider = await getProvidersById(pData.provider);
+
+  const recommend = await getRecommendedProductsFromCategories(
+    pData.category.split(", "),
+  );
 
   console.log("Provider:", provider);
 
@@ -96,15 +100,14 @@ export default async function ProductDetail({
           <PurchaseBox product={pData} />
         </div>
         <ProductView images={pData.images} />
-        <Recommendation list={providerList} title="More from this shop" />
-        <Recommendation list={categoryList} title="You may also like" />
+        <Recommendation
+          list={recommend}
+          title="Other recommendations for your business
+"
+        />
 
-        {/* <div className="w-full h-[1px] bg-slate-200" /> */}
         <ProductInfor attributes={pData.attributes} other={false} />
-        {/* <ProductInfor attributes={pData.attributes} other={true} /> */}
-        {/* <div className="w-full h-[1px] bg-slate-200" /> */}
         <LeadTime leadTime={pData.leadTime} unit={pData.unit} />
-        {/* <div className="w-full h-[1px] bg-slate-200" /> */}
         <Sample sample={pData.sample} unit={pData.unit} product={pData.name} />
         <div className="w-full h-[1px] bg-slate-200" />
         <Reviews initReviews={reviews} productId={pData.id.toString()} />
