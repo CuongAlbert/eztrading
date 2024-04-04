@@ -80,5 +80,59 @@
       "quantity": "Số lượng",
       "time": "Thời gian (ngày)"
     }
+  },
+
+  "ez-business-expansion": {
+    "tagline": "Mở rộng kinh doanh của bạn với EZTrading",
+    "heading-line-1": "Dịch vụ toàn diện",
+    "heading-line-2": "để mở rộng kinh doanh của bạn ra thế giới",
+    "description": "Đội ngũ chuyên gia của chúng tôi sẽ cung cấp những dịch vụ dành riêng cho bạn để phù hợp với kế hoạch mở rộng, đảm bảo mang đến sự phát triển hiệu quả",
+    "benefit": "Lợi ích",
+    "cta": "Liên hệ ngay",
+    "incorporation": {
+      "title": "Thành lập công ty",
+      "benefit-1": "Rút ngắn quy trình thiết lập doanh nghiệp.",
+      "benefit-2": "Cung cấp địa chỉ kinh doanh uy tín.",
+      "benefit-3": "Giảm đáng kể chi phí cố định.",
+      "benefit-4": "Nâng cao hình ảnh và uy tín công ty.",
+      "benefit-5": "Cung cấp quyền truy cập vào thị trường toàn cầu.",
+      "benefit-6": "Bao gồm dịch vụ xử lý và chuyển tiếp thư."
+    },
+    "trade-representative": {
+      "title": "Đại diện thương mại",
+      "benefit-1": "Tạo điều kiện nhập cảnh vào thị trường mới.",
+      "benefit-2": "Cung cấp kiến thức và mối quan hệ địa phương.",
+      "benefit-3": "Giảm nhu cầu về mặt bằng vật lý.",
+      "benefit-4": "Tăng cường khả năng nhận biết và nhận diện thương hiệu.",
+      "benefit-5": "Vượt qua rào cản về quy định và văn hóa.",
+      "benefit-6": "Xây dựng lòng tin với khách hàng và đối tác địa phương."
+    },
+    "marketing-branding": {
+      "title": "Marketing & Thương hiệu",
+      "benefit-1": "Tạo dựng bản sắc thương hiệu mạnh mẽ, đáng nhớ.",
+      "benefit-2": "Điều chỉnh chiến lược cho phù hợp với đối tượng mục tiêu.",
+      "benefit-3": "Tận dụng truyền thông số và truyền thống.",
+      "benefit-4": "Tăng cường hiện diện trực tuyến và SEO.",
+      "benefit-5": "Thúc đẩy sự gắn kết và lòng trung thành của khách hàng.",
+      "benefit-6": "Làm cho doanh nghiệp bạn nổi bật so với đối thủ."
+    },
+    "distribution-partnership": {
+      "title": "Phân phối & Đối tác",
+      "benefit-1": "Mở rộng thị trường một cách hiệu quả.",
+      "benefit-2": "Kết nối với nhà phân phối địa phương đáng tin cậy.",
+      "benefit-3": "Tận dụng cơ hội hợp tác chiến lược.",
+      "benefit-4": "Giảm chi phí logistics và chuỗi cung ứng.",
+      "benefit-5": "Nâng cao sự sẵn có của sản phẩm và sự hài lòng của khách hàng.",
+      "benefit-6": "Cung cấp cái nhìn sâu sắc về xu hướng và nhu cầu thị trường địa phương."
+    }
+  },
+  "contact": {
+    "title": "Liên hệ ngay với chúng tôi",
+    "description": "Chúng tôi luôn sẵn lòng hỗ trợ bạn.",
+    "phone": "Số điện thoại",
+    "email": "Email",
+    "address": "Địa chỉ",
+    "chat": "Chat với chúng tôi",
+    "chat-hint": "Chat ngay"
   }
 }

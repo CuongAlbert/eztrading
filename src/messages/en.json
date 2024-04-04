@@ -79,5 +79,58 @@
       "quantity": "Quantity",
       "time": "Lead time (days)"
     }
+  },
+  "ez-business-expansion": {
+    "tagline": "Welcome to EZ Business Expansion",
+    "heading-line-1": "Your one-stop solution",
+    "heading-line-2": "for seamless business growth and global market entry",
+    "description": "Our expert team is dedicated to providing tailored services that align with your expansion goals, ensuring a efficient scaling process.",
+    "benefit": "Benefit",
+    "cta": "Book now",
+    "incorporation": {
+      "title": "Incorporation & Virtual office",
+      "benefit-1": "Streamlines business setup process.",
+      "benefit-2": "Offers prestigious business addresses.",
+      "benefit-3": "Reduces overhead costs significantly.",
+      "benefit-4": "Enhances company image and credibility.",
+      "benefit-5": "Provides access to global markets.",
+      "benefit-6": "Includes mail handling and forwarding services."
+    },
+    "trade-representative": {
+      "title": "Trade Representative",
+      "benefit-1": "Facilitates entry into new markets.",
+      "benefit-2": "Offers local expertise and connections.",
+      "benefit-3": "Reduces the need for a physical presence.",
+      "benefit-4": "Enhances brand visibility and recognition.",
+      "benefit-5": "Navigates regulatory and cultural barriers.",
+      "benefit-6": "Builds trust with local customers and partners."
+    },
+    "marketing-branding": {
+      "title": "Marketing & Branding",
+      "benefit-1": "Creates a strong, memorable brand identity.",
+      "benefit-2": "Tailors strategies to target demographics.",
+      "benefit-3": "Leverages digital and traditional media.",
+      "benefit-4": "Enhances online presence and SEO.",
+      "benefit-5": "Drives customer engagement and loyalty.",
+      "benefit-6": "Differentiates your business from competitors."
+    },
+    "distribution-partnership": {
+      "title": "Distribution & Partnership",
+      "benefit-1": "Expands your market reach efficiently.",
+      "benefit-2": "Connects with reliable local distributors.",
+      "benefit-3": "Leverages strategic partnership opportunities.",
+      "benefit-4": "Reduces logistics and supply chain costs.",
+      "benefit-5": "Enhances product availability and customer satisfaction.",
+      "benefit-6": "Provides insights into local market trends and demands."
+    }
+  },
+  "contact": {
+    "title": "Let us know how we can help",
+    "description": "We’re here to help and answer any question you might have.",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "chat": "Chat with support",
+    "chat-hint": "Start chatting"
   }
 }
