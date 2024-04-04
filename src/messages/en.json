@@ -33,25 +33,25 @@
         "title": "Personalized experience",
         "desc": "Get curated benefits, such as discounted samples and dedicated support, tailored to your business growth stage."
       }
-    },
-    "expansion": {
-      "title": "EZ Business Expansion",
-      "desc": "EZ Business Expansion is your one-stop solution for seamless business growth and global market entry. Our expert team is dedicated to providing tailored services that align with your expansion goals, ensuring a efficient scaling process.",
-      "li1": "Incorporation & Virtual office",
-      "li2": "Trade representative",
-      "li3": "Marketing & branding",
-      "li4": "Distribution & partnership",
-      "button": "Learn more"
-    },
-    "contact": {
-      "title": "Let us know how we can help",
-      "desc": "We’re here to help and answer any question you might have.",
-      "phone": "Phone",
-      "address": "Address",
-      "email": "Email",
-      "support": "Chat with support",
-      "chat": "Start chatting"
     }
+  },
+  "expansion": {
+    "title": "EZ Business Expansion",
+    "desc": "EZ Business Expansion is your one-stop solution for seamless business growth and global market entry. Our expert team is dedicated to providing tailored services that align with your expansion goals, ensuring a efficient scaling process.",
+    "li1": "Incorporation & Virtual office",
+    "li2": "Trade representative",
+    "li3": "Marketing & branding",
+    "li4": "Distribution & partnership",
+    "button": "Learn more"
+  },
+  "contact": {
+    "title": "Let us know how we can help",
+    "desc": "We’re here to help and answer any question you might have.",
+    "phone": "Phone",
+    "address": "Address",
+    "email": "Email",
+    "chat": "Chat with support",
+    "chat-hint": "Start chatting"
   },
   "LocaleSwitcher": {
     "label": "Change language",

@@ -33,25 +33,25 @@
         "title": "Trải nghiệm được cá nhân hóa",
         "desc": "Nhận các lợi ích chọn lọc, chẳng hạn như hàng dùng thử giảm giá và hỗ trợ tận tình, phù hợp với giai đoạn phát triển kinh doanh của bạn."
       }
-    },
-    "expansion": {
-      "title": "Mở rộng kinh doanh tại EZ",
-      "desc": "EZ Business Expansion là giải pháp toàn diện giúp bạn tăng trưởng kinh doanh liền mạch và gia nhập thị trường toàn cầu. Nhóm chuyên gia của chúng tôi tận tâm cung cấp các dịch vụ phù hợp với mục tiêu mở rộng của bạn, đảm bảo quy trình mở rộng hiệu quả.",
-      "li1": "Thành lập Công ty & Văn phòng ảo",
-      "li2": "Đại diện thương mại",
-      "li3": "Tiếp thị và xây dựng thương hiệu",
-      "li4": "Phân phối & hợp tác",
-      "button": "Xem thêm"
-    },
-    "contact": {
-      "title": "Hãy cho chúng tôi biết chúng tôi có thể giúp gì",
-      "desc": "Chúng tôi sẵn sàng trợ giúp và trả lời bất kỳ câu hỏi nào mà bạn có thể có.",
-      "phone": "Điện thoại",
-      "address": "Địa chỉ",
-      "email": "Email",
-      "support": "Liên lạc hỗ trợ",
-      "chat": "Bắt đầu liên lạc"
     }
+  },
+  "expansion": {
+    "title": "Mở rộng kinh doanh tại EZ",
+    "desc": "EZ Business Expansion là giải pháp toàn diện giúp bạn tăng trưởng kinh doanh liền mạch và gia nhập thị trường toàn cầu. Nhóm chuyên gia của chúng tôi tận tâm cung cấp các dịch vụ phù hợp với mục tiêu mở rộng của bạn, đảm bảo quy trình mở rộng hiệu quả.",
+    "li1": "Thành lập Công ty & Văn phòng ảo",
+    "li2": "Đại diện thương mại",
+    "li3": "Tiếp thị và xây dựng thương hiệu",
+    "li4": "Phân phối & hợp tác",
+    "button": "Xem thêm"
+  },
+  "contact": {
+    "title": "Liên hệ ngay với chúng tôi",
+    "desc": "Chúng tôi luôn sẵn lòng hỗ trợ bạn.",
+    "phone": "Số điện thoại",
+    "email": "Email",
+    "address": "Địa chỉ",
+    "chat": "Chat với chúng tôi",
+    "chat-hint": "Chat ngay"
   },
   "LocaleSwitcher": {
     "label": "Chọn ngôn ngữ",

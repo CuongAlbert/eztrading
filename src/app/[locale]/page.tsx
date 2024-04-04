@@ -115,31 +115,10 @@ export default async function Home({
             };
           })}
         />
-        <EzServiceExpansion
-          lang={{
-            title: t("expansion.title"),
-            desc: t("expansion.desc"),
-            li1: t("expansion.li1"),
-            li2: t("expansion.li2"),
-            li3: t("expansion.li3"),
-            li4: t("expansion.li4"),
-            button: t("expansion.button"),
-          }}
-        />
+        <EzServiceExpansion />
         {/* <About id="about" /> */}
         {/* <Partners id="partners" /> */}
-        <Contact
-          id="contact"
-          lang={{
-            title: t("contact.title"),
-            desc: t("contact.desc"),
-            phone: t("contact.phone"),
-            email: t("contact.email"),
-            address: t("contact.address"),
-            support: t("contact.support"),
-            chat: t("contact.chat"),
-          }}
-        />
+        <Contact id="contact" />
       </main>
       <Footer />
     </>
