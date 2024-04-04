@@ -1,8 +1,9 @@
 "use client";
+
+import { Link } from "@/config/i18n-navigation";
 import React from "react";
-import { useSignIn } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+import { useSignIn } from "@clerk/nextjs";
 
 export const ProSigninBox = () => {
   const [emailAddress, setEmailAddress] = React.useState("");

@@ -4,10 +4,11 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 import { CarouselUI } from "@/components/common";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/config/i18n-navigation";
 import { Product } from "@/types/product";
 import React from "react";
 import { useRouter } from "next/navigation";
+
 interface ListProps {
   products: Product[];
 }
@@ -28,9 +29,9 @@ export default function List({ products }: ListProps) {
     );
   return (
     <div className="w-full mx-auto mt-2 grid grid-col-1 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
-      {products.map((p) => (
+      {products.map((p, idx) => (
         <Card
-          key={`${p.name}-${p.provider}`}
+          key={`${p.name}-${p.provider}-${idx}`}
           className="bg-slate-50/50 backdrop-blur-md border-border border rounded-xl overflow-clip"
         >
           <CarouselUI list={Object.values(p.images)} axis="x" basis="">

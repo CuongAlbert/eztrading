@@ -1,6 +1,6 @@
 import EzExpansion from "@/assets/images/ezexpansion.webp";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/config/i18n-navigation";
 import React from "react";
 import { buttonVariants } from "@/components/ui/button";
 

@@ -1,11 +1,12 @@
-import React from "react";
-import Image from "next/image";
 import {
   EnvelopeSimple,
   FacebookLogo,
   LinkedinLogo,
 } from "@phosphor-icons/react/dist/ssr";
-import Link from "next/link";
+
+import Image from "next/image";
+import { Link } from "@/config/i18n-navigation";
+import React from "react";
 
 export const About = ({ id }: { id: string }) => {
   return (

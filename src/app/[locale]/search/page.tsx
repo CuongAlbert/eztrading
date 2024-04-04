@@ -6,7 +6,7 @@ import { getProductBySlug, searchProducts } from "@/server/products";
 import { Button } from "@/components/ui/button";
 import Filter from "@/components/widgets/productList/Filter";
 import Header from "@/components/ui/Header";
-import Link from "next/link";
+import { Link } from "@/config/i18n-navigation";
 import List from "@/components/widgets/productList/List";
 import { Search } from "lucide-react";
 import { SearchBar } from "@/components/widgets/homepage";

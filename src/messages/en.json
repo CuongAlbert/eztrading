@@ -1,0 +1,24 @@
+{
+  "Home": {
+    "feature": {
+      "title": "Feature Products",
+      "button": "View All Products"
+    },
+    "content1": {
+      "title1": "The First Sustainable B2B Trade Freeway ",
+      "title2": "Between North America and S.E.A region",
+      "description": "Our platform facilitates swift and seamless trade connections between these two regions, fostering a dynamic exchange of sustainable goods. With EZTrading, Gaining access to the regions' finest and most responsible certified suppliers has never been easier. Our secured payment process ensures peace of mind throughout every transaction. Join us on this sustainable journey towards seamless two-way trade and discover the unparalleled convenience of trading with purpose."
+    },
+    "search": {
+      "placeHolder": "What are you looking for?",
+      "title": "Or click to search top products",
+      "button": {
+        "search": "Search"
+      }
+    }
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, vi {🇻🇳} en {🇺🇸} other {Unknown}}"
+  }
+}

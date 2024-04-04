@@ -1,7 +1,7 @@
-import React from "react";
 import { Button } from "@/components/common";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/config/i18n-navigation";
+import React from "react";
 
 export const Hero = () => {
   return (

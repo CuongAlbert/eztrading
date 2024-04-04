@@ -11,7 +11,7 @@ import { EzServiceExpansion } from "@/components/widgets/homepage/EZServiceExpan
 import { Footer } from "@/components/ui/Footer";
 import Header from "@/components/ui/Header";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/config/i18n-navigation";
 import Marketing from "@/assets/images/marketing.webp";
 import Office from "@/assets/images/office.webp";
 import Partnership from "@/assets/images/partnership.webp";

@@ -6,7 +6,7 @@ import {
 
 import Image from "next/image";
 import LeadTime from "@/components/widgets/productDetail/LeadTime";
-import Link from "next/link";
+import { Link } from "@/config/i18n-navigation";
 import { Product } from "@/types/product";
 import ProductInfor from "@/components/widgets/productDetail/ProductInfor";
 import ProductView from "@/components/widgets/productDetail/ProductView";
@@ -21,13 +21,15 @@ import { calculateAverageRating } from "@/lib/helpers";
 import { getProvidersById } from "@/server/providers";
 import { getRecommendedProductsFromCategories } from "@/server/products";
 import { getReviewsByProductId } from "@/server/reviews";
+import { unstable_setRequestLocale } from "next-intl/server";
 import { urlFor } from "@/server/SanityClient";
 
 export default async function ProductDetail({
   params,
 }: {
-  params: { slug: string };
+  params: { locale: string; slug: string };
 }) {
+  unstable_setRequestLocale(params.locale);
   const pData = await getProductBySlug(params.slug);
   const pProduct = await getProductsByProvider(pData.provider);
   const cate = pData.category.split(",").map((c) => c.trim());

@@ -1,12 +1,13 @@
-import React from "react";
-import Link from "next/link";
 import {
-  Envelope,
-  Phone,
   AddressBook,
   ChatCircle,
+  Envelope,
+  Phone,
 } from "@phosphor-icons/react/dist/ssr";
+
 import { Icon } from "@phosphor-icons/react/dist/lib/types";
+import { Link } from "@/config/i18n-navigation";
+import React from "react";
 
 export const Contact = ({ id }: { id: string }) => {
   return (

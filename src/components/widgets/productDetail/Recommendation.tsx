@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 import { CarouselUI } from "@/components/common/CarouselUI";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/config/i18n-navigation";
 import { Product } from "@/types/product";
 import React from "react";
 

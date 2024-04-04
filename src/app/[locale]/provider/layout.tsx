@@ -1,8 +1,9 @@
 "use client";
-import React from "react";
+
 import Header from "@/components/ui/Header";
-import { providerHeader } from "@/config/navigation";
 import { ProviderSettingsProvider } from "@/ctx/ProviderSettings";
+import React from "react";
+import { providerHeader } from "@/config/navigation";
 
 const ProviderLayout = ({ children }: { children: React.ReactNode }) => {
   return (
