@@ -15,7 +15,7 @@ import { Label } from "@/components/ui/label";
 import { SearchResultContext } from "@/ctx/SearchResult";
 import { SelectGroup } from "@radix-ui/react-select";
 
-export default function Filter() {
+export default function Filter(props: { lang: { [key: string]: string } }) {
   const { filterCriteria, filterProducts, categoriesList, countriesList } =
     React.useContext(SearchResultContext);
 
@@ -43,14 +43,15 @@ export default function Filter() {
     setCountry(v);
     filter();
   };
+  const lang = props.lang;
 
   return (
     <div className="flex flex-col md:flex-row justify-between gap-4 p-4 bg-slate-50/50 backdrop-blur-md border-border border rounded-xl">
       <div className="flex flex-col gap-2">
-        <Label className="shrink-0">Category</Label>
+        <Label className="shrink-0">{lang.category}</Label>
         <Select onValueChange={handleCategoryChange}>
           <SelectTrigger className="bg-slate-50/30 backdrop-blur-md flex items-center justify-between">
-            <SelectValue placeholder="Category" />
+            <SelectValue placeholder={lang.category} />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
@@ -64,10 +65,10 @@ export default function Filter() {
         </Select>
       </div>
       <div className="flex flex-col gap-2">
-        <Label className="shrink-0">Country</Label>
+        <Label className="shrink-0">{lang.country}</Label>
         <Select onValueChange={handleCountryChange}>
           <SelectTrigger className="bg-slate-50/30 backdrop-blur-md flex items-center justify-between">
-            <SelectValue placeholder="Country" />
+            <SelectValue placeholder={lang.country} />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
@@ -81,10 +82,10 @@ export default function Filter() {
         </Select>
       </div>
       <div className="flex flex-col gap-2">
-        <Label className="shrink-0">Price</Label>
+        <Label className="shrink-0">{lang.price}</Label>
         <div className="flex gap-2 items-center">
           <Input
-            placeholder="Min"
+            placeholder={lang.min}
             className="w-16 bg-slate-50/30 backdrop-blur-md"
             onChange={(e) => {
               setMinPrice(Number(e.target.value));
@@ -93,7 +94,7 @@ export default function Filter() {
 
           <span>-</span>
           <Input
-            placeholder="Max"
+            placeholder={lang.max}
             className="w-16 bg-slate-50/30 backdrop-blur-md"
             onChange={(e) => {
               if (e.target.value === "") {
@@ -109,10 +110,10 @@ export default function Filter() {
         </div>
       </div>
       <div className="flex flex-col gap-2">
-        <Label className="shrink-0">Min Order</Label>
+        <Label className="shrink-0">{lang.minOrder}</Label>
         <div className="flex gap-2 items-center">
           <Input
-            placeholder="Min order"
+            placeholder={lang.minOrder}
             className="bg-slate-50/30 backdrop-blur-md"
             onChange={(e) => {
               setMinOrder(Number(e.target.value));

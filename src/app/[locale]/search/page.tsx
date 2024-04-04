@@ -5,28 +5,30 @@ import { getProductBySlug, searchProducts } from "@/server/products";
 
 import { Button } from "@/components/ui/button";
 import Filter from "@/components/widgets/productList/Filter";
-import Header from "@/components/ui/Header";
 import { Link } from "@/config/i18n-navigation";
 import List from "@/components/widgets/productList/List";
 import { Search } from "lucide-react";
 import { SearchBar } from "@/components/widgets/homepage";
 import { SearchResultContext } from "@/ctx/SearchResult";
-import { headerData } from "@/config/navigation";
 import { useTranslations } from "next-intl";
 
 export default function ProductList() {
   const { displayProducts } = useContext(SearchResultContext);
-  // const t = useTranslations("Search");
+  const t = useTranslations("Search");
 
   return (
     <>
-      <Header links={headerData.links} actions={headerData.actions} />
       <main className="w-full max-w-6xl p-4 lg:p-16 flex flex-col gap-8 mx-auto">
         <div className="w-full flex flex-col items-center justify-center gap-4">
-          <SearchBar />
+          <SearchBar
+            lang={{
+              placeHolder: t("place-holder"),
+              button: t("button.search"),
+            }}
+          />
           <div className="flex flex-col md:flex-row gap-4 items-center">
             <p className="mx-auto font-medium text-muted-foreground">
-              Or click to search top products
+              {t("title")}
             </p>
             <div className="flex gap-2 flex-wrap items-center justify-center">
               <Button
@@ -51,7 +53,16 @@ export default function ProductList() {
             </div>
           </div>
         </div>
-        <Filter />
+        <Filter
+          lang={{
+            category: t("filter.category"),
+            country: t("filter.country"),
+            price: t("filter.price"),
+            min: t("filter.min"),
+            max: t("filter.max"),
+            minOrder: t("filter.min-order"),
+          }}
+        />
         <List products={displayProducts} />
         <div className="w-[15%]"></div>
       </main>

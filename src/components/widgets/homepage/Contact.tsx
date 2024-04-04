@@ -30,26 +30,26 @@ export const Contact = ({
         <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-8">
           <ContactItem
             icon={Phone}
-            title="Phone"
+            title={lang.phone}
             desc="672-833-8277"
             href="tel:672-833-8277"
           />
           <ContactItem
             icon={Envelope}
-            title="Email"
+            title={lang.email}
             desc="info@ezhouze.ca"
             href="mailto:info@ezhouze.ca"
           />
           <ContactItem
             icon={AddressBook}
-            title="Address"
+            title={lang.address}
             desc="744 W Hastings St #420, Vancouver, BC V6C 1A5"
             href="https://maps.app.goo.gl/UryY2sx1tDHrzhGs6"
           />
           <ContactItem
             icon={ChatCircle}
-            title="Chat with support"
-            desc="Start chatting"
+            title={lang.support}
+            desc={lang.chat}
             href="https://www.messenger.com/t/100830616339564"
           />
         </div>

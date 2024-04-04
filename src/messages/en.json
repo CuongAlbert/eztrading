@@ -45,12 +45,31 @@
     },
     "contact": {
       "title": "Let us know how we can help",
-      "desc": "We’re here to help and answer any question you might have."
+      "desc": "We’re here to help and answer any question you might have.",
+      "phone": "Phone",
+      "address": "Address",
+      "email": "Email",
+      "support": "Chat with support",
+      "chat": "Start chatting"
     }
   },
   "LocaleSwitcher": {
     "label": "Change language",
     "locale": "{locale, select, vi {🇻🇳} en {🇺🇸} other {Unknown}}"
   },
-  "Search": {}
+  "Search": {
+    "place-holder": "What are you looking for?",
+    "title": "Or click to search top products",
+    "button": {
+      "search": "Search"
+    },
+    "filter": {
+      "category": "Category",
+      "country": "Country",
+      "price": "Price",
+      "min": "Min",
+      "max": "Max",
+      "min-order": "Min order"
+    }
+  }
 }

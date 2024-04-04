@@ -47,7 +47,13 @@ export default async function Home({
             {t("content1.title2")}
           </h1>
           <div className="flex ">
-            <SearchBar isDark={true} />
+            <SearchBar
+              isDark={true}
+              lang={{
+                placeHolder: t("search.place-holder"),
+                button: t("search.button.search"),
+              }}
+            />
           </div>
           <div className="flex flex-col md:flex-row gap-4 items-center mb-16">
             <p className="font-medium text-primary-foreground">
@@ -113,10 +119,10 @@ export default async function Home({
           lang={{
             title: t("expansion.title"),
             desc: t("expansion.desc"),
-            li1: t("expansion.l1"),
-            li2: t("expansion.l2"),
-            li3: t("expansion.l3"),
-            li4: t("expansion.l4"),
+            li1: t("expansion.li1"),
+            li2: t("expansion.li2"),
+            li3: t("expansion.li3"),
+            li4: t("expansion.li4"),
             button: t("expansion.button"),
           }}
         />
@@ -124,7 +130,15 @@ export default async function Home({
         {/* <Partners id="partners" /> */}
         <Contact
           id="contact"
-          lang={{ title: t("contact.title"), desc: t("contact.desc") }}
+          lang={{
+            title: t("contact.title"),
+            desc: t("contact.desc"),
+            phone: t("contact.phone"),
+            email: t("contact.email"),
+            address: t("contact.address"),
+            support: t("contact.support"),
+            chat: t("contact.chat"),
+          }}
         />
       </main>
       <Footer />

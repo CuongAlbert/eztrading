@@ -10,11 +10,13 @@ import { Link } from "@/config/i18n-navigation";
 interface SearchBarProps {
   default?: string;
   isDark?: boolean;
+  lang: { [key: string]: string };
 }
 
 export const SearchBar = ({
   default: defaultTerm = "",
   isDark = false,
+  lang,
 }: SearchBarProps) => {
   const searchParams = useSearchParams();
   const [text, setText] = useState<string>(
@@ -35,12 +37,12 @@ export const SearchBar = ({
           ` ${isDark ? "text-background" : ""}`
         }
         type="text"
-        placeholder="What are you looking for?"
+        placeholder={lang.placeHolder}
         value={text}
         onChange={(e) => setText(e.target.value)}
       ></input>
       <div className="flex gap-1 md:gap-4 justify-around items-center">
-        <Button type="submit">Search</Button>
+        <Button type="submit">{lang.button}</Button>
       </div>
     </form>
   );

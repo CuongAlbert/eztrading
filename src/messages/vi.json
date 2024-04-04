@@ -10,7 +10,7 @@
       "description": "Nền tảng của chúng tôi tạo điều kiện kết nối thương mại nhanh chóng và liền mạch giữa hai khu vực này, thúc đẩy trao đổi năng động hàng hóa bền vững. Với EZTrading, việc tiếp cận các nhà cung cấp được chứng nhận tốt nhất và có trách nhiệm nhất trong khu vực chưa bao giờ dễ dàng hơn thế. Quy trình thanh toán bảo mật của chúng tôi đảm bảo sự an tâm trong mọi giao dịch. Hãy tham gia cùng chúng tôi trên hành trình bền vững hướng tới thương mại hai chiều liền mạch và khám phá sự tiện lợi vô song của giao dịch có mục đích."
     },
     "search": {
-      "placeHolder": "Bạn đang tìm kiếm gì?",
+      "place-holder": "Bạn đang tìm kiếm gì?",
       "title": "Hoặc tìm kiếm các sản phẩm nổi bật",
       "button": {
         "search": "Tìm kiếm"
@@ -45,11 +45,31 @@
     },
     "contact": {
       "title": "Hãy cho chúng tôi biết chúng tôi có thể giúp gì",
-      "desc": "Chúng tôi sẵn sàng trợ giúp và trả lời bất kỳ câu hỏi nào mà bạn có thể có."
+      "desc": "Chúng tôi sẵn sàng trợ giúp và trả lời bất kỳ câu hỏi nào mà bạn có thể có.",
+      "phone": "Điện thoại",
+      "address": "Địa chỉ",
+      "email": "Email",
+      "support": "Liên lạc hỗ trợ",
+      "chat": "Bắt đầu liên lạc"
     }
   },
   "LocaleSwitcher": {
     "label": "Chọn ngôn ngữ",
     "locale": "{locale, select, vi {🇻🇳} en {🇺🇸} other {Unknown}}"
+  },
+  "Search": {
+    "place-holder": "Bạn đang tìm kiếm gì?",
+    "title": "Hoặc tìm kiếm các sản phẩm nổi bật",
+    "button": {
+      "search": "Tìm kiếm"
+    },
+    "filter": {
+      "category": "Loại",
+      "country": "Xuất xứ",
+      "price": "Giá",
+      "min": "Từ",
+      "max": "Đến",
+      "min-order": "Đặt ít nhất"
+    }
   }
 }
