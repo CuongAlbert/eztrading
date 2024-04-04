@@ -7,9 +7,9 @@ import { UserButton, useUser } from "@clerk/nextjs";
 
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { Link } from "@/config/i18n-navigation";
+import LocaleSwitcher from "../../widgets/common/LocaleSwitcher";
 import React from "react";
 import { usePathname } from "next/navigation";
-import LocaleSwitcher from "../widgets/common/LocaleSwitch";
 
 interface LinkType {
   text: string;
@@ -24,12 +24,13 @@ interface ActionLinks {
   href: string;
 }
 
-interface HeaderProps {
+export interface HeaderProps {
   links?: MenuLink[];
   actions?: ActionLinks[];
+  children?: React.ReactNode;
 }
 
-const Header = ({ links = [], actions = [] }: HeaderProps) => {
+const HeaderContent = ({ links = [], actions = [], children }: HeaderProps) => {
   const { isSignedIn, isLoaded } = useUser();
   const pathName = usePathname();
   return (
@@ -44,22 +45,9 @@ const Header = ({ links = [], actions = [] }: HeaderProps) => {
             <ToggleMenu />
           </div>
         </div>
-        {/* <nav className="w-full items-center justify-center gap-4 md:flex hidden">
-          {links.map(({ text, href }) => (
-            <Link
-              key={text}
-              href={href}
-              className={`hover:text-blue-900 px-4 py-3 flex items-center font-medium ${
-                href === pathName ? "text-blue-900" : ""
-              }`}
-            >
-              {text}
-            </Link>
-          ))}
-        </nav> */}
 
         <div className="flex gap-2 shrink-0 justify-center items-center">
-          <LocaleSwitcher />
+          {children}
           <div className="items-center flex justify-between gap-2 w-full md:w-auto">
             {actions?.length ? (
               <span className="ml-4 rtl:ml-0 rtl:mr-4">
@@ -114,7 +102,7 @@ const Header = ({ links = [], actions = [] }: HeaderProps) => {
   );
 };
 
-export default Header;
+export default HeaderContent;
 
 const HamburguerMenu = ({ children }: React.PropsWithChildren) => {
   return (
