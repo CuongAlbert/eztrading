@@ -24,6 +24,7 @@ export default async function Home({
 }) {
   unstable_setRequestLocale(locale);
   const t = await getTranslations("Home");
+
   const products = await getHighlightedProducts();
   return (
     <>
@@ -80,32 +81,51 @@ export default async function Home({
       <main className="w-full max-w-6xl p-4 lg:p-16 flex flex-col mx-auto my-8">
         <section className="w-full flex flex-col items-center justify-center gap-4 py-8">
           <h1 className="text-4xl font-bold text-center text-primary">
-            {`Featured Products`}
+            {t("feature.title")}
           </h1>
           <List products={products.slice(0, 4)} />
           <Link href="/search" className={buttonVariants()}>
-            View All Products
+            {t("feature.button")}
           </Link>
         </section>
         <section className="w-full flex flex-col items-center justify-center gap-1 py-8">
           <div className="w-full flex flex-col items-center justify-center gap-0">
             <h1 className="text-4xl font-bold text-center text-primary">
-              {`The First Sustainable B2B Trade Freeway`}
+              {t("content1.title1")}
             </h1>
             <h1 className="text-4xl font-bold text-center mb-4 text-primary">
-              {`Between North America and the S.E.A Region`}
+              {t("content1.title2")}
             </h1>
           </div>
           <p className="text-center text-lg text-muted-foreground mb-24">
-            {`Our platform facilitates swift and seamless trade connections between these two regions, fostering a dynamic exchange of sustainable goods. With EZTrading, Gaining access to the regions' finest and most responsible certified suppliers has never been easier. Our secured payment process ensures peace of mind throughout every transaction. Join us on this sustainable journey towards seamless two-way trade and discover the unparalleled convenience of trading with purpose.`}
+            {t("content1.description")}
           </p>
         </section>
-
-        <ServicesSummary />
-        <EzServiceExpansion />
+        <ServicesSummary
+          lang={[1, 2, 3, 4].map((l) => {
+            return {
+              title: t(`service.${l}.title`),
+              desc: t(`service.${l}.desc`),
+            };
+          })}
+        />
+        <EzServiceExpansion
+          lang={{
+            title: t("expansion.title"),
+            desc: t("expansion.desc"),
+            li1: t("expansion.l1"),
+            li2: t("expansion.l2"),
+            li3: t("expansion.l3"),
+            li4: t("expansion.l4"),
+            button: t("expansion.button"),
+          }}
+        />
         {/* <About id="about" /> */}
         {/* <Partners id="partners" /> */}
-        <Contact id="contact" />
+        <Contact
+          id="contact"
+          lang={{ title: t("contact.title"), desc: t("contact.desc") }}
+        />
       </main>
       <Footer />
     </>

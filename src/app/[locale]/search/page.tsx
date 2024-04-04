@@ -12,9 +12,11 @@ import { Search } from "lucide-react";
 import { SearchBar } from "@/components/widgets/homepage";
 import { SearchResultContext } from "@/ctx/SearchResult";
 import { headerData } from "@/config/navigation";
+import { useTranslations } from "next-intl";
 
 export default function ProductList() {
   const { displayProducts } = useContext(SearchResultContext);
+  // const t = useTranslations("Search");
 
   return (
     <>
