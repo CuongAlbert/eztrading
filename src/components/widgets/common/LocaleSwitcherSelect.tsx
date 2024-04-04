@@ -21,8 +21,8 @@ export default function LocaleSwitcherSelect({
   const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
   const params = useParams();
-  console.log("path name in LocaleSwitcherSelect", pathname);
-  console.log("params in LocaleSwitcherSelect", params);
+  // console.log("path name in LocaleSwitcherSelect", pathname);
+  // console.log("params in LocaleSwitcherSelect", params);
 
   function onSelectChange(event: ChangeEvent<HTMLSelectElement>) {
     const nextLocale = event.target.value;
@@ -34,20 +34,20 @@ export default function LocaleSwitcherSelect({
   return (
     <label
       className={clsx(
-        "relative text-gray-400",
+        "relative ",
         isPending && "transition-opacity [&:disabled]:opacity-30",
       )}
     >
       <p className="sr-only">{label}</p>
       <select
-        className="inline-flex appearance-none bg-transparent py-3 pl-2 pr-6"
+        className="inline-flex appearance-none bg-transparent py-2 px-4 text-sm"
         defaultValue={defaultValue}
         disabled={isPending}
         onChange={onSelectChange}
       >
         {children}
       </select>
-      <span className="pointer-events-none absolute right-2 top-[8px]">⌄</span>
+      {/* <span className="pointer-events-none absolute right-2 top-[8px]">⌄</span> */}
     </label>
   );
 }

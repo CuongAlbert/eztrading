@@ -1,21 +1,24 @@
 "use client";
-import React from "react";
-import { Button } from "@/components/ui/button";
+
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
-  DialogClose,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+
+import { Button } from "@/components/ui/button";
+import { EnvelopeIcon } from "@heroicons/react/24/outline";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import React from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { sendRequest } from "@/server/send-request";
-import { EnvelopeIcon } from "@heroicons/react/24/outline";
+import { useTranslations } from "next-intl";
 
 interface SendRequestProps {
   product: string;
@@ -29,6 +32,8 @@ export const SendRequest = ({ product }: SendRequestProps) => {
   const [message, setMessage] = React.useState("");
   const [isSuccess, setIsSuccess] = React.useState(false);
   const [count, setCount] = React.useState("");
+
+  const t = useTranslations("product-detail.request-form");
 
   const handleSendRequest = async () => {
     const data = {
@@ -71,31 +76,28 @@ export const SendRequest = ({ product }: SendRequestProps) => {
     <Dialog open={isOpen} onOpenChange={openChangeHandler}>
       <DialogTrigger asChild>
         <Button className="bg-orange-500 hover:bg-orange-700">
-          Send Request
+          {t("btn-send")}
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Send Request</DialogTitle>
+          <DialogTitle>{t("title")}</DialogTitle>
           {!isSuccess && (
-            <DialogDescription>
-              Please provide a few details about your request so we can serve
-              you better
-            </DialogDescription>
+            <DialogDescription>{t("description")}</DialogDescription>
           )}
         </DialogHeader>
         {isSuccess && (
           <div className="flex flex-col justify-center items-center gap-8">
             <EnvelopeIcon className="w-16 h-16" />
             <h1 className="text-lg font-medium text-center">
-              Thank you for your request. We will get back to you soon.
+              {t("thank-you")}
             </h1>
           </div>
         )}
         {!isSuccess && (
           <div className="grid gap-4 py-4">
             <div className="grid grid-cols-1 items-center gap-4">
-              <Label htmlFor="count">Number of items</Label>
+              <Label htmlFor="count">{t("form-count")}</Label>
               <Input
                 id="count"
                 value={count}
@@ -104,7 +106,7 @@ export const SendRequest = ({ product }: SendRequestProps) => {
               />
             </div>
             <div className="grid grid-cols-1 items-center gap-4">
-              <Label htmlFor="name">Name</Label>
+              <Label htmlFor="name">{t("form-name")}</Label>
               <Input
                 id="name"
                 value={name}
@@ -113,7 +115,7 @@ export const SendRequest = ({ product }: SendRequestProps) => {
               />
             </div>
             <div className="grid grid-cols-1 items-center gap-4">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">{t("form-email")}</Label>
               <Input
                 id="email"
                 value={email}
@@ -122,7 +124,7 @@ export const SendRequest = ({ product }: SendRequestProps) => {
               />
             </div>
             <div className="grid grid-cols-1 items-center gap-4">
-              <Label htmlFor="phone">Phone</Label>
+              <Label htmlFor="phone">{t("form-phone")}</Label>
               <Input
                 id="phone"
                 value={phone}
@@ -131,7 +133,7 @@ export const SendRequest = ({ product }: SendRequestProps) => {
               />
             </div>
             <div className="grid grid-cols-1 items-center gap-4">
-              <Label htmlFor="message">Message</Label>
+              <Label htmlFor="message">{t("form-message")}</Label>
               <Textarea
                 id="message"
                 value={message}
@@ -144,10 +146,10 @@ export const SendRequest = ({ product }: SendRequestProps) => {
         <DialogFooter>
           {!isSuccess && (
             <Button variant={"default"} onClick={handleSendRequest}>
-              Send Request
+              {t("btn-send")}
             </Button>
           )}
-          {isSuccess && <Button onClick={handleClose}>Close</Button>}
+          {isSuccess && <Button onClick={handleClose}>{t("btn-close")}</Button>}
         </DialogFooter>
       </DialogContent>
     </Dialog>

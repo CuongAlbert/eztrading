@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Product } from "@/types/product";
 import { SendRequest } from "../send-request";
+import { useTranslations } from "next-intl";
 
 export default function PurchaseBox(props: {
   product: Product;
@@ -13,7 +14,7 @@ export default function PurchaseBox(props: {
   payment?: string;
 }) {
   const product = props.product;
-
+  const t = useTranslations("product-detail.purchase-box");
   const calSubTotal = (
     quantity: number,
     priceRecord: { [key: number]: number },
@@ -61,9 +62,9 @@ export default function PurchaseBox(props: {
       <Card className="mx-auto w-full bg-slate-50/50 backdrop-blur-md border-t-4 border-t-green-600 shadow-xl rounded-xl">
         <CardContent className="flex flex-col gap-4 p-6">
           <p className="font-bold text-base">
-            Price{" "}
+            {t("price")}
             <span className="font-normal text-sm text-slate-500">
-              (by order quantity)
+              {t("price-note")}
             </span>
           </p>
           <div className="w-full grid grid-cols-4 gap-2">
@@ -84,7 +85,7 @@ export default function PurchaseBox(props: {
           <hr className="text-blue-600" />
           <div className="w-full flex flex-col gap-2">
             <label className="text-base font-bold" htmlFor="quantity">
-              Quantity
+              {t("quantity")}
             </label>
             <Input
               type="number"
@@ -95,37 +96,37 @@ export default function PurchaseBox(props: {
             />
           </div>
           <div className="w-full flex gap-2 items-center">
-            <p className="">Estimated:</p>
+            <p className="">{t("estimated-price")}</p>
             <p className="font-medium text-3xl">${subtotal.toFixed(0)}</p>
           </div>
 
           <div className="w-full flex flex-col gap-2">
             <label className="text-base font-bold" htmlFor="note">
-              Note
+              {t("note")}
             </label>
             <Input
               type="text-area"
               id="note"
-              placeholder="Enter your note here"
+              placeholder={t("note-placeholder")}
             />
           </div>
 
           <hr className="text-blue-600" />
-          <h1 className="font-bold">Shipping policy</h1>
+          <h1 className="font-bold">{t("shipping-policy")}</h1>
           <div className="flex gap-1">
             <p>
               {props.shipping && props.shipping !== ""
                 ? props.shipping
-                : `Contact us for detailed discussion about shipping policy and estimation`}
+                : t("shipping-policy-default")}
             </p>
           </div>
           <hr className="text-blue-600" />
-          <h1 className="font-bold">Payment policy</h1>
+          <h1 className="font-bold">{t("payment-policy")}</h1>
           <div className="flex gap-1">
             <p>
               {props.payment && props.payment !== ""
                 ? props.payment
-                : `Contact us for detailed discussion about shipping policy and estimation`}
+                : t("payment-policy-default")}
             </p>
           </div>
         </CardContent>

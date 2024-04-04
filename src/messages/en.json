@@ -19,6 +19,65 @@
   },
   "LocaleSwitcher": {
     "label": "Change language",
-    "locale": "{locale, select, vi {🇻🇳} en {🇺🇸} other {Unknown}}"
+    "locale": "{locale, select, vi {🇻🇳 Tiếng Việt} en {🇺🇸 English} other {Unknown}}"
+  },
+  "product-detail": {
+    "verified": "Verified",
+    "reviews": {
+      "no-review": "No reviewed yet",
+      "validation-name": "Please enter your name",
+      "validation-review": "Please enter your review",
+      "validation-rating": "Please select your rating",
+      "submit-error": "An error occurred while submitting your review. Please try again later.",
+      "title": "Ratings and Reviews",
+      "avg-rating": "average rating",
+      "total-reviews": "total reviews",
+      "write-review": "Write your review",
+      "form-name": "Name",
+      "form-email": "Email",
+      "form-rating": "Rating",
+      "form-review": "Review",
+      "form-submit": "Submit",
+      "form-submitting": "Submitting..."
+    },
+    "purchase-box": {
+      "price": "Price ",
+      "price-note": "(by order quantity)",
+      "quantity": "Quantity",
+      "estimated-price": "Estimated Price",
+      "note": "Note",
+      "note-placeholder": "Please enter your note here",
+      "shipping-policy": "Shipping Policy",
+      "shipping-policy-default": "Contact us for detailed discussion about shipping policy and estimation",
+      "payment-policy": "Payment Policy",
+      "payment-policy-default": "Contact us for detailed discussion about payment policy"
+    },
+    "request-form": {
+      "btn-send": "Send Request",
+      "btn-close": "Close",
+      "title": "Send Request",
+      "description": "Please provide a few details about your request so we can serve you better",
+      "thank-you": "Thank you for your request. We will get back to you soon.",
+      "form-count": "Number of items",
+      "form-name": "Name",
+      "form-email": "Email",
+      "form-phone": "Phone",
+      "form-message": "Message"
+    },
+    "samples": {
+      "title": "Samples",
+      "row-sample-price": "Sample price: ",
+      "row-max-order": "Maximum order quantity: "
+    },
+    "recommendation": "Other recommendation for your business",
+    "product-info": {
+      "key-attribute": "Key Attributes",
+      "other-attribute": "Other Attributes"
+    },
+    "lead-time": {
+      "title": "Lead Time",
+      "quantity": "Quantity",
+      "time": "Lead time (days)"
+    }
   }
 }

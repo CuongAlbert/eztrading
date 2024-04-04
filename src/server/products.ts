@@ -592,7 +592,7 @@ export const getRecommendedProductsFromCategories = async (
 
     }`;
 
-  console.log("groq for recommended products", groq);
+  // console.log("groq for recommended products", groq);
 
   const products = await client.fetch(
     groq,

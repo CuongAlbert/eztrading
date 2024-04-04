@@ -13,7 +13,7 @@ export const createProvider = async (provider: NewProvider) => {
   };
 
   try {
-    console.log("create new provider", newData);
+    // console.log("create new provider", newData);
     const data = await client.create(newData);
     return data;
   } catch (error) {
