@@ -9,6 +9,7 @@ import { Bars3Icon } from "@heroicons/react/24/outline";
 import { Link } from "@/config/i18n-navigation";
 import React from "react";
 import { usePathname } from "next/navigation";
+import LocaleSwitcher from "../widgets/common/LocaleSwitch";
 
 interface LinkType {
   text: string;
@@ -58,6 +59,7 @@ const Header = ({ links = [], actions = [] }: HeaderProps) => {
         </nav> */}
 
         <div className="flex gap-2 shrink-0 justify-center items-center">
+          <LocaleSwitcher />
           <div className="items-center flex justify-between gap-2 w-full md:w-auto">
             {actions?.length ? (
               <span className="ml-4 rtl:ml-0 rtl:mr-4">

@@ -82,7 +82,7 @@ export default async function Home({
           <h1 className="text-4xl font-bold text-center text-primary">
             {`Featured Products`}
           </h1>
-          <List products={products.slice(1, 4)} />
+          <List products={products.slice(0, 4)} />
           <Link href="/search" className={buttonVariants()}>
             View All Products
           </Link>
