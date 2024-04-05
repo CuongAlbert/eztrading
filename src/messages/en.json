@@ -10,16 +10,58 @@
       "description": "Our platform facilitates swift and seamless trade connections between these two regions, fostering a dynamic exchange of sustainable goods. With EZTrading, Gaining access to the regions' finest and most responsible certified suppliers has never been easier. Our secured payment process ensures peace of mind throughout every transaction. Join us on this sustainable journey towards seamless two-way trade and discover the unparalleled convenience of trading with purpose."
     },
     "search": {
-      "placeHolder": "What are you looking for?",
+      "place-holder": "What are you looking for?",
       "title": "Or click to search top products",
       "button": {
         "search": "Search"
       }
+    },
+    "service": {
+      "1": {
+        "title": "Diversity offerings",
+        "desc": "Explore products and suppliers for your business from millions of offerings worldwide."
+      },
+      "2": {
+        "title": "Assured quality and transactions",
+        "desc": "Ensure production quality from verified suppliers, with your orders protected from payment to delivery."
+      },
+      "3": {
+        "title": "One-stop trading solution",
+        "desc": "Order seamlessly from product/supplier search to order management, payment, and fulfillment."
+      },
+      "4": {
+        "title": "Personalized experience",
+        "desc": "Get curated benefits, such as discounted samples and dedicated support, tailored to your business growth stage."
+      }
     }
+  },
+  "expansion": {
+    "title": "EZ Business Expansion",
+    "desc": "EZ Business Expansion is your one-stop solution for seamless business growth and global market entry. Our expert team is dedicated to providing tailored services that align with your expansion goals, ensuring a efficient scaling process.",
+    "li1": "Incorporation & Virtual office",
+    "li2": "Trade representative",
+    "li3": "Marketing & branding",
+    "li4": "Distribution & partnership",
+    "button": "Learn more"
   },
   "LocaleSwitcher": {
     "label": "Change language",
     "locale": "{locale, select, vi {🇻🇳 Tiếng Việt} en {🇺🇸 English} other {Unknown}}"
+  },
+  "Search": {
+    "place-holder": "What are you looking for?",
+    "title": "Or click to search top products",
+    "button": {
+      "search": "Search"
+    },
+    "filter": {
+      "category": "Category",
+      "country": "Country",
+      "price": "Price",
+      "min": "Min",
+      "max": "Max",
+      "min-order": "Min order"
+    }
   },
   "product-detail": {
     "verified": "Verified",

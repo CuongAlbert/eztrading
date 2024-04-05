@@ -10,16 +10,58 @@
       "description": "Nền tảng của chúng tôi tạo điều kiện kết nối thương mại nhanh chóng và liền mạch giữa hai khu vực này, thúc đẩy trao đổi năng động hàng hóa bền vững. Với EZTrading, việc tiếp cận các nhà cung cấp được chứng nhận tốt nhất và có trách nhiệm nhất trong khu vực chưa bao giờ dễ dàng hơn thế. Quy trình thanh toán bảo mật của chúng tôi đảm bảo sự an tâm trong mọi giao dịch. Hãy tham gia cùng chúng tôi trên hành trình bền vững hướng tới thương mại hai chiều liền mạch và khám phá sự tiện lợi vô song của giao dịch có mục đích."
     },
     "search": {
-      "placeHolder": "Bạn đang tìm kiếm gì?",
+      "place-holder": "Bạn đang tìm kiếm gì?",
       "title": "Hoặc tìm kiếm các sản phẩm nổi bật",
       "button": {
         "search": "Tìm kiếm"
       }
+    },
+    "service": {
+      "1": {
+        "title": "Dịch vụ đa dạng",
+        "desc": "Khám phá các sản phẩm và nhà cung cấp cho doanh nghiệp của bạn từ hàng triệu sản phẩm trên toàn thế giới."
+      },
+      "2": {
+        "title": "Chất lượng và giao dịch được đảm bảo",
+        "desc": "Đảm bảo chất lượng sản xuất từ các nhà cung cấp đã được xác minh, với đơn hàng của bạn được bảo vệ từ khâu thanh toán đến khâu giao hàng."
+      },
+      "3": {
+        "title": "Giải pháp giao dịch một cửa",
+        "desc": "Đặt hàng liền mạch từ tìm kiếm sản phẩm/nhà cung cấp đến quản lý đơn hàng, thanh toán và thực hiện."
+      },
+      "4": {
+        "title": "Trải nghiệm được cá nhân hóa",
+        "desc": "Nhận các lợi ích chọn lọc, chẳng hạn như hàng dùng thử giảm giá và hỗ trợ tận tình, phù hợp với giai đoạn phát triển kinh doanh của bạn."
+      }
     }
+  },
+  "expansion": {
+    "title": "Mở rộng kinh doanh tại EZ",
+    "desc": "EZ Business Expansion là giải pháp toàn diện giúp bạn tăng trưởng kinh doanh liền mạch và gia nhập thị trường toàn cầu. Nhóm chuyên gia của chúng tôi tận tâm cung cấp các dịch vụ phù hợp với mục tiêu mở rộng của bạn, đảm bảo quy trình mở rộng hiệu quả.",
+    "li1": "Thành lập Công ty & Văn phòng ảo",
+    "li2": "Đại diện thương mại",
+    "li3": "Tiếp thị và xây dựng thương hiệu",
+    "li4": "Phân phối & hợp tác",
+    "button": "Xem thêm"
   },
   "LocaleSwitcher": {
     "label": "Đổi ngôn ngữ",
     "locale": "{locale, select, vi {🇻🇳 Tiếng Việt} en {🇺🇸 English} other {Unknown}}"
+  },
+  "Search": {
+    "place-holder": "Bạn đang tìm kiếm gì?",
+    "title": "Hoặc tìm kiếm các sản phẩm nổi bật",
+    "button": {
+      "search": "Tìm kiếm"
+    },
+    "filter": {
+      "category": "Loại",
+      "country": "Xuất xứ",
+      "price": "Giá",
+      "min": "Từ",
+      "max": "Đến",
+      "min-order": "Đặt ít nhất"
+    }
   },
 
   "product-detail": {

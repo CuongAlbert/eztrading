@@ -9,45 +9,41 @@ import { ShieldCheck } from "@phosphor-icons/react/dist/ssr/ShieldCheck";
 import { Icon } from "@phosphor-icons/react/dist/lib/types";
 import React from "react";
 
-const SERVICES = [
+const SERVICES_ICON = [
   {
-    title: "Diversity offerings",
-    desc: "Explore products and suppliers for your business from millions of offerings worldwide.",
-    icon: {
-      iconComp: Squares2X2Icon,
-      color: "#072c09",
-    },
+    iconComp: Squares2X2Icon,
+    color: "#072c09",
+  },
+
+  {
+    iconComp: ShieldCheckIcon,
+    color: "#34238b",
+  },
+
+  {
+    iconComp: BuildingStorefrontIcon,
+    color: "#e6b633",
   },
   {
-    title: "Assured quality and transactions",
-    desc: `Ensure production quality from verified suppliers, with your orders protected from payment to delivery.`,
-    icon: {
-      iconComp: ShieldCheckIcon,
-      color: "#34238b",
-    },
-  },
-  {
-    title: "One-stop trading solution",
-    desc: "Order seamlessly from product/supplier search to order management, payment, and fulfillment.",
-    icon: {
-      iconComp: BuildingStorefrontIcon,
-      color: "#e6b633",
-    },
-  },
-  {
-    title: "Personalized experience",
-    desc: "Get curated benefits, such as discounted samples and dedicated support, tailored to your business growth stage.",
-    icon: {
-      iconComp: IdentificationIcon,
-      color: "#e6b633",
-    },
+    iconComp: IdentificationIcon,
+    color: "#e6b633",
   },
 ];
 
-export const ServicesSummary = () => {
+export const ServicesSummary = (props: {
+  lang: { title: string; desc: string }[];
+}) => {
+  const lang = props.lang;
+  const services = lang.map((l, idx) => {
+    return {
+      title: l.title,
+      desc: l.desc,
+      icon: SERVICES_ICON[idx],
+    };
+  });
   return (
     <section className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      {SERVICES.map((service) => (
+      {services.map((service) => (
         <ServicesItem
           key={service.title}
           title={service.title}

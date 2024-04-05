@@ -1,11 +1,29 @@
 import React from "react";
 
 import { SearchResultProvider } from "@/ctx/SearchResult";
+import Header from "@/components/ui/Header";
+import { headerData } from "@/config/navigation";
+import { unstable_setRequestLocale } from "next-intl/server";
+import { NextIntlClientProvider, useMessages } from "next-intl";
+import pick from "lodash/pick";
 
-const ProductListLayout = ({ children }: { children: React.ReactNode }) => {
+const ProductListLayout = ({
+  params: { locale },
+  children,
+}: {
+  params: { locale: string };
+  children: React.ReactNode;
+}) => {
+  unstable_setRequestLocale(locale);
+  const messages = useMessages();
   return (
     <>
-      <SearchResultProvider>{children}</SearchResultProvider>
+      <SearchResultProvider>
+        <Header links={headerData.links} actions={headerData.actions} />
+        <NextIntlClientProvider messages={pick(messages, "Search")}>
+          {children}
+        </NextIntlClientProvider>
+      </SearchResultProvider>
     </>
   );
 };
