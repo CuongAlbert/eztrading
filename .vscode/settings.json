@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["Embla", "Infor"]
+  "cSpell.words": ["Embla", "Infor"],
+  "i18n-ally.localesPaths": ["src/messages"]
 }
