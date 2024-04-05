@@ -176,5 +176,9 @@
     "address": "Địa chỉ",
     "chat": "Chat với chúng tôi",
     "chat-hint": "Chat ngay"
+  },
+  "sign-up": {
+    "title": "Xin chào, Nhà cung cấp!",
+    "desc": "Chào mừng đến với EZTRADING! Đăng ký làm nhà cung cấp và bắt đầu cung cấp dịch vụ của bạn cho chủ nhà."
   }
 }

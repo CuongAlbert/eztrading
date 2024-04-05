@@ -174,5 +174,9 @@
     "address": "Address",
     "chat": "Chat with support",
     "chat-hint": "Start chatting"
+  },
+  "sign-up": {
+    "title": "Hello, Provider!",
+    "desc": "Welcome to EZTRADING! Sign up as a provider and start offering your services to homeowners."
   }
 }
