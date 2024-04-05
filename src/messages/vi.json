@@ -180,5 +180,12 @@
   "sign-up": {
     "title": "Xin chào, Nhà cung cấp!",
     "desc": "Chào mừng đến với EZTRADING! Đăng ký làm nhà cung cấp và bắt đầu cung cấp dịch vụ của bạn cho chủ nhà."
+  },
+  "sign-in": {
+    "title": "Chúng tôi đang nỗ lực phát triển doanh nghiệp của bạn",
+    "desc": "Tạo hồ sơ EZHOUZE của bạn và dẫn đầu ",
+    "span": " nhiều chủ nhà",
+    "desc2": ". Nhiều người chú ý đến doanh nghiệp của bạn hơn đồng nghĩa với việc có nhiều cơ hội hơn",
+    "desc3": "kết nối với khách hàng tiếp theo của bạn."
   }
 }
