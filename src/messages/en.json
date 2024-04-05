@@ -185,5 +185,25 @@
     "span": " many homeowners",
     "desc2": ". More eyes on your business means more opportunity to",
     "desc3": "connect with your next customer."
+  },
+  "provider": {
+    "my-profile": {
+      "notify": "Your profile is not completed. Please complete your profile to appear in search results.",
+      "title": "Company profile",
+      "name": "Business name",
+      "profile-status": "Profile status",
+      "verified": "Verified",
+      "in-review": "In review",
+      "email": "Email",
+      "phone": "Phone number",
+      "service-details": "Service details",
+      "address": "Address",
+      "desc": "Description",
+      "shipping-info": "Shipping Information",
+      "payment": "Payment Terms"
+    },
+    "products": {
+      "new-product": "New Product"
+    }
   }
 }

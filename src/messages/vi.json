@@ -187,5 +187,25 @@
     "span": " nhiều chủ nhà",
     "desc2": ". Nhiều người chú ý đến doanh nghiệp của bạn hơn đồng nghĩa với việc có nhiều cơ hội hơn",
     "desc3": "kết nối với khách hàng tiếp theo của bạn."
+  },
+  "provider": {
+    "my-profile": {
+      "notify": "Hồ sơ của bạn chưa được hoàn thiện. Vui lòng hoàn thiện hồ sơ của bạn để xuất hiện trong kết quả tìm kiếm.",
+      "title": "Hồ sơ công ty",
+      "name": "Tên doanh nghiệp",
+      "profile-status": "Trạng thái hồ sơ",
+      "verified": "Đã xác minh",
+      "in-review": "Đang xem xét",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "service-details": "Chi tiết dịch vụ",
+      "address": "Địa chỉ",
+      "desc": "Mô tả",
+      "shipping-info": "Thông tin vận chuyển",
+      "payment": "Phương thức thanh toán"
+    },
+    "products": {
+      "new-product": "Sản phẩm mới"
+    }
   }
 }
