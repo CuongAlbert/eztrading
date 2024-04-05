@@ -2,12 +2,18 @@
 
 import "@smastrom/react-rating/style.css";
 
-import React, { use, useEffect, useRef, useState } from "react";
+import {
+  NextIntlClientProvider,
+  useMessages,
+  useTranslations,
+} from "next-intl";
+import React, { use, useEffect, useRef, useState, useTransition } from "react";
 
 import { Rating } from "@smastrom/react-rating";
 import { Review } from "@/types/reviews";
 import { addReviewToProduct } from "@/server/reviews";
 import { calculateAverageRating } from "@/lib/helpers";
+import pick from "lodash/pick";
 
 type Props = {
   productId: string;
@@ -34,6 +40,7 @@ const Reviews: React.FC<Props> = ({ productId, initReviews }) => {
   const [submitting, setSubmitting] = useState<boolean>(false);
   const formRef = useRef<HTMLFormElement>(null);
   const [rating, setRating] = useState<number>(0);
+  const t = useTranslations("product-detail.reviews");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -58,13 +65,13 @@ const Reviews: React.FC<Props> = ({ productId, initReviews }) => {
     };
 
     if (!name) {
-      validation.name = "Please enter your name";
+      validation.name = t("validation-name");
     }
     if (!review) {
-      validation.review = "Please enter a comment";
+      validation.review = t("validation-review");
     }
     if (!rating || rating === 0) {
-      validation.rating = "Please enter a rating";
+      validation.rating = t("validation-rating");
     }
 
     if (validation.name || validation.review || validation.rating) {
@@ -89,7 +96,7 @@ const Reviews: React.FC<Props> = ({ productId, initReviews }) => {
         setSubmitting(false);
         resetField();
       } else {
-        setSubmitError("There was an error submitting your review");
+        setSubmitError(t("submit-error"));
         return;
       }
     });
@@ -98,17 +105,21 @@ const Reviews: React.FC<Props> = ({ productId, initReviews }) => {
   return (
     <section className="w-full flex flex-col gap-8" id="reviews">
       <div className="flex flex-col gap-2">
-        <p className="text-2xl font-bold">Ratings and reviews</p>
+        <p className="text-2xl font-bold">{t("title")}</p>
         <div className="flex gap-4 items-center">
           <div className="flex flex-col gap-2 justify-center items-center  rounded-md border p-4">
             <p className="text-5xl font-medium">
               {averageRating ? averageRating.toFixed(1) : "--"}
             </p>
-            <p className="text-sm italic text-slate-500">average rating</p>
+            <p className="text-sm italic text-slate-500 lowercase">
+              {t("avg-rating")}
+            </p>
           </div>
           <div className="flex flex-col gap-2 justify-center items-center  rounded-md border p-4">
             <p className="text-5xl font-medium">{totalReviews}</p>
-            <p className="text-sm italic text-slate-500">total reviews</p>
+            <p className="text-sm italic text-slate-500 lowercase">
+              {t("total-reviews")}
+            </p>
           </div>
         </div>
       </div>
@@ -141,10 +152,10 @@ const Reviews: React.FC<Props> = ({ productId, initReviews }) => {
           ))}
         </div>
       ) : (
-        <p>No reviews yet</p>
+        <p>{t("no-review")}</p>
       )}
       {/* <div className="border-b border-slate-5" /> */}
-      <h2 className="text-xl font-bold">Leave your comment</h2>
+      <h2 className="text-xl font-bold">{t("write-review")}</h2>
       <div className="w-full">
         <form
           className="w-full flex flex-col gap-4 max-w-xl"
@@ -154,7 +165,7 @@ const Reviews: React.FC<Props> = ({ productId, initReviews }) => {
           <div className="flex flex-col gap-1 w-full">
             <div className="flex gap-2 items-center">
               <label htmlFor="name" className="font-semibold">
-                Name
+                {t("form-name")}
               </label>
               {error.name && error.name !== "" && (
                 <p className="text-red-500 text-sm">{error.name}</p>
@@ -171,7 +182,7 @@ const Reviews: React.FC<Props> = ({ productId, initReviews }) => {
           <div className="flex flex-col gap-1">
             <div className="flex gap-2 items-center">
               <label htmlFor="email" className="font-semibold">
-                Email
+                {t("form-email")}
               </label>
               {error.email && error.email !== "" && (
                 <p className="text-red-500 text-sm">{error.email}</p>
@@ -189,7 +200,7 @@ const Reviews: React.FC<Props> = ({ productId, initReviews }) => {
           <div className="flex flex-col gap-1">
             <div className="flex gap-2 items-center">
               <label htmlFor="eeeeeee" className="font-semibold">
-                Rating
+                {t("form-rating")}
               </label>
               {error.rating && error.rating !== "" && (
                 <p className="text-red-500 text-sm">{error.rating}</p>
@@ -205,7 +216,7 @@ const Reviews: React.FC<Props> = ({ productId, initReviews }) => {
           <div className="flex flex-col gap-1">
             <div className="flex gap-2 items-center">
               <label htmlFor="eeeeeee" className="font-semibold">
-                Review
+                {t("form-review")}
               </label>
               {error.review && error.review !== "" && (
                 <p className="text-red-500 text-sm">{error.review}</p>
@@ -224,7 +235,7 @@ const Reviews: React.FC<Props> = ({ productId, initReviews }) => {
               type="submit"
               disabled={submitting}
             >
-              {submitting ? "Submitting..." : "Submit"}
+              {submitting ? t("form-submitting") : t("form-submit")}
             </button>
             {submitError && submitError !== "" && (
               <p className="text-red-500 text-sm">{submitError}</p>

@@ -6,6 +6,7 @@ import React, { useState } from "react";
 export default function ProductInfor(props: {
   attributes: { [key: string]: string };
   other: boolean;
+  lang: { [key: string]: string };
 }) {
   const [viewOtherAttributes, setViewOtherAttributes] = useState<boolean>(true);
   const attributes = props.attributes;
@@ -13,9 +14,9 @@ export default function ProductInfor(props: {
   return (
     <div>
       {!other ? (
-        <h1 className="font-bold text-xl">Key Attributes</h1>
+        <h1 className="font-bold text-xl">{props.lang["key-attribute"]}</h1>
       ) : (
-        <h1 className="font-bold text-xl">Other attributes</h1>
+        <h1 className="font-bold text-xl">{props.lang["other-attribute"]}</h1>
       )}
       <div className="overflow-x-auto">
         <table className=" mt-4 rounded-lg border-collapse border border-slate-500">
