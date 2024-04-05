@@ -44,18 +44,9 @@
     "li4": "Phân phối & hợp tác",
     "button": "Xem thêm"
   },
-  "contact": {
-    "title": "Liên hệ ngay với chúng tôi",
-    "desc": "Chúng tôi luôn sẵn lòng hỗ trợ bạn.",
-    "phone": "Số điện thoại",
-    "email": "Email",
-    "address": "Địa chỉ",
-    "chat": "Chat với chúng tôi",
-    "chat-hint": "Chat ngay"
-  },
   "LocaleSwitcher": {
-    "label": "Chọn ngôn ngữ",
-    "locale": "{locale, select, vi {🇻🇳} en {🇺🇸} other {Unknown}}"
+    "label": "Đổi ngôn ngữ",
+    "locale": "{locale, select, vi {🇻🇳 Tiếng Việt} en {🇺🇸 English} other {Unknown}}"
   },
   "Search": {
     "place-holder": "Bạn đang tìm kiếm gì?",
@@ -71,5 +62,119 @@
       "max": "Đến",
       "min-order": "Đặt ít nhất"
     }
+  },
+
+  "product-detail": {
+    "verified": "Đã xác minh",
+    "reviews": {
+      "no-review": "Chưa có đánh giá",
+      "validation-name": "Vui lòng nhập tên của bạn",
+      "validation-review": "Vui lòng nhập nhận xét của bạn",
+      "validation-rating": "Vui lòng chọn đánh giá",
+      "submit-error": "Có lỗi xảy ra khi gửi đánh giá của bạn. Xin thử lại sau.",
+      "title": "Đánh giá và nhận xét",
+      "avg-rating": "đánh giá trung bình",
+      "total-reviews": "tổng số đánh giá",
+      "write-review": "Viết đánh giá của bạn",
+      "form-name": "Tên",
+      "form-email": "Email",
+      "form-rating": "Đánh giá",
+      "form-review": "Nhận xét",
+      "form-submit": "Gửi",
+      "form-submitting": "Đang gửi"
+    },
+    "purchase-box": {
+      "price": "Giá ",
+      "price-note": "(theo số lượng đặt hàng)",
+      "quantity": "Số lượng",
+      "estimated-price": "Giá ước tính",
+      "note": "Ghi chú",
+      "note-placeholder": "Nhập ghi chú của bạn",
+      "shipping-policy": "Chính sách vận chuyển",
+      "shipping-policy-default": "Liên hệ với chúng tôi để biết thêm chi tiết về chính sách vận chuyển",
+      "payment-policy": "Chính sách thanh toán",
+      "payment-policy-default": "Liên hệ với chúng tôi để biết thêm chi tiết về chính sách thanh toán"
+    },
+    "request-form": {
+      "btn-send": "Gửi yêu cầu",
+      "btn-close": "Đóng",
+      "title": "Gửi yêu cầu",
+      "description": "Để đặt hàng hoặc biết thêm thông tin về sản phẩm, vui lòng điền vào biểu mẫu dưới đây.",
+      "thank-you": "Cảm ơn bạn đã gửi yêu cầu. Chúng tôi sẽ liên hệ với bạn sớm nhất có thể.",
+      "form-count": "Số lượng đặt hàng",
+      "form-name": "Tên",
+      "form-email": "Email",
+      "form-phone": "Số điện thoại",
+      "form-message": "Tin nhắn"
+    },
+    "samples": {
+      "title": "Mẫu sản phẩm",
+      "row-sample-price": "Giá mẫu: ",
+      "row-max-order": "Số lượng đặt tối đa: "
+    },
+    "recommendation": "Gợi ý dành riêng cho bạn",
+    "product-info": {
+      "key-attribute": "Thuộc tính quan trọng",
+      "other-attribute": "Thuộc tính khác"
+    },
+    "lead-time": {
+      "title": "Thời gian giao hàng",
+      "quantity": "Số lượng",
+      "time": "Thời gian (ngày)"
+    }
+  },
+
+  "ez-business-expansion": {
+    "tagline": "Mở rộng kinh doanh của bạn với EZTrading",
+    "heading-line-1": "Dịch vụ toàn diện",
+    "heading-line-2": "để mở rộng kinh doanh của bạn ra thế giới",
+    "description": "Đội ngũ chuyên gia của chúng tôi sẽ cung cấp những dịch vụ dành riêng cho bạn để phù hợp với kế hoạch mở rộng, đảm bảo mang đến sự phát triển hiệu quả",
+    "benefit": "Lợi ích",
+    "cta": "Liên hệ ngay",
+    "incorporation": {
+      "title": "Thành lập công ty",
+      "benefit-1": "Rút ngắn quy trình thiết lập doanh nghiệp.",
+      "benefit-2": "Cung cấp địa chỉ kinh doanh uy tín.",
+      "benefit-3": "Giảm đáng kể chi phí cố định.",
+      "benefit-4": "Nâng cao hình ảnh và uy tín công ty.",
+      "benefit-5": "Cung cấp quyền truy cập vào thị trường toàn cầu.",
+      "benefit-6": "Bao gồm dịch vụ xử lý và chuyển tiếp thư."
+    },
+    "trade-representative": {
+      "title": "Đại diện thương mại",
+      "benefit-1": "Tạo điều kiện nhập cảnh vào thị trường mới.",
+      "benefit-2": "Cung cấp kiến thức và mối quan hệ địa phương.",
+      "benefit-3": "Giảm nhu cầu về mặt bằng vật lý.",
+      "benefit-4": "Tăng cường khả năng nhận biết và nhận diện thương hiệu.",
+      "benefit-5": "Vượt qua rào cản về quy định và văn hóa.",
+      "benefit-6": "Xây dựng lòng tin với khách hàng và đối tác địa phương."
+    },
+    "marketing-branding": {
+      "title": "Marketing & Thương hiệu",
+      "benefit-1": "Tạo dựng bản sắc thương hiệu mạnh mẽ, đáng nhớ.",
+      "benefit-2": "Điều chỉnh chiến lược cho phù hợp với đối tượng mục tiêu.",
+      "benefit-3": "Tận dụng truyền thông số và truyền thống.",
+      "benefit-4": "Tăng cường hiện diện trực tuyến và SEO.",
+      "benefit-5": "Thúc đẩy sự gắn kết và lòng trung thành của khách hàng.",
+      "benefit-6": "Làm cho doanh nghiệp bạn nổi bật so với đối thủ."
+    },
+    "distribution-partnership": {
+      "title": "Phân phối & Đối tác",
+      "benefit-1": "Mở rộng thị trường một cách hiệu quả.",
+      "benefit-2": "Kết nối với nhà phân phối địa phương đáng tin cậy.",
+      "benefit-3": "Tận dụng cơ hội hợp tác chiến lược.",
+      "benefit-4": "Giảm chi phí logistics và chuỗi cung ứng.",
+      "benefit-5": "Nâng cao sự sẵn có của sản phẩm và sự hài lòng của khách hàng.",
+      "benefit-6": "Cung cấp cái nhìn sâu sắc về xu hướng và nhu cầu thị trường địa phương."
+    }
+  },
+  "contact": {
+    "title": "Liên hệ ngay với chúng tôi",
+    "description": "Chúng tôi luôn sẵn lòng hỗ trợ bạn.",
+    "phone": "Số điện thoại",
+    "email": "Email",
+    "address": "Địa chỉ",
+    "chat": "Chat với chúng tôi",
+    "chat-hint": "Chat ngay"
   }
 }

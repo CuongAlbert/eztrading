@@ -12,7 +12,6 @@ import { useTranslations } from "next-intl";
 
 export const Contact = ({ id }: { id: string }) => {
   const t = useTranslations("contact");
-  console.log(t("title"));
   return (
     <section
       className={`relative w-full mx-auto px-4 sm:px-6 py-24 flex justify-center items-center`}
@@ -22,7 +21,7 @@ export const Contact = ({ id }: { id: string }) => {
         <h1 className="text-4xl font-bold -mt-4 text-center">{t("title")}</h1>
 
         <p className="text-lg text-slate-11 mb-6 max-w-3xl text-center">
-          {t("desc")}
+          {t("description")}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-8">
           <ContactItem

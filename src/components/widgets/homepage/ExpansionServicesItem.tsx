@@ -8,10 +8,12 @@ export const ExpansionServicesItem = ({
   title,
   image,
   children,
+  label,
 }: React.PropsWithChildren<{
   title: string;
   image: StaticImageData;
   children: React.ReactNode;
+  label: string;
 }>) => {
   return (
     <div className="flex flex-col rounded-xl bg-slate-50/30 backdrop-blur-md border-border border relative overflow-clip">
@@ -30,7 +32,7 @@ export const ExpansionServicesItem = ({
             href="#tally-open=3N67JB&tally-layout=modal&tally-emoji-animation=none"
             className={buttonVariants({ className: "max-w-fit" })}
           >
-            Book now
+            {label}
           </Link>
         </div>
       </div>

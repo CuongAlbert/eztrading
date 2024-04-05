@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import { ClerkProvider } from "@clerk/nextjs";
+import React from "react";
 import { ReactNode } from "react";
 
 type Props = {
