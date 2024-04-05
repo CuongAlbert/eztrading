@@ -23,7 +23,7 @@ const ProviderMyProfile = ({
             className="btn btn-primary w-full md:w-auto"
             href={`/provider/products/new-product`}
           >
-            {t("provider.new-product")}
+            {t("products.new-product")}
           </Link>
         </div>
         <List products={products} />
