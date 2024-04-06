@@ -9,6 +9,7 @@ import { Bars3Icon } from "@heroicons/react/24/outline";
 import { Link } from "@/config/i18n-navigation";
 import React from "react";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 interface LinkType {
   text: string;
@@ -27,11 +28,13 @@ export interface HeaderProps {
   links: MenuLink[];
   actions: ActionLinks[];
   children?: React.ReactNode;
+  locale: string;
 }
 
 const HeaderContent = ({ links, actions, children }: HeaderProps) => {
   const { isSignedIn, isLoaded } = useUser();
   const pathName = usePathname();
+  const t = useTranslations("header");
   return (
     <header className="top-0 z-10 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out sticky bg-slate-50">
       <div className="py-3 px-3 md:px-6 mx-auto w-full flex justify-between">
@@ -53,7 +56,7 @@ const HeaderContent = ({ links, actions, children }: HeaderProps) => {
                 href === pathName ? "text-blue-900" : ""
               }`}
             >
-              {text}
+              {t(`${text}`)}
             </Link>
           ))}
         </nav>
@@ -71,7 +74,7 @@ const HeaderContent = ({ links, actions, children }: HeaderProps) => {
                       href="/provider/my-profile"
                       className="text-blue-12 hover:text-blue-11 whitespace-nowrap"
                     >
-                      Pro Portal
+                      {t("portal")}
                     </Link>
                   </div>
                 ) : (
@@ -80,10 +83,10 @@ const HeaderContent = ({ links, actions, children }: HeaderProps) => {
                       className="hover:text-blue-11 font-medium"
                       href="/sign-in"
                     >
-                      Sign in
+                      {t("sign-in")}
                     </Link>
                     <Link href="/join-as-pro">
-                      <button className="btn btn-primary">Join as pro</button>
+                      <button className="btn btn-primary">{t("action")}</button>
                     </Link>
                   </div>
                 )}

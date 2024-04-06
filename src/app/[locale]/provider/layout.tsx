@@ -17,7 +17,11 @@ const ProviderLayout = ({
   const messages = useMessages();
   return (
     <>
-      <Header links={providerHeader.links} actions={providerHeader.actions} />
+      <Header
+        links={providerHeader.links}
+        actions={providerHeader.actions}
+        locale={locale}
+      />
       <ProviderSettingsProvider>
         <NextIntlClientProvider messages={pick(messages, "provider")}>
           {children}

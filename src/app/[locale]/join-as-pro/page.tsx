@@ -2,10 +2,16 @@ import React from "react";
 import { RegisterBasicInfo } from "@/components/widgets/provider";
 import { Logo } from "@/components/common";
 import { unstable_setRequestLocale } from "next-intl/server";
-import { useTranslations } from "next-intl";
+import {
+  NextIntlClientProvider,
+  useMessages,
+  useTranslations,
+} from "next-intl";
+import { pick } from "lodash";
 const JoinAsPro = ({ params: { locale } }: { params: { locale: string } }) => {
   unstable_setRequestLocale(locale);
   const t = useTranslations("sign-in");
+  const messages = useMessages();
   return (
     <main
       className="w-full h-full flex flex-col md:flex-row p-2 md:p-8 md:justify-center items-center overflow-auto"
@@ -34,7 +40,9 @@ const JoinAsPro = ({ params: { locale } }: { params: { locale: string } }) => {
         </div>
       </div>
       <div className="flex flex-row p-2 md:p-8 items-center">
-        <RegisterBasicInfo />
+        <NextIntlClientProvider messages={pick(messages, "register-box")}>
+          <RegisterBasicInfo />
+        </NextIntlClientProvider>
       </div>
       {/* </div> */}
     </main>

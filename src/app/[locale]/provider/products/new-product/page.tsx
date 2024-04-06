@@ -25,8 +25,13 @@ import { v4 as uuidv4 } from "uuid";
 import { GalleryEdit } from "@/components/widgets/common/GalleryEdit";
 import { updateProductImage } from "@/server/products";
 import { SanityImage } from "@/types/provider";
+import { useTranslations } from "next-intl";
 
-const ProviderMyProfile = () => {
+const ProviderMyProfile = ({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) => {
   const [isUpdatingGallery, setIsUpdatingGallery] = useState<boolean>(false);
   const [currentGallery, setCurrentGallery] = useState<SanityImage[]>([]); // [{src: string, alt: string}
   const [gallery, setGallery] = useState<string[]>([]);
@@ -53,6 +58,8 @@ const ProviderMyProfile = () => {
     maxSample: 0,
     samplePrice: 0,
   }); // {key: value}
+
+  const t = useTranslations("provider");
 
   const getCurrentMinOrder = () => {
     return pricing[pricing.length - 1].min;
@@ -135,9 +142,9 @@ const ProviderMyProfile = () => {
       <Card>
         <CardHeader>
           <CardTitle>
-            {productName === "" ? "Untitled Product" : productName}
+            {productName === "" ? t("new-product.untitle") : productName}
           </CardTitle>
-          <CardDescription>Card Description</CardDescription>
+          {/* <CardDescription>Card Description</CardDescription> */}
         </CardHeader>
         <CardContent>
           <div className="flex flex-col w-full gap-8">
@@ -149,7 +156,7 @@ const ProviderMyProfile = () => {
             <div className="flex justify-center items-center gap-2">
               <div className="w-full h-[1px] bg-slate-200" />
               <h1 className="text-slate-11 text-lg font-medium px-2 shrink-0">
-                Product Information
+                {t("new-product.infor-title")}
               </h1>
               <div className="w-full h-[1px] bg-slate-200" />
             </div>
@@ -159,13 +166,15 @@ const ProviderMyProfile = () => {
              *
              */}
             <div className="grid w-full max-w-md items-center gap-1.5">
-              <Label htmlFor="productName">Product Name</Label>
+              <Label htmlFor="productName">
+                {t("new-product.product-name")}
+              </Label>
               <Input
                 type="text"
                 id="productName"
                 value={productName}
                 onChange={(e) => setProductName(e.target.value)}
-                placeholder="Name your product, better name better search results"
+                placeholder={t("new-product.name-placeholder")}
               />
             </div>
             {/**
@@ -174,13 +183,13 @@ const ProviderMyProfile = () => {
              *
              */}
             <div className="grid w-full max-w-md items-center gap-1.5">
-              <Label htmlFor="unit">Unit</Label>
+              <Label htmlFor="unit">{t("new-product.unit")}</Label>
               <Input
                 type="text"
                 id="unit"
                 value={unit}
                 onChange={(e) => setUnit(e.target.value)}
-                placeholder="Unit of measurement"
+                placeholder={t("new-product.unit-placeholder")}
               />
             </div>
             {/**
@@ -189,13 +198,13 @@ const ProviderMyProfile = () => {
              *
              */}
             <div className="grid w-full max-w-md items-center gap-1.5">
-              <Label htmlFor="country">Country</Label>
+              <Label htmlFor="country">{t("new-product.country")}</Label>
               <Input
                 type="text"
                 id="country"
                 value={country}
                 onChange={(e) => setCountry(e.target.value)}
-                placeholder="Country of origin"
+                placeholder={t("new-product.country-placeholder")}
               />
             </div>
             {/**
@@ -204,8 +213,10 @@ const ProviderMyProfile = () => {
              *
              */}
             <div className="grid w-full max-w-md items-center gap-1.5">
-              <Label htmlFor="country">Pricing</Label>
-              <p className="text-slate-500 text-sm">{`Set pricing scheme by setting min order item and price for that value`}</p>
+              <Label htmlFor="country">{t("new-product.price")}</Label>
+              <p className="text-slate-500 text-sm">
+                {t("new-product.price-desc")}
+              </p>
               {pricing.map((item, index) => (
                 <div className="flex flex-row gap-1.5 items-center" key={index}>
                   <Input
@@ -217,7 +228,7 @@ const ProviderMyProfile = () => {
                       newPricing[index].min = parseInt(e.target.value);
                       setPricing(newPricing);
                     }}
-                    placeholder="Min Order"
+                    placeholder={t("new-product.min-order")}
                   />
                   <Input
                     type="number"
@@ -229,7 +240,7 @@ const ProviderMyProfile = () => {
                       newPricing[index].price = parseFloat(e.target.value);
                       setPricing(newPricing);
                     }}
-                    placeholder="Price"
+                    placeholder={t("new-product.price-placeholder")}
                   />
                   <button
                     className="flex h-8 w-8 justify-center items-center border border-slate-3 shadow rounded-md hover:bg-slate-3 shrink-0"
@@ -255,7 +266,7 @@ const ProviderMyProfile = () => {
                   setPricing(newPricing);
                 }}
               >
-                Add price
+                {t("new-product.price-button")}
               </Button>
             </div>
             {/**
@@ -264,14 +275,16 @@ const ProviderMyProfile = () => {
              *
              */}
             <div className="grid w-full max-w-md items-center gap-1.5">
-              <Label htmlFor="categories">Categories</Label>
-              <p className="text-slate-500 text-sm">{`Select categories that best describe your product, separated by comma`}</p>
+              <Label htmlFor="categories">{t("new-product.category")}</Label>
+              <p className="text-slate-500 text-sm">
+                {t("new-product.category-desc")}
+              </p>
               <Input
                 type="text"
                 id="categories"
                 value={categories}
                 onChange={(e) => setCategories(e.target.value.split(","))}
-                placeholder="Categories"
+                placeholder={t("new-product.category")}
               />
             </div>
             {/**
@@ -290,8 +303,10 @@ const ProviderMyProfile = () => {
              *
              */}
             <div className="grid w-full max-w-md items-center gap-1.5">
-              <Label htmlFor="attributes">Attributes</Label>
-              <p className="text-slate-500 text-sm">{`Add attributes that best describe your product, separated by comma`}</p>
+              <Label htmlFor="attributes">{t("new-product.attribute")}</Label>
+              <p className="text-slate-500 text-sm">
+                {t("new-product.attribute-desc")}
+              </p>
               {Object.keys(attributes).map((key, index) => (
                 <div className="flex flex-row gap-1.5 items-center" key={index}>
                   <Input
@@ -304,7 +319,7 @@ const ProviderMyProfile = () => {
                       delete newAttributes[key];
                       setAttributes(newAttributes);
                     }}
-                    placeholder="Attribute name"
+                    placeholder={t("new-product.attribute-placeholder")}
                   />
                   <Input
                     type="text"
@@ -315,7 +330,7 @@ const ProviderMyProfile = () => {
                       newAttributes[key] = e.target.value;
                       setAttributes(newAttributes);
                     }}
-                    placeholder="Value"
+                    placeholder={t("new-product.placeholder-input")}
                   />
                   <button
                     className="flex h-8 w-8 justify-center items-center border border-slate-3 shadow rounded-md hover:bg-slate-3 shrink-0"
@@ -337,7 +352,7 @@ const ProviderMyProfile = () => {
                   setAttributes(newAttributes);
                 }}
               >
-                Add attribute
+                {t("new-product.attribute-button")}
               </Button>
             </div>
             {/**
@@ -348,7 +363,7 @@ const ProviderMyProfile = () => {
             <div className="flex justify-center items-center gap-2">
               <div className="w-full h-[1px] bg-slate-200" />
               <h1 className="text-slate-11 text-lg font-medium px-2 shrink-0">
-                Order Policies
+                {t("new-product.order-title")}
               </h1>
               <div className="w-full h-[1px] bg-slate-200" />
             </div>
@@ -358,8 +373,10 @@ const ProviderMyProfile = () => {
              *
              */}
             <div className="grid w-full max-w-md items-center gap-1.5">
-              <Label htmlFor="leadTime">Lead Time</Label>
-              <p className="text-slate-500 text-sm">{`Set lead time for each pricing scheme`}</p>
+              <Label htmlFor="leadTime">{t("new-product.lead-time")}</Label>
+              <p className="text-slate-500 text-sm">
+                {t("new-product.lead-time-desc")}
+              </p>
               {Object.keys(leadTime).map((key, index) => (
                 <div className="flex flex-row gap-1.5 items-center" key={index}>
                   <Input
@@ -372,7 +389,7 @@ const ProviderMyProfile = () => {
                       delete newLeadTime[key];
                       setLeadTime(newLeadTime);
                     }}
-                    placeholder="Min order"
+                    placeholder={t("new-product.min-order")}
                   />
                   <Input
                     type="text"
@@ -383,7 +400,7 @@ const ProviderMyProfile = () => {
                       newLeadTime[key] = e.target.value;
                       setLeadTime(newLeadTime);
                     }}
-                    placeholder="Value"
+                    placeholder={t("new-product.placeholder-input")}
                   />
                   <button
                     className="flex h-8 w-8 justify-center items-center border border-slate-3 shadow rounded-md hover:bg-slate-3 shrink-0"
@@ -405,7 +422,7 @@ const ProviderMyProfile = () => {
                   setLeadTime(newLeadTime);
                 }}
               >
-                Add lead time
+                {t("new-product.lead-time-button")}
               </Button>
             </div>
             {/**
@@ -414,8 +431,10 @@ const ProviderMyProfile = () => {
              *
              */}
             <div className="grid w-full max-w-md items-center gap-1.5">
-              <Label htmlFor="sample">Sample</Label>
-              <p className="text-slate-500 text-sm">{`Minimum items to order for sample and price`}</p>
+              <Label htmlFor="sample">{t("new-product.sample")}</Label>
+              <p className="text-slate-500 text-sm">
+                {t("new-product.sample-title")}
+              </p>
               <div className="flex flex-row gap-1.5 items-center">
                 <Input
                   type="number"
@@ -426,7 +445,7 @@ const ProviderMyProfile = () => {
                     newSample.maxSample = parseInt(e.target.value);
                     setSample(newSample);
                   }}
-                  placeholder="Max sample"
+                  placeholder={t("new-product.max-sample")}
                 />
                 <Input
                   type="number"
@@ -437,7 +456,7 @@ const ProviderMyProfile = () => {
                     newSample.samplePrice = parseFloat(e.target.value);
                     setSample(newSample);
                   }}
-                  placeholder="Price"
+                  placeholder={t("new-product.sample-price")}
                 />
               </div>
             </div>
@@ -450,7 +469,7 @@ const ProviderMyProfile = () => {
               variant="primary"
               onClick={onSubmit}
             >
-              Save
+              {t("new-product.save")}
             </Button>
           </div>
         </CardFooter>

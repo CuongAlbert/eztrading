@@ -19,7 +19,11 @@ const ProductListLayout = ({
   return (
     <>
       <SearchResultProvider>
-        <Header links={headerData.links} actions={headerData.actions} />
+        <Header
+          links={headerData.links}
+          actions={headerData.actions}
+          locale={locale}
+        />
         <NextIntlClientProvider messages={pick(messages, "Search")}>
           {children}
         </NextIntlClientProvider>

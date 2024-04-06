@@ -203,7 +203,88 @@
       "payment": "Payment Terms"
     },
     "products": {
+      "title-head": "You have ",
+      "title-tail": " products",
       "new-product": "New Product"
+    },
+    "new-product": {
+      "untitle": "Untitled Product",
+      "infor-title": "Product Information",
+      "product-name": "Product Name",
+      "name-placeholder": "Name your product, better name better search results",
+      "unit": "Unit",
+      "unit-placeholder": "Unit of measurement",
+      "country": "Country",
+      "country-placeholder": "Country of origin",
+      "price": "Pricing",
+      "price-desc": "Set pricing scheme by setting min order item and price for that value",
+      "price-placeholder": "Price",
+      "price-button": "Add price",
+      "category": "Categories",
+      "category-desc": "Select categories that best describe your product, separated by comma",
+      "attribute": "Attributes",
+      "attribute-desc": "Add attributes that best describe your product, separated by comma",
+      "attribute-placeholder": "Attribute name",
+      "placeholder-input": "Value",
+      "attribute-button": "Add attribute",
+      "order-title": "Order Policies",
+      "lead-time": "Lead Time",
+      "lead-time-desc": "Set lead time for each pricing scheme",
+      "min-order": "Min order",
+      "lead-time-button": "Add lead time",
+      "sample": "Sample",
+      "sample-title": "Minimum items to order for sample and price",
+      "max-sample": "Max sample",
+      "sample-price": "Price",
+      "save": "Save"
+    },
+    "gallery": {
+      "add-photo": "Add Photos"
+    },
+    "edit-logo": {
+      "add-logo": "Add logo",
+      "choose-logo": "Choose logo"
     }
+  },
+  "header": {
+    "home": "Home",
+    "services": "Services",
+    "list": "Product List",
+    "my-list": "My Listing",
+    "portal": "Pro Portal",
+    "sign-in": "Sign In",
+    "profile": "Profile",
+    "action": "Join as pro"
+  },
+  "signin-box": {
+    "email": "Email",
+    "email-placeholder": "Your email address",
+    "title": "Sign-in as provider",
+    "password": "Password",
+    "password-placeholder": "Your password",
+    "sign-in": "Sign in",
+    "register-title": "Don't have an account? ",
+    "register": "Register now"
+  },
+  "register-box": {
+    "submit-create": "Creating your account..",
+    "submit-email": "Verifying your email...",
+    "verify-code": "Verification Code",
+    "verify": "Verify",
+    "verify-email": "Verifying Your Email",
+    "title": "Create Your Profile",
+    "company": "Professional/Company Name",
+    "company-placeholder": "Your business name",
+    "phone": "Phone",
+    "name-placeholder": "Your full name",
+    "account-info": "Account Infor",
+    "your-name": "Your Name",
+    "email": "Email",
+    "email-placeholder": "Nhập email của bạn",
+    "password": "Password",
+    "password-placeholder": "Your password",
+    "register": "Register now",
+    "sign-in": "Sign In Nơw",
+    "signin-title": "Already have an account? "
   }
 }

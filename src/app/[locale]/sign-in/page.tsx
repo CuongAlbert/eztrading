@@ -2,11 +2,17 @@ import React from "react";
 import { ProSigninBox } from "@/components/widgets/provider";
 import { Logo } from "@/components/common";
 import { unstable_setRequestLocale } from "next-intl/server";
-import { useTranslations } from "next-intl";
+import {
+  NextIntlClientProvider,
+  useMessages,
+  useTranslations,
+} from "next-intl";
+import { pick } from "lodash";
 
 const ProSignin = ({ params: { locale } }: { params: { locale: string } }) => {
   unstable_setRequestLocale(locale);
   const t = useTranslations("sign-in");
+  const messages = useMessages();
   return (
     <main
       className="w-full h-full flex flex-col md:flex-row p-2 md:p-8 md:justify-center items-center overflow-auto"
@@ -35,7 +41,9 @@ const ProSignin = ({ params: { locale } }: { params: { locale: string } }) => {
         </div>
       </div>
       <div className="flex flex-row p-2 md:p-8 items-center">
-        <ProSigninBox />
+        <NextIntlClientProvider messages={pick(messages, "signin-box")}>
+          <ProSigninBox />
+        </NextIntlClientProvider>
       </div>
       {/* </div> */}
     </main>
