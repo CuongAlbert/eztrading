@@ -16,7 +16,11 @@ const ProductListLayout = ({
   return (
     <NextIntlClientProvider messages={pick(messages, "product-detail")}>
       <div className="bg-slate-50 relative">
-        <Header links={headerData.links} actions={headerData.actions} />
+        <Header
+          links={headerData.links}
+          actions={headerData.actions}
+          locale={locale}
+        />
         {children}
       </div>
     </NextIntlClientProvider>
