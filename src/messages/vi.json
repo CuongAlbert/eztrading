@@ -61,7 +61,9 @@
       "min": "Từ",
       "max": "Đến",
       "min-order": "Đặt ít nhất"
-    }
+    },
+    "no-product": "Không có sản phẩm nào",
+    "go-home": "Về trang chủ"
   },
 
   "product-detail": {
@@ -253,10 +255,10 @@
     "services": "Dịch vụ",
     "list": "Sản phẩm",
     "action": "Tham gia",
-    "portal": "Hồ sơ của tôi",
+    "portal": "Hồ sơ nhà cung cấp",
     "sign-in": "Đăng nhập",
-    "my-list": "Sản phẩm",
-    "profile": "Thông tin"
+    "my-list": "Sản phẩm cung cấp",
+    "profile": "Thông tin nhà cung cấp"
   },
   "signin-box": {
     "email": "Email",
@@ -288,5 +290,13 @@
     "register": "Đăng ký ngay",
     "sign-in": "Đăng nhập ngay",
     "signin-title": "Bạn đã có tài khoản? "
+  },
+  "footer": {
+    "company": "Công ty",
+    "about-us": "Về chúng tôi",
+    "contact": "Liên hệ",
+    "legal": "Pháp lý",
+    "terms": "Điều khoản sử dụng",
+    "policy": "Chính sách quyền riêng tư"
   }
 }

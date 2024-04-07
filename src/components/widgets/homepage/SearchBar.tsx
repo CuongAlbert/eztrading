@@ -1,11 +1,10 @@
 "use client";
 
-import React, { ButtonHTMLAttributes, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import React, { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "@/config/i18n-navigation";
 
 import { Button } from "@/components/ui/button";
-import { CameraIcon } from "@heroicons/react/24/outline";
-import { Link } from "@/config/i18n-navigation";
 
 interface SearchBarProps {
   default?: string;

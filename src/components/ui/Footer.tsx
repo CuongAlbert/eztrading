@@ -1,8 +1,12 @@
 import { Link } from "@/config/i18n-navigation";
 import { Logo } from "../common";
 import React from "react";
+import { unstable_setRequestLocale } from "next-intl/server";
+import { useTranslations } from "next-intl";
 
 export const Footer = () => {
+  // unstable_setRequestLocale(locale);
+  const t = useTranslations("footer");
   return (
     <section className="relative w-full mx-auto px-4 sm:px-6 py-8 flex flex-col gap-8 justify-center items-center border border-t-slate-5">
       <footer className="flex w-full flex-col md:flex-row gap-8 md:gap-16 justify-center">
@@ -22,21 +26,21 @@ export const Footer = () => {
           </Link>
         </nav> */}
         <nav className="flex-col flex gap-2">
-          <header className="font-bold">Company</header>
+          <header className="font-bold">{t("company")}</header>
           <Link className="" href="/#about">
-            About us
+            {t("about-us")}
           </Link>
           <Link className="" href="/#contact">
-            Contact
+            {t("contact")}
           </Link>
         </nav>
         <nav className="flex-col flex gap-2">
-          <header className="font-bold">Legal</header>
+          <header className="font-bold">{t("legal")}</header>
           <Link className="" href="/">
-            Terms of use
+            {t("terms")}
           </Link>
           <Link className="" href="/privacy-policy">
-            Privacy policy
+            {t("policy")}
           </Link>
         </nav>
       </footer>

@@ -61,7 +61,9 @@
       "min": "Min",
       "max": "Max",
       "min-order": "Min order"
-    }
+    },
+    "no-product": "No Product",
+    "go-home": "Go Home"
   },
   "product-detail": {
     "verified": "Verified",
@@ -286,5 +288,13 @@
     "register": "Register now",
     "sign-in": "Sign In Nơw",
     "signin-title": "Already have an account? "
+  },
+  "footer": {
+    "company": "Company",
+    "about-us": "About us",
+    "contact": "Contact",
+    "legal": "Legal",
+    "terms": "Terms of use",
+    "policy": "Privacy Policy"
   }
 }
