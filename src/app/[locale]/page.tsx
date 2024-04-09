@@ -42,14 +42,16 @@ export default async function Home({
         />
         <div className="w-full flex p-4 md:p-16 lg:p-32 flex-col gap-3 justify-center absolute top-0 left-0 h-full bg-gradient-to-r from-green-950 via-green-950/80 to-transparent to-[120%]">
           <p className="font-bold text-primary-foreground ">EZTRADING</p>
-          <h1 className="text-4xl font-bold text-orange-500">
-            {/* {`The First Sustainable B2B Trade Freeway `} */}
-            {t("content1.title1")}
-          </h1>
-          <h1 className="text-4xl font-bold text-orange-500">
-            {/* {`Between North America and S.E.A region`} */}
-            {t("content1.title2")}
-          </h1>
+          <div className="flex flex-col w-full py-2">
+            <h1 className="text-4xl font-bold text-orange-500">
+              {/* {`The First Sustainable B2B Trade Freeway `} */}
+              {t("content1.title1")}
+            </h1>
+            <h1 className="text-4xl font-bold text-orange-500">
+              {/* {`Between North America and S.E.A region`} */}
+              {t("content1.title2")}
+            </h1>
+          </div>
           <div className="flex ">
             <SearchBar
               isDark={true}

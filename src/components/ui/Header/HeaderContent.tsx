@@ -60,7 +60,7 @@ const HeaderContent = ({ links, actions, children }: HeaderProps) => {
             </Link>
           ))}
         </nav>
-        <div className="flex gap-2 shrink-0 justify-center items-center">
+        <div className="flex shrink-0 justify-center items-center">
           {children}
           <div className="items-center flex justify-between gap-2 w-full md:w-auto">
             {actions?.length ? (
