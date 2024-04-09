@@ -2,7 +2,8 @@
 
 import React, { createContext, use, useCallback, useEffect } from "react";
 import { getProductBySlug, searchProducts } from "@/server/products";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "@/config/i18n-navigation";
 
 import { Loading } from "@/components/widgets/common";
 import { Product } from "@/types/product";

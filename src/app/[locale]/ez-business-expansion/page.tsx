@@ -19,7 +19,11 @@ const EzBusinessExpansionPage = ({
   const t = useTranslations("ez-business-expansion");
   return (
     <>
-      <Header links={headerData.links} actions={headerData.actions} />
+      <Header
+        links={headerData.links}
+        actions={headerData.actions}
+        locale={locale}
+      />
 
       <main className="w-full max-w-6xl p-4 lg:p-16 flex flex-col mx-auto my-8">
         <p className="font-bold text-center text-orange-500 my-2 uppercase">

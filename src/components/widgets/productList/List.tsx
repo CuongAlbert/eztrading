@@ -7,26 +7,12 @@ import Image from "next/image";
 import { Link } from "@/config/i18n-navigation";
 import { Product } from "@/types/product";
 import React from "react";
-import { useRouter } from "next/navigation";
 
 interface ListProps {
   products: Product[];
 }
 
 export default function List({ products }: ListProps) {
-  const router = useRouter();
-  if (!products || products.length === 0)
-    return (
-      <div className="flex flex-col items-center justify-center h-screen">
-        <h1 className="text-2xl font-bold text-slate-11">No Products Found</h1>
-        <button
-          className="btn btn-primary mt-4"
-          onClick={() => router.push("/")}
-        >
-          Go Home
-        </button>
-      </div>
-    );
   return (
     <div className="w-full mx-auto mt-2 grid grid-col-1 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
       {products.map((p, idx) => (

@@ -1,18 +1,18 @@
 export const headerData = {
   links: [
-    { text: "Home", href: "/" },
+    { text: "home", href: "/" },
     {
-      text: "Services",
+      text: "services",
       href: "/ez-business-expansion",
     },
     {
-      text: "Product List",
+      text: "list",
       href: "/search",
     },
   ],
   actions: [
     {
-      text: "Join as pro",
+      text: "action",
       href: "/sign-in",
     },
   ],
@@ -68,19 +68,19 @@ export const footerData = {
 
 export const providerHeader = {
   links: [
-    { text: "Home", href: "/" },
+    { text: "home", href: "/" },
     {
-      text: "Profile",
+      text: "profile",
       href: "/provider/my-profile",
     },
     {
-      text: "My Listings",
+      text: "my-list",
       href: "/provider/products",
     },
   ],
   actions: [
     {
-      text: "Join as pro",
+      text: "action",
       href: "/join-as-pro",
     },
   ],

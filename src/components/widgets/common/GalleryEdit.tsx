@@ -8,6 +8,7 @@ import Image from "next/image";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import { v4 as uuidv4 } from "uuid";
 import { toBase64 } from "@/lib/helpers";
+import { useTranslations } from "next-intl";
 
 interface GalleryEditProps {
   isUpdatingGallery: boolean;
@@ -25,7 +26,7 @@ export const GalleryEdit: React.FC<GalleryEditProps> = ({
   // const [currentGallery, setCurrentGallery] =
   //   React.useState<SanityImage[]>(gallery);
   const currentGallery = gallery;
-
+  const t = useTranslations("provider");
   useEffect(() => {
     if (!selectedImages) {
       setPreviewUrls([]);
@@ -81,7 +82,7 @@ export const GalleryEdit: React.FC<GalleryEditProps> = ({
               htmlFor="multiple-files"
             >
               <PhotoIcon className="w-12 h-12 text-slate-8" />
-              <p className="text-slate-8">Add photos</p>
+              <p className="text-slate-8">{t("gallery.add-photo")}</p>
             </label>
           )}
           <label
@@ -89,7 +90,7 @@ export const GalleryEdit: React.FC<GalleryEditProps> = ({
             htmlFor="multiple-files"
           >
             <PhotoIcon className="w-12 h-12 text-slate-8" />
-            <p className="text-slate-8">Add photos</p>
+            <p className="text-slate-8">{t("gallery.add-photo")}</p>
           </label>
           {previewUrls &&
             previewUrls.length > 0 &&
@@ -139,7 +140,7 @@ export const GalleryEdit: React.FC<GalleryEditProps> = ({
           className="btn btn-secondary w-full flex-1"
         >
           <PhotoIcon className="w-6 h-6" />
-          <p>Add photos</p>
+          <p>{t("gallery.add-photo")}</p>
         </label>
         <input
           type="file"

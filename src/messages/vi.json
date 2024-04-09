@@ -5,9 +5,9 @@
       "button": "Xem tất cả sản phẩm"
     },
     "content1": {
-      "title1": "Kết nối thương mại B2B bền vững đầu tiên ",
+      "title1": "Cao tốc Thương mại B2B Đầu tiên ",
       "title2": "Giữa Bắc Mỹ và khu vực Đông Nam Á",
-      "description": "Nền tảng của chúng tôi tạo điều kiện kết nối thương mại nhanh chóng và liền mạch giữa hai khu vực này, thúc đẩy trao đổi năng động hàng hóa bền vững. Với EZTrading, việc tiếp cận các nhà cung cấp được chứng nhận tốt nhất và có trách nhiệm nhất trong khu vực chưa bao giờ dễ dàng hơn thế. Quy trình thanh toán bảo mật của chúng tôi đảm bảo sự an tâm trong mọi giao dịch. Hãy tham gia cùng chúng tôi trên hành trình bền vững hướng tới thương mại hai chiều liền mạch và khám phá sự tiện lợi vô song của giao dịch có mục đích."
+      "description": "Chào mừng bạn đến với EZTrading - Cao tốc Thương mại B2B các mặt hàng bền vững Đầu tiên giữa Bắc Mỹ và khu vực Đông Nam Á. Nền tảng của chúng tôi tạo điều kiện thuận lợi và liền mạch cho các kết nối thương mại giữa hai khu vực này, thúc đẩy giao thương linh hoạt của các mặt hàng bền vững, thân thiện môi trường. Với EZTrading, việc tiếp cận các nhà cung cấp hàng đầu trong khu vực được chứng nhận và có cam kết bảo vệ môi trường chưa bao giờ dễ dàng như vậy. Quy trình thanh toán bảo mật của chúng tôi đảm bảo sự yên tâm trong mỗi giao dịch. Hãy tham gia cùng chúng tôi trong hành trình bền vững này, với giao thương hai chiều liền mạch và sự thuận tiện tuyệt đối.      "
     },
     "search": {
       "place-holder": "Bạn đang tìm kiếm gì?",
@@ -61,7 +61,9 @@
       "min": "Từ",
       "max": "Đến",
       "min-order": "Đặt ít nhất"
-    }
+    },
+    "no-product": "Không có sản phẩm nào",
+    "go-home": "Về trang chủ"
   },
 
   "product-detail": {
@@ -176,5 +178,125 @@
     "address": "Địa chỉ",
     "chat": "Chat với chúng tôi",
     "chat-hint": "Chat ngay"
+  },
+  "sign-up": {
+    "title": "Xin chào, Nhà cung cấp!",
+    "desc": "Chào mừng đến với EZTRADING! Đăng ký làm nhà cung cấp và bắt đầu cung cấp dịch vụ của bạn cho chủ nhà."
+  },
+  "sign-in": {
+    "title": "Chúng tôi đang nỗ lực phát triển doanh nghiệp của bạn",
+    "desc": "Tạo hồ sơ EZHOUZE của bạn và dẫn đầu ",
+    "span": " nhiều chủ nhà",
+    "desc2": ". Nhiều người chú ý đến doanh nghiệp của bạn hơn đồng nghĩa với việc có nhiều cơ hội hơn",
+    "desc3": "kết nối với khách hàng tiếp theo của bạn."
+  },
+  "provider": {
+    "my-profile": {
+      "notify": "Hồ sơ của bạn chưa được hoàn thiện. Vui lòng hoàn thiện hồ sơ của bạn để xuất hiện trong kết quả tìm kiếm.",
+      "title": "Hồ sơ công ty",
+      "name": "Tên doanh nghiệp",
+      "profile-status": "Trạng thái hồ sơ",
+      "verified": "Đã xác minh",
+      "in-review": "Đang xem xét",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "service-details": "Chi tiết dịch vụ",
+      "address": "Địa chỉ",
+      "desc": "Mô tả",
+      "shipping-info": "Thông tin vận chuyển",
+      "payment": "Phương thức thanh toán"
+    },
+    "products": {
+      "new-product": "Sản phẩm mới",
+      "title-head": "Bạn có ",
+      "title-tail": " sản phẩm"
+    },
+    "new-product": {
+      "untitle": "Sản phẩm mới",
+      "infor-title": "Thông tin sản phẩm",
+      "product-name": "Tên sản phẩm",
+      "name-placeholder": "Đặt tên tốt cho kết quả tìm kiếm tốt hơn",
+      "unit": "Đơn vị",
+      "unit-placeholder": "Đơn vị đo lường",
+      "country": "Quốc gia",
+      "country-placeholder": "Xuất xứ",
+      "price": "Giá",
+      "price-desc": "Đặt sơ đồ định giá bằng cách đặt mục đặt hàng tối thiểu và giá cho giá trị đó",
+      "price-placeholder": "Giá",
+      "price-button": "Thêm giá",
+      "category": "Chủng loại",
+      "category-desc": "Chọn các danh mục mô tả đúng nhất sản phẩm của bạn, phân tách bằng dấu phẩy",
+      "attribute": "Thuộc tính",
+      "attribute-desc": "Thêm các thuộc tính mô tả đúng nhất sản phẩm của bạn, phân tách bằng dấu phẩy",
+      "attribute-placeholder": "Tên thuộc tính",
+      "placeholder-input": "Giá trị",
+      "attribute-button": "Thêm thuộc tính",
+      "order-title": "Chính sách đặt hàng",
+      "lead-time": "Thời gian",
+      "lead-time-desc": "Đặt thời gian thực hiện cho từng phương án định giá",
+      "min-order": "Đặt ít nhất",
+      "lead-time-button": "Thêm thời gian",
+      "sample": "Mẫu",
+      "sample-title": "Đặt hàng tối thiểu cho mẫu và giá",
+      "max-sample": "Số mẫu tối đa",
+      "sample-price": "Giá",
+      "save": "Lưu"
+    },
+    "gallery": {
+      "add-photo": "Thêm Ảnh"
+    },
+    "edit-logo": {
+      "add-logo": "Thêm logo",
+      "choose-logo": "Chọn logo"
+    }
+  },
+  "header": {
+    "home": "Trang chủ",
+    "services": "Dịch vụ",
+    "list": "Sản phẩm",
+    "action": "Tham gia",
+    "portal": "Hồ sơ nhà cung cấp",
+    "sign-in": "Đăng nhập",
+    "my-list": "Sản phẩm cung cấp",
+    "profile": "Thông tin nhà cung cấp"
+  },
+  "signin-box": {
+    "email": "Email",
+    "title": "Đăng nhập nhà cung cấp",
+    "password": "Mật khẩu",
+    "sign-in": "Đăng nhập",
+    "register": "Đăng ký ngay",
+    "email-placeholder": "Nhập địa chỉ email của bạn",
+    "password-placeholder": "Nhập mật khẩu của ban",
+    "register-title": "Bạn chưa có tài khoản? "
+  },
+  "register-box": {
+    "submit-create": "Đang tạo tài khoản của bạn...",
+    "submit-email": "Đang xác thực email của bạn...",
+    "verify-code": "Mã xác thực",
+    "verify": "Xác thực",
+    "verify-email": "Đang xác thực",
+    "title": "Tạo Hồ Sơ Của Bạn",
+    "company": "Tên Công ty/Tổ chức",
+    "company-placeholder": "Nhập tên công ty",
+    "phone": "Điện thoại",
+    "account-info": "Thông tin tài khoản",
+    "your-name": "Tên của bạn",
+    "name-placeholder": "Nhập tên của bạn",
+    "email": "Email",
+    "email-placeholder": "Nhập địa chỉ email của bạn",
+    "password": "Mật khẩu",
+    "password-placeholder": "Nhập mật khẩu của bạn",
+    "register": "Đăng ký ngay",
+    "sign-in": "Đăng nhập ngay",
+    "signin-title": "Bạn đã có tài khoản? "
+  },
+  "footer": {
+    "company": "Công ty",
+    "about-us": "Về chúng tôi",
+    "contact": "Liên hệ",
+    "legal": "Pháp lý",
+    "terms": "Điều khoản sử dụng",
+    "policy": "Chính sách quyền riêng tư"
   }
 }

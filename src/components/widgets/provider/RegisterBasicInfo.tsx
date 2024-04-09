@@ -5,8 +5,9 @@ import { NewProvider } from "@/types/provider";
 import React from "react";
 import { createProvider } from "@/server/providers";
 import { set } from "sanity";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/config/i18n-navigation";
 import { useSignUp } from "@clerk/nextjs";
+import { useTranslations } from "next-intl";
 
 // import { ClerkAPIErrorJSON } from "@clerk/types";
 
@@ -24,6 +25,8 @@ export const RegisterBasicInfo = () => {
   const [isSubmittingCode, setIsSubmittingCode] = React.useState(false);
   const [formInputError, setFormInputError] = React.useState("");
   const [codeError, setCodeError] = React.useState("");
+
+  const t = useTranslations("register-box");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -111,7 +114,7 @@ export const RegisterBasicInfo = () => {
           <div className="loading loading-spinner loading-lg bg-blue-8" />
         </div>
         <p className="text-xl text-center text-slate-11">
-          Creating your account..
+          {t("submit-create")}
         </p>
       </div>
     );
@@ -123,9 +126,7 @@ export const RegisterBasicInfo = () => {
         <div className="flex w-full items-center justify-center">
           <div className="loading loading-spinner loading-lg bg-blue-8" />
         </div>
-        <p className="text-xl text-center text-slate-11">
-          Verifying your email...
-        </p>
+        <p className="text-xl text-center text-slate-11">{t("submit-email")}</p>
       </div>
     );
   }
@@ -135,12 +136,12 @@ export const RegisterBasicInfo = () => {
       <form onSubmit={handleVerify}>
         <div className="flex flex-col gap-6 w-96 max-w-full rounded-lg border border-5 overflow-scroll shadow-xl border-t-4 border-t-blue-600 p-4 transition-all ease-in-out bg-blue-50 shrink-0">
           <p className="font-medium text-xl w-full text-center">
-            Verify Your Email
+            {t("verify-email")}
           </p>
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2">
               <label htmlFor="code" className="font-medium text-sm">
-                Verification Code
+                {t("verify-code")}
               </label>
               <input
                 className="py-2 px-4 bg-transparent w-full border border-slate-5 rounded-md"
@@ -157,7 +158,7 @@ export const RegisterBasicInfo = () => {
             </div>
           </div>
           <button className="btn btn-primary" type="submit">
-            Verify
+            {t("verify")}
           </button>
           {codeError !== "" && (
             <p className="text-red-600 text-sm text-center">{codeError}</p>
@@ -170,18 +171,16 @@ export const RegisterBasicInfo = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="flex flex-col gap-6 w-96 max-w-full rounded-lg border border-5 overflow-scroll shadow-xl border-t-4 border-t-blue-600 p-4 transition-all ease-in-out bg-blue-50 shrink-0">
-        <p className="font-medium text-xl w-full text-center">
-          Create Your Profile
-        </p>
+        <p className="font-medium text-xl w-full text-center">{t("title")}</p>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-2">
             <label htmlFor="company" className="font-medium text-sm">
-              Professional/Company Name
+              {t("company")}
             </label>
             <input
               className="py-2 px-4 bg-transparent w-full border border-slate-5 rounded-md"
               type="text"
-              placeholder="Your business name"
+              placeholder={t("company-placeholder")}
               name="company"
               id="company"
               value={company}
@@ -195,7 +194,7 @@ export const RegisterBasicInfo = () => {
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex flex-col w-full gap-2">
               <label htmlFor="phone" className="font-medium text-sm">
-                Phone
+                {t("phone")}
               </label>
               <input
                 className="py-2 px-4 bg-transparent w-full border border-slate-5 rounded-md"
@@ -213,16 +212,18 @@ export const RegisterBasicInfo = () => {
           </div>
         </div>
         <div className="w-full h-[1px] bg-slate-5" />
-        <p className="font-medium text-xl w-full text-center">Account info</p>
+        <p className="font-medium text-xl w-full text-center">
+          {t("account-info")}
+        </p>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-2">
             <label htmlFor="name" className="font-medium text-sm">
-              Your Name
+              {t("your-name")}
             </label>
             <input
               className="py-2 px-4 bg-transparent w-full border border-slate-5 rounded-md"
               type="text"
-              placeholder="Your full name"
+              placeholder={t("name-placeholder")}
               name="username"
               id="username"
               value={username}
@@ -234,12 +235,12 @@ export const RegisterBasicInfo = () => {
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="email" className="font-medium text-sm">
-              Email
+              {t("email")}
             </label>
             <input
               className="py-2 px-4 bg-transparent w-full border border-slate-5 rounded-md"
               type="email"
-              placeholder="Your email address"
+              placeholder={t("email-placeholder")}
               name="email"
               id="email"
               value={emailAddress}
@@ -251,12 +252,12 @@ export const RegisterBasicInfo = () => {
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="password" className="font-medium text-sm">
-              Password
+              {t("password")}
             </label>
             <input
               className="py-2 px-4 bg-transparent w-full border border-slate-5 rounded-md"
               type="password"
-              placeholder="Your business name"
+              placeholder={t("password-placeholder")}
               name="password"
               id="password"
               value={password}
@@ -268,15 +269,15 @@ export const RegisterBasicInfo = () => {
           </div>
         </div>
         <button className="btn btn-primary" type="submit">
-          Register Now!
+          {t("register")}
         </button>
         {formInputError !== "" && (
           <p className="text-red-600 text-sm">{formInputError}</p>
         )}
         <p className="text-sm text-center">
-          {"Already have an account? "}
+          {t("signin-title")}
           <Link href="/sign-in" className="text-blue-700">
-            Sign-in now
+            {t("sign-in")}
           </Link>
         </p>
       </div>

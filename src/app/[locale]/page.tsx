@@ -28,7 +28,11 @@ export default async function Home({
   const products = await getHighlightedProducts();
   return (
     <>
-      <Header links={headerData.links} actions={headerData.actions} />
+      <Header
+        links={headerData.links}
+        actions={headerData.actions}
+        locale={locale}
+      />
       <div className="w-full h-[640px] relative">
         <Image
           src="/images/home-cover.avif"

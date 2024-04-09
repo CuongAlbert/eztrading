@@ -6,6 +6,7 @@ import { PhotoIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { toBase64, b64toBlob } from "@/lib/helpers";
 import { updateProviderLogo } from "@/server/providers";
+import { useTranslations } from "next-intl";
 
 interface LogoEditProps {
   logo: SanityImage | null;
@@ -19,6 +20,7 @@ export const LogoEdit: React.FC<LogoEditProps> = ({ logo, providerId }) => {
     logo,
   );
   const [isUpdating, setIsUpdating] = React.useState<boolean>(false);
+  const t = useTranslations("provider");
 
   useEffect(() => {
     if (!selectedImage) {
@@ -114,14 +116,14 @@ export const LogoEdit: React.FC<LogoEditProps> = ({ logo, providerId }) => {
             htmlFor="actual-button"
           >
             <PhotoIcon className="w-12 h-12 text-slate-8" />
-            <p className="text-slate-8">Add logo</p>
+            <p className="text-slate-8">{t("edit-logo.add-logo")}</p>
           </label>
         )}
       </div>
       {!previewUrl ? (
         <>
           <label className="btn btn-secondary" htmlFor="actual-button">
-            Choose logo{" "}
+            {t("edit-logo.choose-logo")}
           </label>
           <input
             type="file"
