@@ -5,7 +5,7 @@ import { NewProvider } from "@/types/provider";
 import React from "react";
 import { createProvider } from "@/server/providers";
 import { set } from "sanity";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/config/i18n-navigation";
 import { useSignUp } from "@clerk/nextjs";
 import { useTranslations } from "next-intl";
 

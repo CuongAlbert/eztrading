@@ -3,7 +3,7 @@ import React, { createContext, useEffect } from "react";
 
 import { useUser } from "@clerk/nextjs";
 import { ProviderInfo } from "@/types/provider";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/config/i18n-navigation";
 import { getProviderByAuthProviderId } from "@/server/providers";
 import { Loading } from "@/components/widgets/common";
 import { Product } from "@/types/product";

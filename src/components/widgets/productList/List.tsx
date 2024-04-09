@@ -7,7 +7,6 @@ import Image from "next/image";
 import { Link } from "@/config/i18n-navigation";
 import { Product } from "@/types/product";
 import React from "react";
-import { useRouter } from "next/navigation";
 
 interface ListProps {
   products: Product[];
