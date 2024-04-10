@@ -179,12 +179,12 @@
   },
   "sign-up": {
     "title": "Hello, Provider!",
-    "desc": "Welcome to EZTRADING! Sign up as a provider and start offering your services to homeowners."
+    "desc": "Welcome to EZTRADING! Sign up as a provider and start offering your services to customers."
   },
   "sign-in": {
     "title": "We're in the business of growing yours",
-    "desc": "Create your EZHOUZE profile, and get in front of ",
-    "span": " many homeowners",
+    "desc": "Create your EZTRADING profile, and get in front of ",
+    "span": " many customers",
     "desc2": ". More eyes on your business means more opportunity to",
     "desc3": "connect with your next customer."
   },

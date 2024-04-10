@@ -5,8 +5,8 @@
       "button": "Xem tất cả sản phẩm"
     },
     "content1": {
-      "title1": "Cao tốc Thương mại B2B Đầu tiên ",
-      "title2": "Giữa Bắc Mỹ và khu vực Đông Nam Á",
+      "title1": "Cao tốc Thương mại B2B Đầu Tiên ",
+      "title2": "Giữa Bắc Mỹ và Đông Nam Á",
       "description": "Chào mừng bạn đến với EZTrading - Cao tốc Thương mại B2B các mặt hàng bền vững Đầu tiên giữa Bắc Mỹ và khu vực Đông Nam Á. Nền tảng của chúng tôi tạo điều kiện thuận lợi và liền mạch cho các kết nối thương mại giữa hai khu vực này, thúc đẩy giao thương linh hoạt của các mặt hàng bền vững, thân thiện môi trường. Với EZTrading, việc tiếp cận các nhà cung cấp hàng đầu trong khu vực được chứng nhận và có cam kết bảo vệ môi trường chưa bao giờ dễ dàng như vậy. Quy trình thanh toán bảo mật của chúng tôi đảm bảo sự yên tâm trong mỗi giao dịch. Hãy tham gia cùng chúng tôi trong hành trình bền vững này, với giao thương hai chiều liền mạch và sự thuận tiện tuyệt đối.      "
     },
     "search": {
@@ -36,31 +36,31 @@
     }
   },
   "expansion": {
-    "title": "Mở rộng kinh doanh tại EZ",
-    "desc": "EZ Business Expansion là giải pháp toàn diện giúp bạn tăng trưởng kinh doanh liền mạch và gia nhập thị trường toàn cầu. Nhóm chuyên gia của chúng tôi tận tâm cung cấp các dịch vụ phù hợp với mục tiêu mở rộng của bạn, đảm bảo quy trình mở rộng hiệu quả.",
-    "li1": "Thành lập Công ty & Văn phòng ảo",
-    "li2": "Đại diện thương mại",
-    "li3": "Tiếp thị và xây dựng thương hiệu",
-    "li4": "Phân phối & hợp tác",
-    "button": "Xem thêm"
+    "title": "Dịch vụ Mở Rộng Thị Trường EZ Business",
+    "desc": "Dịch vụ Mở Rộng Thị Trường EZ Business là giải pháp toàn diện cho những doanh nghiệp có nhu cầu phát triển và thâm nhập vào thị trường toàn cầu. Đội ngũ chuyên gia của chúng tôi cam kết cung cấp các dịch vụ được tùy chỉnh phù hợp với mục tiêu mở rộng của bạn, đảm bảo quá trình mở rộng hiệu quả.",
+    "li1": "Thành lập doanh nghiệp & Văn Phòng Vệ Tinh",
+    "li2": "Đại diện Kinh Doanh",
+    "li3": "Tiếp Thị và Quảng Bá Thương Hiệu",
+    "li4": "Phân Phối và Hợp Tác Đầu Tư",
+    "button": "Tìm hiểu thêm"
   },
   "LocaleSwitcher": {
     "label": "Đổi ngôn ngữ",
     "locale": "{locale, select, vi {🇻🇳 Tiếng Việt} en {🇺🇸 English} other {Unknown}}"
   },
   "Search": {
-    "place-holder": "Bạn đang tìm kiếm gì?",
+    "place-holder": "Bạn đang tìm kiếm gì?",
     "title": "Hoặc tìm kiếm các sản phẩm nổi bật",
     "button": {
       "search": "Tìm kiếm"
     },
     "filter": {
-      "category": "Loại",
-      "country": "Xuất xứ",
+      "category": "Nhóm sản phẩm",
+      "country": "Quốc gia",
       "price": "Giá",
-      "min": "Từ",
-      "max": "Đến",
-      "min-order": "Đặt ít nhất"
+      "min": "Tối thiểu",
+      "max": "Tối đa",
+      "min-order": "SL tối thiểu"
     },
     "no-product": "Không có sản phẩm nào",
     "go-home": "Về trang chủ"
@@ -71,13 +71,13 @@
     "reviews": {
       "no-review": "Chưa có đánh giá",
       "validation-name": "Vui lòng nhập tên của bạn",
-      "validation-review": "Vui lòng nhập nhận xét của bạn",
-      "validation-rating": "Vui lòng chọn đánh giá",
-      "submit-error": "Có lỗi xảy ra khi gửi đánh giá của bạn. Xin thử lại sau.",
-      "title": "Đánh giá và nhận xét",
-      "avg-rating": "đánh giá trung bình",
-      "total-reviews": "tổng số đánh giá",
-      "write-review": "Viết đánh giá của bạn",
+      "validation-review": "Hãy nhập nội dung đánh giá tại đây",
+      "validation-rating": "Vui lòng chọn điểm đánh giá",
+      "submit-error": "Đã xảy ra lỗi. Xin vui lòng thử lại sau.",
+      "title": "Đánh giá & Nhận xét",
+      "avg-rating": "Điểm đánh giá trung bình",
+      "total-reviews": "Tổng số đánh giá",
+      "write-review": "Đăng bình luận",
       "form-name": "Tên",
       "form-email": "Email",
       "form-rating": "Đánh giá",
@@ -91,7 +91,7 @@
       "quantity": "Số lượng",
       "estimated-price": "Giá ước tính",
       "note": "Ghi chú",
-      "note-placeholder": "Nhập ghi chú của bạn",
+      "note-placeholder": "Hãy nhập nội dung ghi chú tại đây",
       "shipping-policy": "Chính sách vận chuyển",
       "shipping-policy-default": "Liên hệ với chúng tôi để biết thêm chi tiết về chính sách vận chuyển",
       "payment-policy": "Chính sách thanh toán",
@@ -117,12 +117,12 @@
     "recommendation": "Gợi ý dành riêng cho bạn",
     "product-info": {
       "key-attribute": "Thuộc tính quan trọng",
-      "other-attribute": "Thuộc tính khác"
+      "other-attribute": "Các Đặc Tính Khác"
     },
     "lead-time": {
-      "title": "Thời gian giao hàng",
-      "quantity": "Số lượng",
-      "time": "Thời gian (ngày)"
+      "title": "Thời gian sản xuất",
+      "quantity": "Số Lượng",
+      "time": "Thời gian sản xuất (ngày)"
     }
   },
 
@@ -130,24 +130,24 @@
     "tagline": "Mở rộng kinh doanh của bạn với EZTrading",
     "heading-line-1": "Dịch vụ toàn diện",
     "heading-line-2": "để mở rộng kinh doanh của bạn ra thế giới",
-    "description": "Đội ngũ chuyên gia của chúng tôi sẽ cung cấp những dịch vụ dành riêng cho bạn để phù hợp với kế hoạch mở rộng, đảm bảo mang đến sự phát triển hiệu quả",
+    "description": "Đội ngũ chuyên gia của chúng tôi cam kết cung cấp các dịch vụ được tùy chỉnh phù hợp với mục tiêu mở rộng của bạn, đảm bảo quá trình mở rộng hiệu quả.",
     "benefit": "Lợi ích",
     "cta": "Liên hệ ngay",
     "incorporation": {
-      "title": "Thành lập công ty",
-      "benefit-1": "Rút ngắn quy trình thiết lập doanh nghiệp.",
-      "benefit-2": "Cung cấp địa chỉ kinh doanh uy tín.",
-      "benefit-3": "Giảm đáng kể chi phí cố định.",
-      "benefit-4": "Nâng cao hình ảnh và uy tín công ty.",
-      "benefit-5": "Cung cấp quyền truy cập vào thị trường toàn cầu.",
-      "benefit-6": "Bao gồm dịch vụ xử lý và chuyển tiếp thư."
+      "title": "Thành lập doanh nghiệp & Văn Phòng Vệ Tinh",
+      "benefit-1": "Làm gọn quy trình thành lập doanh nghiệp",
+      "benefit-2": "Offers prestigious business addresses.",
+      "benefit-3": "Reduces overhead costs significantly.",
+      "benefit-4": "Enhances company image and credibility.",
+      "benefit-5": "Provides access to global markets.",
+      "benefit-6": "Cung cấp dịch vụ xử lý và chuyển tiếp thư"
     },
     "trade-representative": {
-      "title": "Đại diện thương mại",
-      "benefit-1": "Tạo điều kiện nhập cảnh vào thị trường mới.",
+      "title": "Đại diện Kinh Doanh",
+      "benefit-1": "Tạo điều kiện thâm nhập thị trường mới",
       "benefit-2": "Cung cấp kiến thức và mối quan hệ địa phương.",
-      "benefit-3": "Giảm nhu cầu về mặt bằng vật lý.",
-      "benefit-4": "Tăng cường khả năng nhận biết và nhận diện thương hiệu.",
+      "benefit-3": "Không cần sự hiện diện vật lý",
+      "benefit-4": "Tăng cường mức độ nhận diện thương hiệu.",
       "benefit-5": "Vượt qua rào cản về quy định và văn hóa.",
       "benefit-6": "Xây dựng lòng tin với khách hàng và đối tác địa phương."
     },
@@ -165,7 +165,7 @@
       "benefit-1": "Mở rộng thị trường một cách hiệu quả.",
       "benefit-2": "Kết nối với nhà phân phối địa phương đáng tin cậy.",
       "benefit-3": "Tận dụng cơ hội hợp tác chiến lược.",
-      "benefit-4": "Giảm chi phí logistics và chuỗi cung ứng.",
+      "benefit-4": "Giảm thiểu chi phí phân phối ",
       "benefit-5": "Nâng cao sự sẵn có của sản phẩm và sự hài lòng của khách hàng.",
       "benefit-6": "Cung cấp cái nhìn sâu sắc về xu hướng và nhu cầu thị trường địa phương."
     }
@@ -184,9 +184,9 @@
     "desc": "Chào mừng đến với EZTRADING! Đăng ký làm nhà cung cấp và bắt đầu cung cấp dịch vụ của bạn cho chủ nhà."
   },
   "sign-in": {
-    "title": "Chúng tôi đang nỗ lực phát triển doanh nghiệp của bạn",
-    "desc": "Tạo hồ sơ EZHOUZE của bạn và dẫn đầu ",
-    "span": " nhiều chủ nhà",
+    "title": "Chúng tôi muốn giúp phát triển doanh nghiệp của bạn",
+    "desc": "Tạo hồ sơ EZTRADING của bạn và kết nối ",
+    "span": " với nhiều khách hàng",
     "desc2": ". Nhiều người chú ý đến doanh nghiệp của bạn hơn đồng nghĩa với việc có nhiều cơ hội hơn",
     "desc3": "kết nối với khách hàng tiếp theo của bạn."
   },
